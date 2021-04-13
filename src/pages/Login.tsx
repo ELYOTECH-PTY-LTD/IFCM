@@ -1,21 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonRow, IonCol, IonButton, IonList, IonItem, IonLabel, IonInput, IonText, IonRouterLink, IonIcon } from '@ionic/react';
 import './Login.scss';
-import { setIsLoggedIn, setUsername } from '../data/user/user.actions';
-import { connect } from '../data/connect';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps, withRouter } from 'react-router';
+import { IonReactRouter } from '@ionic/react-router';
+import { Link } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+import history from '../history';
+import { LogoFacebook } from 'react-ionicons'
+import { LogoInstagram } from 'react-ionicons'
+import { LogoTwitter } from 'react-ionicons'
 
-interface OwnProps extends RouteComponentProps {}
-
-interface DispatchProps {
-  setIsLoggedIn: typeof setIsLoggedIn;
-  setUsername: typeof setUsername;
-}
-
-interface LoginProps extends OwnProps,  DispatchProps { }
-
-const Login: React.FC<LoginProps> = ({setIsLoggedIn, history, setUsername: setUsernameAction}) => {
-
+type SomeComponentProps = RouteComponentProps;
+const Login: React.FC<SomeComponentProps> = ({ history }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -31,16 +27,9 @@ const Login: React.FC<LoginProps> = ({setIsLoggedIn, history, setUsername: setUs
     if(!password) {
       setPasswordError(true);
     }
-
-    if(username && password) {
-      await setIsLoggedIn(true);
-      await setUsernameAction(username);
-      history.push('/home', {direction: 'none'});
-    }
   };
-
-  return (
-    <IonPage id="login-page">
+    return (
+      <IonPage id="login-page">
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">   
@@ -56,9 +45,29 @@ const Login: React.FC<LoginProps> = ({setIsLoggedIn, history, setUsername: setUs
 
         <form noValidate onSubmit={login}>
           <IonList>
-            <IonButton expand="block" color="facebook" className="margin"> <IonIcon name="logo-facebook" className="margin-logo"></IonIcon> Facebook Connect</IonButton>
-            <IonButton expand="block" color="instagram" className="margin"><IonIcon name="logo-instagram" className="margin-logo"></IonIcon> Instagram Connect</IonButton>
-            <IonButton expand="block" color="twitter" className="margin"> <IonIcon name="logo-twitter" className="margin-logo"></IonIcon> Twitter Connect</IonButton>
+            <IonButton expand="block" color="facebook" className="margin"> 
+            <LogoFacebook
+            color={'#ffffff'}
+            height="25px"
+            width="25px"
+              /> <IonText className="facebook">Facebook Connect</IonText>
+              
+              </IonButton>
+            
+            <IonButton expand="block" color="instagram" className="margin">
+            <LogoInstagram
+            color={'#ffffff'}
+            height="25px"
+            width="25px"/> <IonText className="instagram">Instagram Connect</IonText>
+            </IonButton>
+            
+            <IonButton expand="block" color="twitter" className="margin"> 
+            
+            <LogoTwitter
+            color={'#ffffff'}
+            height="25px"
+            width="25px"/> <IonText className="twitter">Twitter Connect</IonText>
+            </IonButton>
             
             <IonText className="ion-text-center"> <p className="gray" > OR</p></IonText>
             
@@ -96,7 +105,7 @@ const Login: React.FC<LoginProps> = ({setIsLoggedIn, history, setUsername: setUs
         </form>
         <IonText className="ion-text-center">
           <IonRouterLink href="/forgot" class="forgot">Forgot Password ?</IonRouterLink>
-          <p>Don't have an account ? <IonRouterLink href="/signup">Sign up</IonRouterLink></p>
+          <p>Don't have an account ? <IonRouterLink href="/Signup">Sign up</IonRouterLink></p>
         </IonText>
         
 
@@ -105,11 +114,6 @@ const Login: React.FC<LoginProps> = ({setIsLoggedIn, history, setUsername: setUs
     </IonPage>
   );
 };
+export default withRouter (Login);
 
-export default connect<OwnProps, {}, DispatchProps>({
-  mapDispatchToProps: {
-    setIsLoggedIn,
-    setUsername
-  },
-  component: Login
-})
+  

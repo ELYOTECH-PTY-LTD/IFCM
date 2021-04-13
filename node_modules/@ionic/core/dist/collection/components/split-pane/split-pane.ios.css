@@ -18,7 +18,7 @@
 }
 
 /**
- * Do not pass CSS Variables down on larger 
+ * Do not pass CSS Variables down on larger
  * screens as we want them to affect the outer
  * `ion-menu` rather than the inner content
  */

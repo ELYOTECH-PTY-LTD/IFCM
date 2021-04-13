@@ -3,7 +3,7 @@
  * Defaults to the current date if
  * no date given
  */
-export declare const getDateValue: (date: DatetimeData, format: string) => number;
+export declare const getDateValue: (date: DatetimeData, format: string) => number | string;
 export declare const renderDatetime: (template: string, value: DatetimeData | undefined, locale: LocaleData) => string | undefined;
 export declare const renderTextFormat: (format: string, value: any, date: DatetimeData | undefined, locale: LocaleData) => string | undefined;
 export declare const dateValueRange: (format: string, min: DatetimeData, max: DatetimeData) => any[];
@@ -37,18 +37,19 @@ export declare const convertToArrayOfStrings: (input: string | string[] | undefi
  */
 export declare const convertToArrayOfNumbers: (input: any[] | string | number, type: string) => number[];
 export interface DatetimeData {
-    year?: number;
-    month?: number;
-    day?: number;
-    hour?: number;
-    minute?: number;
-    second?: number;
-    millisecond?: number;
-    tzOffset?: number;
+  year?: number;
+  month?: number;
+  day?: number;
+  hour?: number;
+  minute?: number;
+  second?: number;
+  millisecond?: number;
+  tzOffset?: number;
+  ampm?: string;
 }
 export interface LocaleData {
-    monthNames?: string[];
-    monthShortNames?: string[];
-    dayNames?: string[];
-    dayShortNames?: string[];
+  monthNames?: string[];
+  monthShortNames?: string[];
+  dayNames?: string[];
+  dayShortNames?: string[];
 }

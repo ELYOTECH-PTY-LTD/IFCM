@@ -14,6 +14,7 @@
   font-family: var(--ion-font-family, inherit);
   text-align: center;
   contain: paint;
+  user-select: none;
 }
 
 :host(.segment-scrollable) {

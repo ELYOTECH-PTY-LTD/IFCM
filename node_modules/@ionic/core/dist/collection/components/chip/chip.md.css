@@ -51,6 +51,12 @@
   }
 }
 
+:host(.chip-disabled) {
+  cursor: default;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 :host(.ion-color) {
   background: rgba(var(--ion-color-base-rgb), 0.08);
   color: var(--ion-color-shade);

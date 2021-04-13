@@ -133,6 +133,15 @@
   right: 0;
 }
 
+:host-context(.item-label-floating.item-has-placeholder:not(.item-has-value)) {
+  opacity: 0;
+}
+
+:host-context(.item-label-floating.item-has-placeholder:not(.item-has-value).item-has-focus) {
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
 :host {
   --padding-top: 10px;
   --padding-end: 0;

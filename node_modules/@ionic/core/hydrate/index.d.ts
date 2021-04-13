@@ -3,23 +3,28 @@
 export declare function createWindowFromHtml(templateHtml: string, uniqueId: string): any;
 export interface HydrateDocumentOptions {
 	/**
+	 * Build ID that will be added to `<html data-stencil-build="BUILD_ID">`. By default
+	 * a random ID will be generated
+	 */
+	buildId?: string;
+	/**
 	 * Sets the `href` attribute on the `<link rel="canonical">`
 	 * tag within the `<head>`. If the value is not defined it will
 	 * ensure a canonical link tag is no included in the `<head>`.
 	 */
 	canonicalUrl?: string;
 	/**
-	 * Constrain `setTimeout()` to 1ms, but still async. Also
-	 * only allows `setInterval()` to fire once, also constrained to 1ms.
-	 * Defaults to `true`.
-	 */
-	constrainTimeouts?: boolean;
-	/**
 	 * Include the HTML comments and attributes used by the clientside
 	 * JavaScript to read the structure of the HTML and rebuild each
 	 * component. Defaults to `true`.
 	 */
 	clientHydrateAnnotations?: boolean;
+	/**
+	 * Constrain `setTimeout()` to 1ms, but still async. Also
+	 * only allows `setInterval()` to fire once, also constrained to 1ms.
+	 * Defaults to `true`.
+	 */
+	constrainTimeouts?: boolean;
 	/**
 	 * Sets `document.cookie`
 	 */
@@ -156,6 +161,7 @@ export interface Diagnostic {
 	}[];
 }
 export interface HydrateResults {
+	buildId: string;
 	diagnostics: Diagnostic[];
 	url: string;
 	host: string;
@@ -168,9 +174,10 @@ export interface HydrateResults {
 	html: string;
 	components: HydrateComponent[];
 	anchors: HydrateAnchorElement[];
-	styles: HydrateStyleElement[];
-	scripts: HydrateScriptElement[];
 	imgs: HydrateImgElement[];
+	scripts: HydrateScriptElement[];
+	styles: HydrateStyleElement[];
+	staticData: HydrateStaticData[];
 	title: string;
 	hydratedCount: number;
 	httpStatus: number;
@@ -188,15 +195,20 @@ export interface HydrateAnchorElement extends HydrateElement {
 	href?: string;
 	target?: string;
 }
-export interface HydrateStyleElement extends HydrateElement {
-	href?: string;
+export interface HydrateImgElement extends HydrateElement {
+	src?: string;
 }
 export interface HydrateScriptElement extends HydrateElement {
 	src?: string;
 	type?: string;
 }
-export interface HydrateImgElement extends HydrateElement {
-	src?: string;
+export interface HydrateStyleElement extends HydrateElement {
+	href?: string;
+}
+export interface HydrateStaticData {
+	id: string;
+	type: string;
+	content: string;
 }
 export declare function renderToString(html: string | any, options?: SerializeDocumentOptions): Promise<HydrateResults>;
 export declare function hydrateDocument(doc: any | string, options?: HydrateDocumentOptions): Promise<HydrateResults>;

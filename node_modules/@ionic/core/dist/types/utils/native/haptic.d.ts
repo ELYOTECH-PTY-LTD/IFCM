@@ -1,8 +1,8 @@
 interface HapticImpactOptions {
-    style: 'light' | 'medium' | 'heavy';
+  style: 'light' | 'medium' | 'heavy';
 }
 interface HapticNotificationOptions {
-    style: 'success' | 'warning' | 'error';
+  style: 'success' | 'warning' | 'error';
 }
 /**
  * Check to see if the Haptic Plugin is available

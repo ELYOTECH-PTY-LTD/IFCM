@@ -335,12 +335,23 @@ button, a {
   --highlight-background: var(--highlight-color-invalid);
 }
 
+:host(:not(.item-label)) ::slotted(ion-select) {
+  --padding-start: 0;
+  max-width: none;
+}
+
 :host(.item-label-stacked) ::slotted(ion-select),
 :host(.item-label-floating) ::slotted(ion-select) {
+  --padding-top: 8px;
+  --padding-bottom: 8px;
   --padding-start: 0;
   align-self: stretch;
   width: 100%;
   max-width: 100%;
+}
+
+:host(:not(.item-label)) ::slotted(ion-datetime) {
+  --padding-start: 0;
 }
 
 :host(.item-label-stacked) ::slotted(ion-datetime),
@@ -561,4 +572,9 @@ ion-ripple-effect {
   --padding-top: 8px;
   --padding-bottom: 8px;
   --padding-start: 0px;
+}
+
+:host(.item-label-fixed) ::slotted(ion-select),
+:host(.item-label-fixed) ::slotted(ion-datetime) {
+  --padding-start: 0;
 }

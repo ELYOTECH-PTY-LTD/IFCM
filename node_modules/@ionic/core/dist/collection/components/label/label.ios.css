@@ -78,7 +78,7 @@
 }
 :host(.label-floating) {
   margin-bottom: 0;
-  transform: translate3d(0,  27px,  0);
+  transform: translate3d(0,  29px,  0);
   transform-origin: left top;
   transition: transform 150ms ease-in-out;
 }
@@ -86,8 +86,12 @@
   transform-origin: right top;
 }
 
+:host-context(.item-textarea).label-floating {
+  transform: translate3d(0,  28px,  0);
+}
+
 :host-context(.item-has-focus).label-floating,
-:host-context(.item-has-placeholder).label-floating,
+:host-context(.item-has-placeholder:not(.item-input)).label-floating,
 :host-context(.item-has-value).label-floating {
   transform: translate3d(0,  0,  0) scale(0.82);
 }
