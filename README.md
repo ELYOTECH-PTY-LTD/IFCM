@@ -23,3 +23,4 @@ Typescript
 Ionic icons
 NodeSASS
 History
+Axios
