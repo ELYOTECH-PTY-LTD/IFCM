@@ -1,0 +1,7 @@
+{
+  "name": "IFCM",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
