@@ -20,6 +20,11 @@
  * https://www.ionicframework.com/docs/theming/color-generator
  */
 
+ @font-face {
+  font-family: "Gilroy-ExtraBold";
+  src: url("./fonts/Gilroy-ExtraBold.otf") format("otf"),
+ }
+
  :root {
   /** primary **/
   --ion-color-primary: #3880ff;
@@ -92,6 +97,10 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-color-ifcm_orange: rgb(254, 125, 78);
+  /**Police **/
+    
 }
 
 
@@ -109,7 +118,7 @@
  */
 
  :root {
-  --ion-color-favorite: #69bb7b;
+  --ion-color-favorite: rgb(254, 125, 78);
   --ion-color-favorite-rgb: 105,187,123;
   --ion-color-favorite-contrast: #ffffff;
   --ion-color-favorite-contrast-rgb: 255,255,255;
@@ -143,6 +152,9 @@
   --ion-color-facebook-contrast-rgb: 255,255,255;
   --ion-color-facebook-shade: #344e86;
   --ion-color-facebook-tint: #4f6aa2;
+
+
+  --ion-color-ifcm_orange: rgb(254, 125, 78);
 }
 
 .ion-color-favorite {
@@ -274,14 +286,14 @@
  */
 
 .dark-theme {
-  --ion-color-primary: #428cff;
+  --ion-color-primary: rgb(254, 125, 78);
   --ion-color-primary-rgb: 66,140,255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255,255,255;
   --ion-color-primary-shade: #3a7be0;
   --ion-color-primary-tint: #5598ff;
 
-  --ion-color-secondary: #50c8ff;
+  --ion-color-secondary: rgb(254, 125, 78);
   --ion-color-secondary-rgb: 80,200,255;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255,255,255;

@@ -1,0 +1,210 @@
+/**
+
+police 
+*
+*/
+
+@font-face {
+    font-family: "Gilroy-ExtraBold";
+    src: url("./fonts/Gilroy-ExtraBold.otf") format("otf"),
+   }
+
+.logo{
+        width: 140px;
+        height: 53px;
+        margin-top: 30px;
+        margin-left: 15px;
+        height: 53px;
+        width: 140px;
+}
+.title{
+    margin-left: 25px;
+    color: #2d3650;
+    font-size: 24px;
+    font-weight: 750;
+    letter-spacing: 0px;
+    line-height: 36px;
+    //font-family: 'Gilroy-ExtraBold' !important;
+    
+}
+.prophetic-card{
+    background: rgb(254, 125, 78);
+    border-radius: 14px;
+    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.1);
+    margin-left: 25px;
+    margin-right: 25px;
+    bottom: 20px;
+}
+.quotes{
+  margin-left: 15px;
+}
+.text_prophet{
+
+    height: 48px;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+   // font-family: OpenSans;
+    letter-spacing: 0px;
+    line-height: 25px;
+}
+.prophet {
+    font-size: 12px;
+    text-align: right;
+    position: relative;
+    left: 60%;
+    color: rgb(155, 60, 25);
+    font-size: 12px;
+    //font-family: OpenSans;
+    letter-spacing: 0px;
+    line-height: 20px;
+}
+.verse{
+    margin-left: 30px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    margin-top: -25px;
+    opacity: 100%;
+}
+.verse_titre{
+    width: 306px;
+    height: 25px;
+    color: rgb(134, 135, 168);
+    font-size: 21px;
+   // font-family: Gilroy-ExtraBold;
+    font-weight: 800;
+    letter-spacing: 0px;
+    line-height: 20px;
+}
+.verse_rectangle{
+        width: 128px;
+    height: 23px;
+    background: #FFFFFF;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+.verse_auteur{
+        width: 90px;
+    height: 29px;
+    color: rgb(165, 164, 192);
+    font-size: 14px;
+  //  font-family: OpenSans-Semibold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 30px;
+}
+.verse_texte{
+    width: 284px;
+    height: 30px;
+    color: rgb(12, 17, 44);
+    font-size: 18px;
+    //font-family: OpenSans;
+    letter-spacing: 0px;
+    line-height: 30px;
+}
+.event{
+    margin-left: 30px;
+    margin-right: 25px;
+}
+.event_titre{
+    width: 306px;
+    height: 33px; 
+    color: rgb(134, 135, 168);
+    font-size: 21px;
+   // font-family: Gilroy-ExtraBold;
+    font-weight: 800;
+    letter-spacing: 0px;
+    line-height: 20px;
+}
+.event_card>img{
+    width: 91px;
+    height: 108px;
+    border-radius: 15px;
+}
+.event_card{
+    box-shadow: none !important;
+    margin-bottom: -45px;
+}
+
+.event_text{
+    width: 218px;
+    height: 40px;
+    color: rgb(167, 166, 193);
+    font-size: 14px;
+   // font-family: OpenSans;
+    letter-spacing: 0px;
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    bottom: 102px;
+    left: 100px;
+    width: 65%;
+    display: flex;
+}
+.event_lieu{
+    position: relative;
+    bottom: 112px;
+    left: 101px;
+    width: 150px;
+    color: rgb(12, 17, 44);
+    font-size: 15px;
+    //font-family: OpenSans;
+    letter-spacing: 0px;
+    line-height: 25px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.event_date{
+    width: 90px;
+    height: 20px;
+    color: rgb(254, 125, 78);
+    font-size: 14px;
+  //  font-family: '/' !important;
+    font-weight: 800;
+    letter-spacing: 0px;
+    line-height: 20px;
+    position: relative;
+    bottom: 110px;
+    left: 102px;
+    width: 50%;
+    display: flex;
+}
+.card{
+    z-index: 1;
+}
+
+.navbar{
+     margin-left: 30px;
+    margin-right: 25px;
+    z-index: 2;
+}
+.orange_button{
+    width:50%;
+    position:relative;
+}
+.block{
+    display: block;
+}
+
+.button_orange{
+    position: relative;
+    z-index: 3;
+    float: unset;
+}
+.orange_ifcm{
+    color: rgb(254, 125, 78);
+}
+.grey_ifcm{
+    color: #a5a4c0;
+}
+
+.emptycard {
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
+    border-radius: 50px 50px 0px 0px;
+    margin-left:0;
+    margin-right: 0;
+    margin-bottom: 0;
+    border: 0px solid #000000;
+}

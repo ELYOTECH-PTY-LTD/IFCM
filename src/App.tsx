@@ -34,7 +34,10 @@ import Login from './pages/Login';
 import Welcome from './pages/Welcome';
 import DashBoard from './pages/DashboardPage';
 import Signup from './pages/Signup';
-
+import Homepage from './pages/Homepage'
+import Navbar from './pages/Navbar'
+import Events from './pages/Events'
+import Teaching from './pages/Teaching'
 const App: React.FC = () => (
   <IonApp>
 <IonReactRouter history={history}>
@@ -43,6 +46,10 @@ const App: React.FC = () => (
       <Redirect exact from="/" to="/Welcome" />
       <Route path="/Login" render={() => <Login />} exact={true} />
       <Route path="/Signup" render={() => <Signup />} exact={true} />
+      <Route path="/Home" render={() => <Homepage />} exact={true} />
+      <Route path="/Events" render={() => <Events />} exact={true} />
+      <Route path="/Navbar" render={() => <Navbar />} exact={true} />
+      <Route path="/Teaching" render={() => <Teaching />} exact={true} />
      </IonRouterOutlet>
   </IonReactRouter>
 </IonApp>
