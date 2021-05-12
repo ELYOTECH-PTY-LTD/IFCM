@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonSlides,IonSlide,IonButtons,IonIcon,useIonViewWillEnter, IonImg, IonTitle, IonText, IonCard, IonCardContent, IonCardSubtitle ,IonList, IonItem, IonAvatar, IonFooter, IonLabel, IonTabButton,IonTabBar, IonGrid, IonRow, IonCol, IonCardTitle, IonCardHeader,IonBackButton } from '@ionic/react';
-import { arrowBack, arrowForward, bookmarksSharp } from 'ionicons/icons';
+import { arrowBack, arrowForward, bookmarksSharp,lockClosedOutline } from 'ionicons/icons';
 import './Teaching_details.scss';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { IonReactRouter } from '@ionic/react-router';
@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import history from '../history';
 import UserService from "../services/UserService";
-import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline ,ArrowBackOutline } from 'react-ionicons'
+import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline ,ArrowBackOutline, LockClosedOutline } from 'react-ionicons'
 
 type SomeComponentProps = RouteComponentProps;
 const Teaching_details: React.FC<SomeComponentProps> = ({ history }) => {
@@ -36,20 +36,31 @@ const Teaching_details: React.FC<SomeComponentProps> = ({ history }) => {
                &nbsp;
                </p>
                <IonList>
-                 <IonCard href="/Teaching_list" className="card">
+                 <IonCard href="/Teaching_list" className="card_teach">
                    <img src="/assets/img/teaching/image002.png" className="img_card"></img>
                    <IonText className="text_card">Developing the strengths  </IonText><br/>
                    <IonText className="date_card">01 Dec. 2020  </IonText>
                  </IonCard>
-                 <IonCard href="/Teaching_list" className="card">
+                 <IonCard href="/Teaching_list" className="card_teach">
                    <img src="/assets/img/teaching/image002.png" className="img_card"></img>
                    <IonText className="text_card">Developing the strengths  </IonText><br/>
                    <IonText className="date_card">01 Dec. 2020  </IonText>
                  </IonCard>
-                 <IonCard href="/Teaching_list" className="card">
+                 <IonCard href="/Teaching_list" className="card_teach">
                    <img src="/assets/img/teaching/image002.png" className="img_card"></img>
                    <IonText className="text_card">Developing the strengths  </IonText><br/>
                    <IonText className="date_card">01 Dec. 2020  </IonText>
+                   <IonIcon slot="end" icon={lockClosedOutline}></IonIcon>
+                   <IonIcon name="lock-closed-outline"></IonIcon>
+                   <div id="cercle"></div>
+                   <LockClosedOutline 
+                      color={'#00000'}
+                      cssClasses="icon_lock" 
+                    />
+
+                  
+                 
+
                  </IonCard>
                </IonList>
             </IonCard>

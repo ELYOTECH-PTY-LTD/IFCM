@@ -17,7 +17,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     position: absolute;
-    bottom: 60%;
+    bottom: 65%;
     left: 5%;
     
 }
@@ -31,7 +31,7 @@
     letter-spacing: 0px;
     line-height: 36px;
     position: absolute;
-    bottom: 50%;
+    bottom: 56%;
     left: 5%;
 }
 .text_nombre{
@@ -42,7 +42,7 @@
     letter-spacing: 0px;
     line-height: 30px;
     position: absolute;
-    bottom: 45%;
+    bottom: 50%;
     left: 1%;
 }
 
@@ -83,27 +83,54 @@
     letter-spacing: 0px;
     line-height: 19px;
     position: absolute;
-    top: 10px;
-    left: 56px;
+    top: 20px;
+    left: 75px;
 }
 .date_card{
     width: 87px;
     height: 20px;
-    color: rgb(15, 21, 47);
+    color: #c7c7c7;
     font-size: 14px;
   //  font-family: Gilroy-Light;
     font-weight: 300;
     letter-spacing: 0px;
     line-height: 20px;
     position: absolute;
-    top: 35px;
-    left: 56px;
+    top: 39px;
+    left: 75px;
 }
-.card{
+.card_teach{
     background: rgb(246, 246, 249);
     box-shadow: none !important;
     margin-top: 15px;
+    margin-bottom: -2px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-radius: 7px 7px 7px 7px;
+    width: 316px;
+    height: 77px;
+
+    
 }
 .box{
     box-shadow: none !important;
+}
+.icon_lock{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 30%;
+    left: 86%;
+    
+}
+#cercle {
+    position: fixed;
+    top: 22px;
+    background-color: #84848445;
+    left: 270px;
+    z-index: 2000;
+    width: 27px;
+    height: 27px;
+    border-radius: 20px;
 }
