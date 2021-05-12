@@ -1,0 +1,109 @@
+.img_love{
+    width: 589px;
+    height: 397px;
+    background: rgb(216, 216, 216);
+    padding: 0;
+    margin: 0;
+}
+
+.text_catégorie{
+    background-color: chocolate;
+    padding: 0;
+    margin: 0;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+    padding-left: 10px;
+    padding-right: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: absolute;
+    bottom: 60%;
+    left: 5%;
+    
+}
+.text_caté{
+    width: 237px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 37px;
+    //font-family: Raleway-SemiBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 36px;
+    position: absolute;
+    bottom: 50%;
+    left: 5%;
+}
+.text_nombre{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    //font-family: Raleway-SemiBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 30px;
+    position: absolute;
+    bottom: 45%;
+    left: 1%;
+}
+
+.back{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.text_title{
+    width: 306px;
+    height: 25px;
+    color: rgb(134, 135, 168);
+    font-size: 24px;
+    //font-family: Gilroy-ExtraBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 20px;
+    z-index: auto;
+    position: relative;
+    bottom: 38%;
+    top: 33px;
+    left: 2%;
+}
+.img_card{
+    width: 54px;
+    height: 54px;
+    background: rgb(255, 255, 255);
+    border-radius: 11px;
+}
+.text_card{
+    width: 220px;
+    height: 23px;
+    color: rgb(12, 17, 44);
+    font-size: 16px;
+    //font-family: OpenSans;
+    letter-spacing: 0px;
+    line-height: 19px;
+    position: absolute;
+    top: 10px;
+    left: 56px;
+}
+.date_card{
+    width: 87px;
+    height: 20px;
+    color: rgb(15, 21, 47);
+    font-size: 14px;
+  //  font-family: Gilroy-Light;
+    font-weight: 300;
+    letter-spacing: 0px;
+    line-height: 20px;
+    position: absolute;
+    top: 35px;
+    left: 56px;
+}
+.card{
+    background: rgb(246, 246, 249);
+    box-shadow: none !important;
+    margin-top: 15px;
+}
+.box{
+    box-shadow: none !important;
+}
