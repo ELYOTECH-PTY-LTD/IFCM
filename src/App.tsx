@@ -36,11 +36,42 @@ import DashBoard from './pages/DashboardPage';
 import Signup from './pages/Signup';
 import Homepage from './pages/Homepage'
 import Navbar from './pages/Navbar'
-import Events from './pages/Events'
+import EventDetails from './pages/EventDetails';
 import Teaching from './pages/Teaching'
-import Teaching_details from './pages/Teaching_details'
-import  Teaching_list from './pages/Teaching_list'
-const App: React.FC = () => (
+import TeachingDetails from './pages/TeachingDetails'
+import TeachingList from './pages/TeachingList';
+
+import Shopping from './pages/Shopping';
+import UserProfile from './pages/UserProfile';
+
+
+
+const App: React.FC = () => {
+  
+  return (
+
+  <IonApp>
+  <IonReactRouter>
+  <IonSplitPane contentId="main">
+      <Navbar/>
+      <IonRouterOutlet id="main">
+        {/*
+        We use IonRoute here to keep the tabs state intact,
+        which makes transitions between tabs and non tab pages smooth
+        */}
+        <Route path="/tabs" render={() => <Navbar />} />
+        <Route path="/welcome" component={Welcome} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+   
+        <Route path="/" component={Welcome} exact />
+      </IonRouterOutlet>
+     </IonSplitPane>
+  </IonReactRouter>
+</IonApp>
+
+
+/* 
   <IonApp>
 <IonReactRouter history={history}>
     <IonRouterOutlet id="main"> 
@@ -49,15 +80,23 @@ const App: React.FC = () => (
       <Route path="/Login" render={() => <Login />} exact={true} />
       <Route path="/Signup" render={() => <Signup />} exact={true} />
       <Route path="/Home" render={() => <Homepage />} exact={true} />
-      <Route path="/Events" render={() => <Events />} exact={true} />
+      <Route path="/EventDetails" render={() => <EventDetails />} exact={true} />
       <Route path="/Navbar" render={() => <Navbar />} exact={true} />
       <Route path="/Teaching" render={() => <Teaching />} exact={true} />
-      <Route path="/Teaching_details" render={() => <Teaching_details />} exact={true} />
-       <Route path="/Teaching_list" render={() => <Teaching_list />} exact={true} />
+      <Route path="/TeachingList" render={() => <TeachingList />} exact={true} />
+      <Route path="/TeachingDetails" render={() => <TeachingDetails />} exact={true} />
+
+
      </IonRouterOutlet>
   </IonReactRouter>
 </IonApp>
 );
+
+*/
+
+);
+
+}
 
 export default App;
 

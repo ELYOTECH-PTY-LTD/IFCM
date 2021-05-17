@@ -28,7 +28,7 @@ const Welcome: React.FC<SomeComponentProps> = ({ history }) => {
           {showSkip && <IonButton color='primary' onClick={goHome}> Skip</IonButton>}
         </IonButtons>
         <IonButtons slot="end">
-          {showSkip && <IonButton color='primary' onClick={UserService.doLogin}> Skip</IonButton>}
+          {showSkip && <IonButton color='primary' onClick={UserService.doLogin}> Skip KeyCloak</IonButton>}
         </IonButtons>
       </IonToolbar>
     </IonHeader>

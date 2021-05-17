@@ -1,100 +1,123 @@
+
+.teaching-title {
+    box-shadow: none !important;
+    margin-top: 79px;
+}
+
+
 .titre{
-color: rgb(254, 125, 78);
-font-size: 37px;
-//font-family: Raleway-Regular;
-font-weight: normal;
-letter-spacing: 0px;
-line-height: 36px;
-padding-top: 35px;
-margin-bottom: 35px;
-margin-left: 35px;
-}
-.titre_text{
-    width: 281px;
-height: 30px;
-color: rgb(12, 17, 44);
-font-size: 16px;
-//font-family: Raleway-Medium;
-font-weight: 500;
-letter-spacing: 0px;
-line-height: 30px;
-margin-left: 35px;
-}
-
-.titre_card {
-
-color: rgb(134, 135, 168);
-font-size: 24px;
-//font-family: Gilroy-ExtraBold;
-font-weight: 600;
-letter-spacing: 0px;
-line-height: 20px;
-margin-left: 35px;
-margin-left: 35px;
-padding-top: 45px;
-position: absolute;
-}
-.card_one{
-    margin-left: 18px;
-    margin-top: 71px;
-    display: block;
-    width: auto;
-    margin-right: 176px;
-    width: 161px;
-height: 225px;
-background: rgb(255, 255, 255);
-box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.17);
-border-radius: 21px;
-}
-.card_titre{
-    width: 128px;
-    height: 33px;
-    color: rgb(15, 21, 47);
-    font-size: 21px;
-    //font-family: Gilroy-ExtraBold;
-    font-weight: 600;
+    color: rgb(254, 125, 78);
+    font-size: 37px;
+    //font-family: Raleway-Regular;
+    font-weight: normal;
     letter-spacing: 0px;
-    line-height: 20px;
-    position: relative;
-    top: 10%;
-    left: 12%;
-}
-.card_text{
-    width: 50px;
+    line-height: 36px;
+    padding-top: 35px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+
+    }
+    .titre_text{
+        width: 281px;
     height: 30px;
-    color: rgb(254, 125, 78) !important;
+    color: rgb(12, 17, 44);
     font-size: 16px;
     //font-family: Raleway-Medium;
     font-weight: 500;
     letter-spacing: 0px;
     line-height: 30px;
-    display: block;
-    position: relative;
-    top: 10%;
-    left: 12%;
-}
-.card_two{
-    display: block;
-    width: 161px;
-    height: 193px;
+    margin-left: 35px;
+    }
+    
+    .titre_card {
+    
+    color: rgb(134, 135, 168);
+    font-size: 24px;
+    //font-family: Gilroy-ExtraBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 20px;
+    margin-left: 35px;
+    margin-left: 35px;
+    padding-top: 45px;
+    position: absolute;
+    }
+    .card_one{
+        margin-left: 18px;
+        margin-top: 71px;
+        display: block;
+        width: auto;
+        margin-right: 176px;
+        width: 161px;
+    height: 225px;
     background: rgb(255, 255, 255);
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.17);
     border-radius: 21px;
-    position: relative;
-    top: -51%;
-    margin-bottom: -1px;
-    left: 49%;
-}
+    }
+    .card_titre{
+        width: 128px;
+        height: 33px;
+        color: rgb(15, 21, 47);
+        font-size: 21px;
+        //font-family: Gilroy-ExtraBold;
+        font-weight: 600;
+        letter-spacing: 0px;
+        line-height: 20px;
+        position: relative;
+        top: 10%;
+        left: 12%;
+    }
+    .card_text{
+        width: 50px;
+        height: 30px;
+        color: rgb(254, 125, 78) !important;
+        font-size: 16px;
+        //font-family: Raleway-Medium;
+        font-weight: 500;
+        letter-spacing: 0px;
+        line-height: 30px;
+        display: block;
+        position: relative;
+        top: 10%;
+        left: 12%;
+    }
+    .card_two{
+        display: block;
+        width: 161px;
+        height: 193px;
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.17);
+        border-radius: 21px;
+        position: relative;
+        top: -51%;
+        margin-bottom: -1px;
+        left: 49%;
+    }
+    
+    .ligne{
+        margin-top: 6%;
+    }
+    .custom_grid{
+        --ion-grid-column-padding:        5px;
+    }
+    .colum {
+        margin-bottom: -308px;
+    }
+    .shadow{
+        box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.17);
+    }
 
-.ligne{
-    margin-top: 6%;
-}
-.custom_grid{
-    --ion-grid-column-padding:        5px;
-}
-.colum {
-    margin-bottom: -308px;
-}
-.shadow{
-    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.17);
-}
+
+.emptycard-teaching {
+    height: 606px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
+    border-radius: 50px 50px 0px 0px;
+    margin-top: 170px;
+    margin-left:0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 36px;
+    border: 0px solid #000000;
+
+  }

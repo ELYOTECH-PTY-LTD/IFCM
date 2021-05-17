@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonRow, IonCol, IonButton, IonList, IonItem, IonLabel, IonInput, IonText } from '@ionic/react';
-import './Login.scss';
+import './Signup.scss';
 import { RouteComponentProps, withRouter } from 'react-router';
 import history from '../history';
 

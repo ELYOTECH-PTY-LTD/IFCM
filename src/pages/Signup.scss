@@ -1,0 +1,41 @@
+#login-page, #signup-page, #support-page {
+    .login-logo {
+      padding: 20px 0;
+      min-height: 200px;
+      text-align: center;
+    }
+    
+    .login-logo img {
+      max-width: 350px;
+    }
+    
+    .list {
+      margin-bottom: 0;
+    }
+    .forgot{
+      text-align: center;
+      display:block;
+      padding: 16px;
+    }
+    .gray{ 
+      color: #8e8e8e;
+    }
+    .margin{ 
+      margin: 12px;
+    }
+    .margin-logo{
+      margin: 5px;
+      font-size: 25px;
+      padding-bottom: 1px;
+    }
+    .facebook{
+      padding-left: 10px;
+    }
+    .instagram{
+      padding-left: 8px;
+    }
+    .twitter{
+      padding-right: 30px;
+      margin-left: 8px;
+    }
+  }

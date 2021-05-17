@@ -14,8 +14,9 @@ import Signup from './Signup';
 import Homepage from './Homepage'
 import Navbar from './Navbar'
 import Teaching from './Teaching'
-import Teaching_details from './Teaching_details'
-import Teaching_list from './Teaching_list'
+import TeachingDetails from './TeachingDetails';
+import TeachingList from './TeachingList';
+
 const DashboardPage: React.FC = () => {
     return (
       <IonRouterOutlet>
@@ -25,8 +26,9 @@ const DashboardPage: React.FC = () => {
         <Route path="/Home" render={() => <Homepage />} exact={true} />
         <Route path="/Navbar" render={() => <Navbar />} exact={true} />
         <Route path="/Teaching" render={() => <Teaching />} exact={true} />
-        <Route path="/Teaching_details" render={() => <Teaching_details />} exact={true} />
-        <Route path="/Teaching_list" render={() => <Teaching_list />} exact={true} />
+        <Route path="/TeachingList" render={() => <TeachingList />} exact={true} />
+        <Route path="/TeachingDetails" render={() => <TeachingDetails />} exact={true} />
+
       </IonRouterOutlet>
     );
   };
