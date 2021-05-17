@@ -46,7 +46,7 @@ const Teaching_details: React.FC<SomeComponentProps> = ({ history }) => {
                    <IonText className="text_card">Developing the strengths  </IonText><br/>
                    <IonText className="date_card">01 Dec. 2020  </IonText>
                  </IonCard>
-                 <IonCard href="/Teaching_list" className="card_teach">
+                 <IonCard href="/Teaching_order" className="card_teach">
                    <img src="/assets/img/teaching/image002.png" className="img_card"></img>
                    <IonText className="text_card">Developing the strengths  </IonText><br/>
                    <IonText className="date_card">01 Dec. 2020  </IonText>

@@ -40,6 +40,7 @@ import Events from './pages/Events'
 import Teaching from './pages/Teaching'
 import Teaching_details from './pages/Teaching_details'
 import  Teaching_list from './pages/Teaching_list'
+import  Teaching_order from './pages/Teaching_order'
 const App: React.FC = () => (
   <IonApp>
 <IonReactRouter history={history}>
@@ -54,6 +55,7 @@ const App: React.FC = () => (
       <Route path="/Teaching" render={() => <Teaching />} exact={true} />
       <Route path="/Teaching_details" render={() => <Teaching_details />} exact={true} />
        <Route path="/Teaching_list" render={() => <Teaching_list />} exact={true} />
+       <Route path="/Teaching_order" render={() => <Teaching_order />} exact={true} />
      </IonRouterOutlet>
   </IonReactRouter>
 </IonApp>
