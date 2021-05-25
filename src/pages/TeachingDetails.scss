@@ -1,3 +1,140 @@
+.img_love{
+    width: 589px;
+    height: 397px;
+    background: rgb(216, 216, 216);
+    padding: 0;
+    margin: 0;
+}
+
+.text_catégorie{
+    background-color: chocolate;
+    padding: 0;
+    margin: 0;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+    padding-left: 10px;
+    padding-right: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: absolute;
+    bottom: 65%;
+    left: 5%;
+    
+}
+.text_caté{
+    width: 237px;
+    height: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 37px;
+    //font-family: Raleway-SemiBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 36px;
+    position: absolute;
+    bottom: 56%;
+    left: 5%;
+}
+.text_nombre{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    //font-family: Raleway-SemiBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 30px;
+    position: absolute;
+    bottom: 50%;
+    left: 1%;
+}
+
+.back{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.text_title{
+    width: 306px;
+    height: 25px;
+    color: rgb(134, 135, 168);
+    font-size: 24px;
+    //font-family: Gilroy-ExtraBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 20px;
+    z-index: auto;
+    position: relative;
+    bottom: 38%;
+    top: 33px;
+    left: 2%;
+}
+.img_card{
+    width: 54px;
+    height: 54px;
+    background: rgb(255, 255, 255);
+    border-radius: 11px;
+}
+.text_card{
+    width: 220px;
+    height: 23px;
+    color: rgb(12, 17, 44);
+    font-size: 16px;
+    //font-family: OpenSans;
+    letter-spacing: 0px;
+    line-height: 19px;
+    position: absolute;
+    top: 20px;
+    left: 75px;
+}
+.date_card{
+    width: 87px;
+    height: 20px;
+    color: #c7c7c7;
+    font-size: 14px;
+  //  font-family: Gilroy-Light;
+    font-weight: 300;
+    letter-spacing: 0px;
+    line-height: 20px;
+    position: absolute;
+    top: 39px;
+    left: 75px;
+}
+.card_teach{
+    background: rgb(246, 246, 249);
+    box-shadow: none !important;
+    margin-top: 15px;
+    margin-bottom: -2px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-radius: 7px 7px 7px 7px;
+    width: 316px;
+    height: 77px;
+
+    
+}
+.box{
+    box-shadow: none !important;
+}
+.icon_lock{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 30%;
+    left: 86%;
+    
+}
+#cercle {
+    position: fixed;
+    top: 22px;
+    background-color: #84848445;
+    left: 270px;
+    z-index: 2000;
+    width: 27px;
+    height: 27px;
+    border-radius: 20px;
+}
+
 .header_title{
     color: #fe7d4e;
     font-size: 25px;
@@ -32,3 +169,18 @@
     left: 41px;
     top: 100px;
 }
+
+.date_eventdetails{
+
+    color: rgb(254, 125, 78);
+
+  }
+
+  .eventdetailstitle {
+    height: 30px;
+    color: rgb(12, 17, 44);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    text-align: center;
+  }

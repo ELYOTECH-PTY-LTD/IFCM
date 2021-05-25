@@ -30,21 +30,22 @@ const Donation: React.FC<SomeComponentProps> = ({ history }) => {
   
             <IonCard className="emptycard-teaching">
             <div className="div-donation">
+                <p>&nbsp;</p>
                 <IonGrid>
                     <IonRow>
-                        <IonCol >
+                        <IonCol className="donation-col" >
                             <IonCard className="donation-card">
                             <img src="/assets/img/love.jpg" className="donation-img"/>
                             </IonCard>
                         </IonCol>
-                        <IonCol >
+                        <IonCol className="donation-col">
 
                             <IonCard className="donation-card">
                             <img src="/assets/img/charities2.jpeg" className="donation-img"/>
 
                             </IonCard>                        
                             </IonCol>
-                        <IonCol >
+                        <IonCol className="donation-col">
                         <IonCard className="donation-card"> 
                             <img src="/assets/img/charities3.jpeg" className="donation-img"/>
 

@@ -17,6 +17,7 @@ import EventDetails from './EventDetails';
 import Teaching from './Teaching';
 import TeachingList from './TeachingList';
 import TeachingDetails from './TeachingDetails';
+import TeachingOrder from './TeachingOrder';
 import Signup from './Signup';
 import Login from './Login';
 import Welcome from './Welcome';
@@ -43,8 +44,9 @@ const Navbar: React.FC<MainTabsProps> = () => {
         <Route path="/tabs/home/eventdetails/" component={EventDetails} />
         <Route path="/tabs/shopping" render={() => <Shopping />} exact={true} />
         <Route path="/tabs/teaching" render={() => <Teaching />} exact={true} />
-        <Route path="/tabs/teaching/:id" component={TeachingList} exact={true} />
-        <Route path="/tabs/teachinglist/:id" component={TeachingDetails} />
+        <Route path="/tabs/teaching/teachinglist" component={TeachingList} exact={true} />
+        <Route path="/tabs/teaching/teachingdetails" component={TeachingDetails} />
+        <Route path="/tabs/teaching/teachingorder" component={TeachingOrder} />
         <Route path="/tabs/shopping" render={() => <Shopping />} exact={true} />
         <Route path="/tabs/donation" render={() => <Donation />} exact={true} />
         <Route path="/tabs/profile" render={() => <UserProfile />} exact={true} />

@@ -51,8 +51,6 @@ const Homepage: React.FC<SomeComponentProps> = ({ history }) => {
             <IonText color="light">
               <p>&nbsp; </p>
               <h5>Worries destroy the heart. Please guard your heart. Worries destroy the heart. 
-              SHALOM !!
-It is the blessing we all really want, and when we think about our life and our World, we realize that SHALOM---PEACE; is all we really need. 
 No matter what we have or don't have , no matter what we are going through, if we're at peace with ourselves and those around us, we can thrive..
 </h5> 
 </IonText>

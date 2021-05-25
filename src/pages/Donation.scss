@@ -62,26 +62,33 @@
 
   .div-donation {
     margin-top: 10px;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 2px;
+    margin-left: 2px;
  }
 
+ .donation-col{
+  width: 100px;
+height: 110px;
+}
+
   .donation-card{
-    width: 110px;
-    height: 135px;
+    width: 100px;
+    height: 110px;
     border: none;
     box-shadow: none;
   }
 
   .donation-img {
-    width: 110px;
-    height: 135px;
+    width: 100px;
+    height: 110px;
 border-radius: 8.5px;
 background:#d8d8d8;
 padding: 0;
 margin: 0;
 border: 0;
   }
+
+
 
   .dollar-card{
  //   width: 110px;

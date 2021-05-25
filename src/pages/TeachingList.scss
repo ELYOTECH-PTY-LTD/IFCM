@@ -1,83 +1,136 @@
-
-
-.card-img {
+.img_love{
     width: 589px;
     height: 397px;
-    box-sizing :initial;
+    background: rgb(216, 216, 216);
+    padding: 0;
+    margin: 0;
 }
 
-.card-subtitle{
-   background: #fe7d4e;
-    color: rgb(255, 255, 255);
-    width: 80px;
-    height: 30px;
-    border-radius: 7px;
-    text-align:justify;
-    margin-top: -50%;
-    margin-left: 35px;
-    font-weight: 1000;
-
+.text_catégorie{
+    background-color: chocolate;
+    padding: 0;
+    margin: 0;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+    padding-left: 10px;
+    padding-right: 13px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: absolute;
+    bottom: 65%;
+    left: 5%;
+    
 }
-
-.card-title {
+.text_caté{
+    width: 237px;
     height: 40px;
     color: rgb(255, 255, 255);
     font-size: 37px;
+    //font-family: Raleway-SemiBold;
     font-weight: 600;
     letter-spacing: 0px;
     line-height: 36px;
-    margin-left: 35px;
     position: absolute;
-
-
+    bottom: 56%;
+    left: 5%;
 }
-
-.card-content {
-    height: 30px;
+.text_nombre{
     color: rgb(255, 255, 255);
     font-size: 16px;
+    //font-family: Raleway-SemiBold;
     font-weight: 600;
-    text-align: justify;
-    vertical-align: center;
-    margin-left: 35px;
-    margin-top: -30%;
-
+    letter-spacing: 0px;
+    line-height: 30px;
+    position: absolute;
+    bottom: 50%;
+    left: 1%;
 }
 
-.text {
-width: 306px;
-height: 25px;
-color: rgb(134, 135, 168);
-font-size: 24px;
-font-weight: 800;
-letter-spacing: 0px;
-line-height: 20px;
-margin-left: 35px;
-
+.back{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 15px;
+    left: 15px;
 }
-
-.date{
-
-    width: 87px;
-height: 20px;
-color: rgb(15, 21, 47);
-font-size: 14px;
-font-family: Gilroy-Light;
-font-weight: 300;
-letter-spacing: 0px;
-line-height: 20px;
-} 
-
-.teaching-list{
-border-radius: 7px;
-background-color:#f6f6f9;
-width: 356px;
-height: 77px;
-border-radius: 7px;
+.text_title{
+    width: 306px;
+    height: 25px;
+    color: rgb(134, 135, 168);
+    font-size: 24px;
+    //font-family: Gilroy-ExtraBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 20px;
+    z-index: auto;
+    position: relative;
+    bottom: 38%;
+    top: 33px;
+    left: 2%;
 }
-
-.item-img{
+.img_card{
     width: 54px;
-height: 54px;
-border-radius: 10px;
+    height: 54px;
+    background: rgb(255, 255, 255);
+    border-radius: 11px;
+}
+.text_card{
+    width: 220px;
+    height: 23px;
+    color: rgb(12, 17, 44);
+    font-size: 16px;
+    //font-family: OpenSans;
+    letter-spacing: 0px;
+    line-height: 19px;
+    position: absolute;
+    top: 20px;
+    left: 75px;
+}
+.date_card{
+    width: 87px;
+    height: 20px;
+    color: #c7c7c7;
+    font-size: 14px;
+  //  font-family: Gilroy-Light;
+    font-weight: 300;
+    letter-spacing: 0px;
+    line-height: 20px;
+    position: absolute;
+    top: 39px;
+    left: 75px;
+}
+.card_teach{
+    background: rgb(246, 246, 249);
+    box-shadow: none !important;
+    margin-top: 15px;
+    margin-bottom: -2px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-radius: 7px 7px 7px 7px;
+    width: 316px;
+    height: 77px;
+
+    
+}
+.box{
+    box-shadow: none !important;
+}
+.icon_lock{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 30%;
+    left: 86%;
+    
+}
+#cercle {
+    position: fixed;
+    top: 22px;
+    background-color: #84848445;
+    left: 270px;
+    z-index: 2000;
+    width: 27px;
+    height: 27px;
+    border-radius: 20px;
 }

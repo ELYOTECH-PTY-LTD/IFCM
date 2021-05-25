@@ -27,12 +27,12 @@ const Teaching: React.FC<SomeComponentProps> = ({ history }) => {
                 <IonGrid className="custom_grid ">
                     <IonRow className="ligne padding">
                         <IonCol className="colum">
-                            <IonCard className="card_one" href="/Teaching_details">
+                            <IonCard className="card_one" href="/tabs/teaching/TeachingList">
                                 <img src="/assets/img/Love.jpg"></img>
                                 <IonText className="card_titre">Love</IonText>
                                 <IonText className="card_text">5 texts</IonText>
                             </IonCard>
-                            <IonCard className="card_two">
+                            <IonCard className="card_two" href="/tabs/teaching/TeachingList">
                                 <img src="/assets/img/anxiete.jpeg"></img>
                                 <IonText className="card_titre">Anxiety</IonText>
                                 <IonText className="card_text">9 texts</IonText>
@@ -42,12 +42,12 @@ const Teaching: React.FC<SomeComponentProps> = ({ history }) => {
                     </IonRow>
                     <IonRow className="ligne padding">
                         <IonCol className="colum">
-                            <IonCard className="card_one">
+                            <IonCard className="card_one" href="/tabs/teaching/TeachingList">
                                 <img src="/assets/img/prayer.png"></img>
                                 <IonText className="card_titre">Prayer</IonText>
                                 <IonText className="card_text">5 texts</IonText>
                             </IonCard>
-                            <IonCard className="card_two">
+                            <IonCard className="card_two" href="/tabs/teaching/TeachingList">
                                 <img src="/assets/img/Black-Success.jpg"></img>
                                 <IonText className="card_titre">Success</IonText>
                                 <IonText className="card_text">9 texts</IonText>

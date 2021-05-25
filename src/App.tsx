@@ -40,6 +40,7 @@ import EventDetails from './pages/EventDetails';
 import Teaching from './pages/Teaching'
 import TeachingDetails from './pages/TeachingDetails'
 import TeachingList from './pages/TeachingList';
+import TeachingOrder from './pages/TeachingOrder';
 
 import Shopping from './pages/Shopping';
 import UserProfile from './pages/UserProfile';
