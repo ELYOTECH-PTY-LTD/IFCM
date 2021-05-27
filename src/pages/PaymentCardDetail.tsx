@@ -145,7 +145,7 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
 
                     <IonItem className="exp_payment">
                     <IonLabel position="stacked" color="primary" >CVV   </IonLabel>
-                    <IonInput name="text_cvv" type="number"  value={Exp} onIonChange={e => setExp(e.detail.value!)}>
+                    <IonInput name="text_cvv" type="number" max="3" value={Exp} onIonChange={e => setExp(e.detail.value!)}>
                     </IonInput>
                     </IonItem>
 
