@@ -34,19 +34,6 @@ police
 }
 
 
-.emptycard {
-    height: 606px;
-    background: rgb(255, 255, 255);
-    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
-    border-radius: 50px 50px 0px 0px;
-    margin-top: 170px;
-    margin-left:0;
-    margin-right: 0;
-    margin-bottom: 0;
-    border: 0px solid #000000;
-
-  }
-
 .quotes {
     margin-left: 22px;
     position: relative;
@@ -253,16 +240,6 @@ border: 0;
     color: #a5a4c0;
 }
 
-.emptycard {
-    background: rgb(255, 255, 255);
-    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
-    border-radius: 50px 50px 0px 0px;
-    margin-left:0;
-    margin-right: 0;
-    margin-bottom: 0;
-    border: 0px solid #000000;
-}
-
 .img {
     width: 91px;
     height: 108px;
@@ -306,15 +283,6 @@ border: 0;
 
 }
 
-.emptycard {
-    background: rgb(255, 255, 255);
-    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
-    border-radius: 50px 50px 0px 0px;
-    margin-left:0;
-    margin-right: 0;
-    margin-bottom: 0;
-    border: 0px solid #000000;
-  }
   
   .img {
     width: 91px;
@@ -359,3 +327,16 @@ border: 0;
   
   }
   
+  
+.emptycard {
+    height: 606px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
+    border-radius: 50px 50px 0px 0px;
+    margin-top: 170px;
+    margin-left:0;
+    margin-right: 0;
+    margin-bottom: 0;
+    border: 0px solid #000000;
+
+  }

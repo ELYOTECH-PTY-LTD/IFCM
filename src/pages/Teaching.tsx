@@ -10,6 +10,18 @@ import history from '../history';
 import UserService from "../services/UserService";
 import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline} from 'react-ionicons'
 
+type EventItem = {
+    src: string;
+    text: string;
+    nbr: string;
+  };
+  const items: EventItem[] = [{ src: '/assets/img/israel_pilgrimage.jpg', text: '2020 Israel Pilgrimage', nbr :'AUG 06, 2020',}
+  ,{src: '/assets/img/israel_pilgrimage.jpg', text: '2020 Israel Pilgrimage', nbr :'AUG 06, 2020',},
+  {src: '/assets/img/israel_pilgrimage.jpg', text: '2020 Israel Pilgrimage', nbr :'AUG 06, 2020',}
+
+];
+  
+
 type SomeComponentProps = RouteComponentProps;
 const Teaching: React.FC<SomeComponentProps> = ({ history }) => {
 
@@ -25,41 +37,23 @@ const Teaching: React.FC<SomeComponentProps> = ({ history }) => {
             <IonText className="titre_card flex">Categories </IonText>
             <div className="card">
                 <IonGrid className="custom_grid ">
+                    {items.map((image, i) => (
                     <IonRow className="ligne padding">
-                        <IonCol className="colum">
-                            <IonCard className="card_one" href="/tabs/teaching/TeachingList">
-                                <img src="/assets/img/Love.jpg"></img>
-                                <IonText className="card_titre">Love</IonText>
-                                <IonText className="card_text">5 texts</IonText>
-                            </IonCard>
-                            <IonCard className="card_two" href="/tabs/teaching/TeachingList">
-                                <img src="/assets/img/anxiete.jpeg"></img>
-                                <IonText className="card_titre">Anxiety</IonText>
-                                <IonText className="card_text">9 texts</IonText>
-                            </IonCard>
-                        </IonCol>
-                        
-                    </IonRow>
-                    <IonRow className="ligne padding">
-                        <IonCol className="colum">
-                            <IonCard className="card_one" href="/tabs/teaching/TeachingList">
-                                <img src="/assets/img/prayer.png"></img>
-                                <IonText className="card_titre">Prayer</IonText>
-                                <IonText className="card_text">5 texts</IonText>
-                            </IonCard>
-                            <IonCard className="card_two" href="/tabs/teaching/TeachingList">
-                                <img src="/assets/img/Black-Success.jpg"></img>
-                                <IonText className="card_titre">Success</IonText>
-                                <IonText className="card_text">9 texts</IonText>
-                            </IonCard>
-                        </IonCol>
-
-                        
-                    </IonRow>
-                   
-                  
-                    
-                    
+                <IonCol className="colum">
+                    <IonCard className="card_one" href="/tabs/teaching/TeachingList">
+                        <img src={image.src}></img>
+                        <IonText className="card_titre">{image.text}</IonText>
+                        <IonText className="card_text">{image.nbr}</IonText>
+                    </IonCard>
+                    <IonCard className="card_two" href="/tabs/teaching/TeachingList">
+                        <img src={image.src}></img>
+                        <IonText className="card_titre">{image.text}</IonText>
+                        <IonText className="card_text">{image.nbr}</IonText>
+                    </IonCard>
+                </IonCol>
+            </IonRow>
+             
+      ))}
                 </IonGrid>
             </div>
             </IonCard>

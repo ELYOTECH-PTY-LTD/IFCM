@@ -10,6 +10,16 @@ import history from '../history';
 import UserService from "../services/UserService";
 import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline, LockClosedOutline} from 'react-ionicons'
 
+type Item = {
+  src: string;
+  title: string;
+  date: string;
+  text:string;
+};
+const items: Item[] = [{ 
+src: '/assets/img/Love.jpg', title: 'Developping the strengths', date:'Free text - 01 Dec. 2020',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel enim nec urna malesuada viverra. Nullam at massa commodo, sollicitudin risus quis, iaculis mauris. Pellentesque dictum vel elit in semper. Vestibulum vitae velit id enim sagittis consectetur dignissim sit amet est. Praesent vitae posuere nisi, non porttitor mi.'},];
+
+
 type SomeComponentProps = RouteComponentProps;
 const TeachingDetails: React.FC<SomeComponentProps> = ({ history }) => {
 
@@ -29,20 +39,21 @@ const TeachingDetails: React.FC<SomeComponentProps> = ({ history }) => {
   
   
       <IonContent fullscreen>
-        <IonCard>
-          <img src="/assets/img/Love.jpg" />
-          <IonCardHeader>
-          <IonCardTitle> Developping the strengths </IonCardTitle>
-            <IonCardSubtitle className="date_eventdetails">Free text - 01 Dec. 2020 </IonCardSubtitle>
-          </IonCardHeader>
-  <IonCardContent> 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel enim nec urna malesuada viverra. Nullam at massa commodo, sollicitudin risus quis, 
-  iaculis mauris. Pellentesque dictum vel elit in semper. 
-  Vestibulum vitae velit id enim sagittis consectetur dignissim sit amet est. Praesent vitae posuere nisi, non porttitor mi.   
-  </IonCardContent>
-        </IonCard>
-      </IonContent>
-          </IonPage>
+          {items.map((image, i) => (
+              <IonCard className="box_shadox">
+              <img src={image.src}/>
+              <IonCardHeader>
+              <IonCardTitle>{image.title}</IonCardTitle>
+                <IonCardSubtitle className="date_eventdetails">{image.date}</IonCardSubtitle>
+              </IonCardHeader>
+              <IonCardContent> 
+              {image.text}
+              </IonCardContent>
+              </IonCard>
+          ))}
+                
+              </IonContent>
+                  </IonPage>
           
     );
   };

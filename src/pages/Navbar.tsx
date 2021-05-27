@@ -24,7 +24,9 @@ import Welcome from './Welcome';
 import Shopping from './Shopping';
 import UserProfile from './UserProfile';
 import Donation from './Donation';
-
+import TeachingDetailsPrivate from './TeachingDetailsPrivate';
+import PaymentCardDetail from './PaymentCardDetail'
+import PaymentShippingDetail from './PaymentShippingDetail'
 
 interface MainTabsProps { }
 
@@ -46,8 +48,11 @@ const Navbar: React.FC<MainTabsProps> = () => {
         <Route path="/tabs/teaching" render={() => <Teaching />} exact={true} />
         <Route path="/tabs/teaching/teachinglist" component={TeachingList} exact={true} />
         <Route path="/tabs/teaching/teachingdetails" component={TeachingDetails} />
+        <Route path="/tabs/teaching/teachingdetailsprivate" component={TeachingDetailsPrivate} />
         <Route path="/tabs/teaching/teachingorder" component={TeachingOrder} />
         <Route path="/tabs/shopping" render={() => <Shopping />} exact={true} />
+        <Route path="/tabs/shopping/PaymentCardDetail" component={PaymentCardDetail} />
+        <Route path="/tabs/shopping/PaymentShippingDetail" component={PaymentShippingDetail} />
         <Route path="/tabs/donation" render={() => <Donation />} exact={true} />
         <Route path="/tabs/profile" render={() => <UserProfile />} exact={true} />
 

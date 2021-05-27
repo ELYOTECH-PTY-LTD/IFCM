@@ -110,27 +110,26 @@
     border-radius: 7px 7px 7px 7px;
     width: 316px;
     height: 77px;
-
-    
 }
 .box{
     box-shadow: none !important;
 }
-.icon_lock{
+
+.icon_locke{
     margin: 0;
     padding: 0;
-    position: fixed;
-    top: 30%;
-    left: 86%;
-    
+    display: block;
+    position: absolute;
+    top: -25%;
+    left: 228%;
 }
-#cercle {
-    position: fixed;
-    top: 22px;
+
+#cerclee {
     background-color: #84848445;
-    left: 270px;
-    z-index: 2000;
     width: 27px;
     height: 27px;
     border-radius: 20px;
+    position: absolute;
+    top: -25%;
+    left: 225%;
 }

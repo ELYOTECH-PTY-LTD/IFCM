@@ -19,7 +19,25 @@ type Item = {
         text: string;
         date: string;
       };
-const items: Item[] = [{ src: '/assets/img/black-family1.jpg', text: 'Developing the strengths', date:'01 Dec. 2020'},{ src: '/assets/img/black-family.jpg', text: 'a picture of a cat', date:'01 Dec. 2020'},{ src: 'http://placekitten.com/g/200/300', text: 'a picture of a cat', date:'01 Dec. 2020'},{ src: 'http://placekitten.com/g/200/300', text: 'a picture of a cat', date:'01 Dec. 2020'}, ];
+const items: Item[] = [{ 
+  src: '/assets/img/black-family1.jpg', text: 'Developing the strengths', date:'01 Dec. 2020'},
+  { 
+    src: '/assets/img/black-family1.jpg', text: 'Developing the strengths', date:'01 Dec. 2020'},
+    { 
+      src: '/assets/img/black-family1.jpg', text: 'Developing the strengths', date:'01 Dec. 2020'},];
+      
+      
+      type Iteme = {
+        src: string;
+        text: string;
+        date: string;
+      };
+const itemsPrivate: Item[] = [{ 
+  src: '/assets/img/black-family1.jpg', text: 'Developing the strengths', date:'01 Dec. 2020'},
+  { 
+    src: '/assets/img/black-family1.jpg', text: 'Developing the strengths', date:'01 Dec. 2020'},
+    { 
+      src: '/assets/img/black-family1.jpg', text: 'Developing the strengths', date:'01 Dec. 2020'},];
 
     return (
       <IonPage id="teachinglist-page">
@@ -44,32 +62,25 @@ const items: Item[] = [{ src: '/assets/img/black-family1.jpg', text: 'Developing
            &nbsp;
            </p>
            <IonList>
-             <IonCard href="/tabs/teaching/TeachingDetails" className="card_teach">
-               <img src="/assets/img/Black-family.jpg" className="img_card"></img>
-               <IonText className="text_card">Developing the strengths  </IonText><br/>
-               <IonText className="date_card">01 Dec. 2020  </IonText>
-             </IonCard>
-             <IonCard href="/tabs/teaching/TeachingDetails"className="card_teach">
-               <img src="/assets/img/black-family1.jpg" className="img_card"></img>
-               <IonText className="text_card">Developing the strengths  </IonText><br/>
-               <IonText className="date_card">01 Dec. 2020  </IonText>
-             </IonCard>
-             <IonCard href="/tabs/teaching/TeachingOrrder" className="card_teach">
-               <img src="/assets/img/Black-Success.jpg" className="img_card"></img>
-               <IonText className="text_card">Developing the strengths  </IonText><br/>
-               <IonText className="date_card">01 Dec. 2020  </IonText>
-               <IonIcon slot="end" icon={lockClosedOutline}></IonIcon>
-               <IonIcon name="lock-closed-outline"></IonIcon>
-               <div id="cercle"></div>
-               <LockClosedOutline 
-                  color={'#00000'}
-                  cssClasses="icon_lock" 
-                />
-
-              
-             
-
-             </IonCard>
+             {items.map((image, i) => (
+                    <IonCard href="/tabs/teaching/TeachingDetails" className="card_teach" key={i}>
+                    <img src={image.src} className="img_card"></img>
+                    <IonText className="text_card">{image.text}</IonText><br/>
+                    <IonText className="date_card">{image.date}</IonText>
+                  </IonCard>
+             ))}
+              {itemsPrivate.map((image, i) => (
+                    <IonCard href="/tabs/teaching/TeachingDetailsPrivate" className="card_teach">
+                    <img src={image.src}  className="img_card"></img>
+                    <IonText className="text_card">{image.text}   </IonText><br/>
+                    <IonText className="date_card">{image.date}  <div id="cerclee"></div>
+                    <LockClosedOutline 
+                       color={'#00000'}
+                       cssClasses="icon_locke" 
+                     /> </IonText>
+                    <IonIcon slot="end" icon={lockClosedOutline}></IonIcon>
+                  </IonCard>
+             ))}
            </IonList>
         </IonCard>
       </IonContent>
