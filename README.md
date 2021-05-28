@@ -24,3 +24,8 @@ Ionic icons
 NodeSASS
 History
 Axios
+
+
+## UPDATE :::::::
+npm install styled-components --save
+npm install -g npm
