@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import history from '../history';
 import UserService from "../services/UserService";
-import { BookmarkSharp, BagCheckOutline,CheckmarkCircleOutline, HomeOutline , BagOutline, HeartOutline , PersonOutline ,ArrowBackOutline , LockClosedOutline ,DiscOutline} from 'react-ionicons'
+import { BookmarkSharp, LockOpenOutline ,BagCheckOutline,CheckmarkCircleOutline, HomeOutline , BagOutline, HeartOutline , PersonOutline ,ArrowBackOutline , LockClosedOutline ,DiscOutline} from 'react-ionicons'
 
 type Item = {
     src: string;
@@ -91,14 +91,15 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
                   </div>
                   </div>
 
-                <IonText className="Payment_title">Order placed  </IonText>
+                <IonText className="Payment_title">Teaching unlocked    </IonText>
           <IonRow>
             <div className="shopping_card">
-            <BagCheckOutline
+            <LockOpenOutline
             color={'#949494'} 
             height="75px"
             width="75px"
             cssClasses="icon_shop"
+
           />
           <IonText className="thanks">Thanks for your purchase.</IonText>
           <IonText className="ordernumber">Order #453745</IonText>
