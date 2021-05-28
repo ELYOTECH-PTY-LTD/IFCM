@@ -54,25 +54,28 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                     <IonBackButton defaultHref="/tabs/teaching/TeachingDetailsPrivate" className="back"/>
                 </IonButtons>
                 <IonText className="titre_teaching">Checkout</IonText>
-
                 <div className="selection">
                     <div className="payment">
-                        <DiscOutline
-                        color={'#fe7d4e'}
-                        height="24px"
-                        width="24px"
-                        cssClasses="payment_circle"
-                        />
+                        
+                    <div className="cercle_orange">
+                <div className="circle_orange">
+                  <div className="dot_orange">
+                  </div>
+                </div>
+                </div>
+                        
+                        
+
                         <br/>
                         <IonText className="payment_text">Payment</IonText>
                     </div>
                     <div className="confirmation">
-                        <DiscOutline
-                        color={'black'}
-                        height="24px"
-                        width="24px"
-                        cssClasses="confirmation_circle"
-                        />
+                        <div className="cercle_black">
+                    <div className="circle_black">
+                      <div className="dot_black">
+                      </div>
+                    </div>
+                    </div>
                         <br/>
                         <IonText className="confirmation_text">Confirmation</IonText>
                     </div>

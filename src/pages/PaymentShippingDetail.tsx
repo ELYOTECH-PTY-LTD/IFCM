@@ -1,14 +1,14 @@
 import React, { useState, useRef } from 'react';
 import { IonContent, IonHeader, IonPage, IonToolbar, IonButton,IonInput, IonSlides,IonSlide,IonButtons,IonIcon,useIonViewWillEnter, IonImg, IonTitle, IonText, IonCard, IonCardContent, IonCardSubtitle ,IonList, IonItem, IonAvatar, IonFooter, IonLabel, IonTabButton,IonTabBar, IonGrid, IonRow, IonCol, IonCardTitle, IonCardHeader,IonBackButton } from '@ionic/react';
 import { arrowBack, arrowForward, bookmarksSharp , lockClosedOutline} from 'ionicons/icons';
-import './PaymentShippingDetail.scss';
+import './PaymentShippingDetails.scss';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { IonReactRouter } from '@ionic/react-router';
 import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import history from '../history';
 import UserService from "../services/UserService";
-import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline ,ArrowBackOutline , LockClosedOutline ,DiscOutline} from 'react-ionicons'
+import { BookmarkSharp, BagCheckOutline,CheckmarkCircleOutline, HomeOutline , BagOutline, HeartOutline , PersonOutline ,ArrowBackOutline , LockClosedOutline ,DiscOutline} from 'react-ionicons'
 
 type Item = {
     src: string;
@@ -55,54 +55,78 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
                 </IonButtons>
                 <IonText className="titre_teaching">Checkout</IonText>
 
-                <div className="selection">
-                    <div className="payment">
-                        <DiscOutline
-                        color={'#fe7d4e'}
-                        height="24px"
-                        width="24px"
-                        cssClasses="payment_circle"
-                        />
-                        <br/>
-                        <IonText className="payment_text">Payment</IonText>
+                <div className="multipleselection">
+
+                  <div className="delivery_payment">
+                      <CheckmarkCircleOutline
+                        color={'#0c0e2f'}
+                        height="35px"
+                        width="35px"
+                      />
+                      <br/>
+                    <IonText className="delivery_text">Delivery</IonText>
+                  </div>
+
+                  <div className="payment_payment">
+                  <div className="cercle_grey">
+                    <div className="circle_grey">
+                      <div className="dot_grey">
+                      </div>
                     </div>
-                    <div className="confirmation">
-                        <DiscOutline
-                        color={'black'}
-                        height="24px"
-                        width="24px"
-                        cssClasses="confirmation_circle"
-                        />
-                        <br/>
-                        <IonText className="confirmation_text">Confirmation</IonText>
                     </div>
-                </div>
-
-                <IonText className="Payment_title">Teaching unlocked </IonText>
-
-                
-                
+                    
+                    <IonText className="payment_confirmation">Payment</IonText>
+                  </div>
 
 
-              
-          
-            
-            
-            
-       
+                  <div className="confirmation_payment">
+                  <div className="cercle_orang">
+                    <div className="circle_orang">
+                      <div className="dot_orang">
+                      </div>
+                    </div>
+                    </div>
+                    <br/>
+                    <IonText className="confirmation_payment_text">Confirmation</IonText>
+                  </div>
+                  </div>
 
+                <IonText className="Payment_title">Order placed  </IonText>
           <IonRow>
+            <div className="shopping_card">
+            <BagCheckOutline
+            color={'#949494'} 
+            height="75px"
+            width="75px"
+            cssClasses="icon_shop"
+          />
+          <IonText className="thanks">Thanks for your purchase.</IonText>
+          <IonText className="ordernumber">Order #453745</IonText>
+            </div>
+          
+          <div className="liste_order">
+            <IonText className="orders">
+            True Christianity is irresistible  
+            </IonText>
+            <IonText className="orders">
+            True Christianivty is irresistible  
+            </IonText>
+            <IonText className="orders">
+            True Christianity is irresistible
+            </IonText>
+            <IonText className="order_delivery">
+            Delivery 
+            </IonText>
+            <IonText className="total_order">
+            Total 
+            </IonText>
+          </div>
             
-            <IonCol>
-              <div className="total">
-              <IonText slot="start" className="total_text">Total</IonText>
-              <IonText slot="end" className="prix_total">R 5.00</IonText>
-              </div>
-            
-            </IonCol>
           </IonRow>
     
-
+          <IonButton className="btn_valider_order" color="light" expand="block">
+          Order details
+          </IonButton>
           </IonContent>
         </IonPage>
         
