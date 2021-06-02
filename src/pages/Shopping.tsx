@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { IonThumbnail, IonSegment, IonSegmentButton, IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonSlides,IonSlide,IonButtons,IonIcon,useIonViewWillEnter, IonImg, IonTitle, IonText, IonCard, IonCardContent, IonCardSubtitle ,IonList, IonItem, IonAvatar, IonFooter, IonLabel, IonTabButton,IonTabBar } from '@ionic/react';
-import { arrowForward, bookmarksSharp, call, home, heart, pin, star, globe, basket, camera, bookmark  } from 'ionicons/icons';
+import { IonRange, IonInput, IonToggle, IonSelectOption, IonSelect, IonDatetime, IonThumbnail, IonCheckbox, IonRow, IonCol, IonGrid, IonCardTitle, IonSegment, IonSegmentButton, IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonSlides,IonSlide,IonButtons,IonIcon,useIonViewWillEnter, IonImg, IonTitle, IonText, IonCard, IonCardContent, IonCardSubtitle ,IonList, IonItem, IonAvatar, IonFooter, IonLabel, IonTabButton,IonTabBar } from '@ionic/react';
+import {  navigate, informationCircle, checkmarkCircle, shuffle, closeCircle, bagOutline, arrowForward, bookmarksSharp, call, home, heart, pin, star, globe, basket, camera, bookmark, basketOutline  } from 'ionicons/icons';
 import './Shopping.scss';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { IonReactRouter } from '@ionic/react-router';
@@ -15,102 +15,60 @@ const Shopping: React.FC<SomeComponentProps> = ({ history }) => {
 
     return (
         <IonPage id="shopping-page">
-          <IonHeader>
-        <IonToolbar>
-          <IonTitle>SegmentExamples</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        {/*-- Default Segment --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)}>
-          <IonSegmentButton value="friends">
-            <IonLabel>Friends</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="enemies">
-            <IonLabel>Enemies</IonLabel>
-          </IonSegmentButton>
-        </IonSegment>
+           <IonContent fullscreen>
+              <IonCard className="teaching-title" >
+                  <IonCardTitle className="titre">Shop</IonCardTitle>
+                  <IonIcon icon={bagOutline} size="large" color="medium" className="bag-icon"/>
+              </IonCard>
+    
 
-        {/*-- Disabled Segment --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)} disabled value="sunny">
-          <IonSegmentButton value="sunny">
-            <IonLabel>Sunny</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="rainy">
-            <IonLabel>Rainy</IonLabel>
-          </IonSegmentButton>
-        </IonSegment>
 
-        {/*-- Segment with anchors --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)}>
-          <IonSegmentButton value="dogs">
-            <IonLabel>Dogs</IonLabel>
+     {/*-- Segment with secondary color --*/}
+     <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)} color="success">
+          <IonSegmentButton value="BOOKS" className="shopping-button">
+            <IonLabel className="shopping-title">BOOKS</IonLabel>
           </IonSegmentButton>
-          <IonSegmentButton value="cats">
-            <IonLabel>Cats</IonLabel>
+          <IonSegmentButton value="VIDEOS" className="shopping-button">
+            <IonLabel className="shopping-title">VIDEOS</IonLabel>
           </IonSegmentButton>
-        </IonSegment>
+          <IonSegmentButton value="ACCESSORIES" className="shopping-button">
+            <IonLabel className="shopping-title">ACCESSORIES</IonLabel>
+          </IonSegmentButton>
+      </IonSegment>
 
-        {/*-- Scrollable Segment --*/}
-        <IonSegment scrollable value="heart">
-          <IonSegmentButton value="home">
-            <IonIcon icon={home} />
-          </IonSegmentButton>
-          <IonSegmentButton value="heart">
-            <IonIcon icon={heart} />
-          </IonSegmentButton>
-          <IonSegmentButton value="pin">
-            <IonIcon icon={pin} />
-          </IonSegmentButton>
-          <IonSegmentButton value="star">
-            <IonIcon icon={star} />
-          </IonSegmentButton>
-          <IonSegmentButton value="call">
-            <IonIcon icon={call} />
-          </IonSegmentButton>
-          <IonSegmentButton value="globe">
-            <IonIcon icon={globe} />
-          </IonSegmentButton>
-          <IonSegmentButton value="basket">
-            <IonIcon icon={basket} />
-          </IonSegmentButton>
-        </IonSegment>
+        
+      <IonCard className="emptycard-shopping">
 
-        {/*-- Segment with secondary color --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)} color="secondary">
-          <IonSegmentButton value="standard">
-            <IonLabel>Standard</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="hybrid">
-            <IonLabel>Hybrid</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="sat">
-            <IonLabel>Satellite</IonLabel>
-          </IonSegmentButton>
-        </IonSegment>
+            <IonText className="titre_card flex">All Items </IonText>
+            <br/>
+            <br/>
+      <IonGrid className="shopping-grid">
+                    <IonRow>
+                        <IonCol>
+                            <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
+                                <img src="/assets/img/Love.jpg" className="book-img"/> 
+                            </IonCard>
+                            <IonText className="shoppingitem-text"> The power of praying for your adult children  </IonText>
+                                <br/>
+                                <IonText className="shoppingitem-price"> R300</IonText>
+                        </IonCol>
+                      <IonCol>
+                      <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
+                                <img src="/assets/img/Prayer.png" className="book-img"/> 
+                            </IonCard>
+                            <IonText className="shoppingitem-text"> True Christianity is irresistible    </IonText>
+                                <br/>
+                                <IonText className="shoppingitem-price"> R300</IonText>
 
-        {/*-- Segment in a toolbar --*/}
-        <IonToolbar>
-          <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)}>
-            <IonSegmentButton value="camera">
-              <IonIcon icon={camera} />
-            </IonSegmentButton>
-            <IonSegmentButton value="bookmark">
-              <IonIcon icon={bookmark} />
-            </IonSegmentButton>
-          </IonSegment>
-        </IonToolbar>
+                        </IonCol>
+                      </IonRow>
+                  </IonGrid>
+        </IonCard>
 
-        {/*-- Segment with default selection --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)} value="javascript">
-          <IonSegmentButton value="python">
-            <IonLabel>Python</IonLabel>
-          </IonSegmentButton>
-          <IonSegmentButton value="javascript">
-            <IonLabel>Javascript</IonLabel>
-          </IonSegmentButton>
-        </IonSegment>
+
+ 
       </IonContent>
+
     </IonPage>
   );
 };

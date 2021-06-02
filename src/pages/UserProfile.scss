@@ -1,34 +1,87 @@
-.header_title{
+.userprofile-title{
     color: #fe7d4e;
-    font-size: 25px;
+    font-size: 37px;
     font-weight: normal;
     letter-spacing: 0px;
-    line-height: 36px;
-    position: absolute;
-    left: -70px;
-    top: 81px;
-}
- 
-.header_text{
-    color: rgb(12, 17, 44);
-    font-size: 16px;
-    //font-family: Raleway-Medium;
-    font-weight: 500;
-    letter-spacing: 0px;
-    line-height: 30px;
-    position: absolute;
-    left: 41px;
-    top: 100px;
+    /* line-height: 36px; */
+    padding-top: 35px;
+    margin-bottom: 10px;
+    margin-left: 35px;
 }
 
-.text_container{
-    color: rgb(134, 135, 168);
-    font-size: 24px;
-    //font-family: Gilroy-ExtraBold;
-    font-weight: 800;
+.userprofile-subtitle {
+    height: 30px;
+    color: #0c112c;
+    font-size: 16px;
+    font-weight: 500;
     letter-spacing: 0px;
-    line-height: 20px;
-    position: absolute;
-    left: 41px;
-    top: 100px;
+  //  line-height: 30px;
+    margin-left: 35px;
+    text-transform: none;
+
 }
+ 
+
+.emptycard {
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
+    border-radius: 50px 50px 0px 0px;
+    margin-top: 170px;
+    margin-left:0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 36px;
+    border: 0px solid #000000;
+
+  }
+
+  .userpicture {
+    width: 86px;
+    height: 86px;
+    background: rgb(255, 255, 255);
+    border-radius: 15px 15px 15px 15px;
+  }
+
+  .usercard-img {
+    width: 86px;
+    height: 86px;
+  }
+
+  .username {
+color: rgb(44, 64, 110);
+font-size: 24px;
+font-weight: 800;
+letter-spacing: 0px;
+  }
+
+  .email {
+color: rgb(134, 135, 168);
+font-size: 16px;
+letter-spacing: 0px;
+  }
+
+
+  .text-edit {
+
+height: 26px;
+color: rgb(254, 125, 78);
+font-size: 16px;
+letter-spacing: 0px;
+  }
+  .user-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .user-logout{
+    width: 326px;
+    height: 60px;
+    --background:var(--ion-color-ifcmgrey);
+    border-radius: 30px;
+    color: black;
+    align-items: center;
+    margin-block: 10px;
+    text-align: center;
+    margin-left: 25px;
+  }
+

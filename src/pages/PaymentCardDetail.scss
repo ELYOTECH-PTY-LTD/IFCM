@@ -1,0 +1,157 @@
+.selection{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: baseline;
+	align-content: stretch;
+    padding-top: 90px;
+}
+.payment{
+    display: block;
+}
+.payment_text{
+    color: #fe7d4e;
+    margin-left: -15px;
+}
+.confirmation{
+    display: block;
+    margin-left: 70px;
+}
+
+.confirmation_text{
+  margin-left: -30px;
+}
+
+.Payment_title{
+    color: rgb(134, 135, 168);
+    font-size: 21px;
+   // font-family: Gilroy-ExtraBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 20px;
+    margin-left: 25px;
+    display: flex;
+    padding: 10px;
+    padding-top: 40px;
+}
+
+.selection_payment{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: baseline;
+	align-content: stretch;
+    padding-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.visa{
+    display: block;
+}
+.btn_visa{
+    width: 96px;
+    height: 60px;
+    border: 1px solid rgb(254, 125, 78);
+    border-radius: 7px;
+    box-shadow: none !important;
+}
+.mastercard{
+    display: block;
+}
+.btn_mastercard{
+    width: 96px;
+    height: 60px;
+
+    border-radius: 7px;
+    box-shadow: none !important;
+}
+.paypal{
+    display: block;
+}
+.btn_paypal{
+    width: 96px;
+    height: 60px;
+    border-radius: 7px;
+    box-shadow: none !important;
+}
+.total{
+    padding-top: 10%;
+}
+.total_text{
+    width: 113px;
+    height: 30px;
+    color: rgb(12, 17, 44);
+    font-size: 26px;
+    //font-family: Gilroy-ExtraBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 30px;
+}
+.prix_total{
+    width: 64px;
+    height: 29px;
+    color: rgb(254, 125, 78);
+    font-size: 21px;
+    //font-family: Gilroy-ExtraBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 20px;
+}
+.btn_complete{
+        width: 326px;
+        height: 60px;
+        background: rgb(254, 125, 78);
+        border-radius: 30px 30px 30px 30px;
+        margin-left: auto;
+        margin-right: auto;
+}
+.cercle_orange{
+    position: absolute;
+    left: 32%;
+    top: 15%; 
+    text-align: center;
+    display: contents;
+}
+
+.circle_orange{
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    border: solid 2px #fe7d4e;
+}
+.dot_orange{
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+    background-color: #fe7d4e;
+    display: block;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.cercle_black{
+    position: absolute;
+    left: 60%;
+    top: 15%;
+    text-align: center;
+    display: contents;
+}
+
+.circle_black{
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    border: solid 2px black;
+}
+.dot_black{
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+    background-color:black;
+    display: block;
+    margin-top: 3px;
+    margin-left: 3px;
+}

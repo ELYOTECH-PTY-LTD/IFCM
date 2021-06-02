@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { IonSelectOption, IonSelect, IonTextarea, IonItemDivider, IonInput, IonThumbnail, IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonSlides,IonSlide,IonButtons,IonIcon,useIonViewWillEnter, IonImg, IonTitle, IonText, IonCard, IonCardContent, IonCardSubtitle ,IonList, IonItem, IonAvatar, IonFooter, IonLabel, IonTabButton,IonTabBar, IonGrid, IonRow, IonCol, IonCardTitle } from '@ionic/react';
-import { arrowForward, bookmarksSharp } from 'ionicons/icons';
+import {  IonChip, IonSelectOption, IonSelect, IonTextarea, IonItemDivider, IonInput, IonThumbnail, IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonSlides,IonSlide,IonButtons,IonIcon,useIonViewWillEnter, IonImg, IonTitle, IonText, IonCard, IonCardContent, IonCardSubtitle ,IonList, IonItem, IonAvatar, IonFooter, IonLabel, IonTabButton,IonTabBar, IonGrid, IonRow, IonCol, IonCardTitle } from '@ionic/react';
+import { arrowForward, bookmarksSharp, chevronForwardOutline } from 'ionicons/icons';
 import './Donation.scss';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { IonReactRouter } from '@ionic/react-router';
@@ -21,14 +21,14 @@ const Donation: React.FC<SomeComponentProps> = ({ history }) => {
 
 
     return (
-        <IonPage id="teaching-page">
+        <IonPage id="donation-page">
           <IonContent fullscreen>
               <IonCard className="teaching-title" >
-                  <IonCardTitle className="titre">Donation</IonCardTitle>
-                  <IonCardSubtitle className="titre_text">Support Impact For Christ Ministries Charitable Deeds</IonCardSubtitle>
+                  <IonCardTitle className="donation-title"> Donation</IonCardTitle>
+                  <IonCardSubtitle className="donation-subtitle">Support Impact For Christ Ministries Charitable Deeds</IonCardSubtitle>
               </IonCard>
   
-            <IonCard className="emptycard-teaching">
+            <IonCard className="emptycard">
             <div className="div-donation">
                 <p>&nbsp;</p>
                 <IonGrid>
@@ -76,8 +76,15 @@ const Donation: React.FC<SomeComponentProps> = ({ history }) => {
         </IonRow>
     </IonGrid>
 </IonCard>
+<br/>
 
-        <IonItem>
+
+<IonButton className="cause-button" shape="round" fill="outline" color="medium" routerLink="/tabs/userprofile/notificationslist">Choose your cause Chip
+    <IonIcon icon={chevronForwardOutline} />
+    </IonButton>
+
+
+        <IonItem color="medium">
           <IonLabel>Choose your cause</IonLabel>
           <IonSelect interface="action-sheet" interfaceOptions={options}>
           <IonSelectOption  value="Tithe">Tithe</IonSelectOption>
@@ -88,11 +95,10 @@ const Donation: React.FC<SomeComponentProps> = ({ history }) => {
         </IonItem>
 
 <p>&nbsp;</p>
-        <IonRow>
-            <IonCol>
-              <IonButton className="donation-button" type="submit" expand="block">Donate</IonButton>
-            </IonCol>
-          </IonRow>
+       
+       
+<IonButton className="donation-button" shape="round" type="submit" expand="block" href="#"> Donate </IonButton>
+           
 
 </IonCard>
 

@@ -24,7 +24,9 @@ import Welcome from './Welcome';
 import Shopping from './Shopping';
 import UserProfile from './UserProfile';
 import Donation from './Donation';
-
+import AboutUs from './AboutUs';
+import PaymentCardDetail from './PaymentCardDetail';
+import PaymentShippingDetail from './PaymentShippingDetail';
 
 interface MainTabsProps { }
 
@@ -41,7 +43,7 @@ const Navbar: React.FC<MainTabsProps> = () => {
           Use the component prop when your component depends on the RouterComponentProps passed in automatically.
         */}
         <Route path="/tabs/home" render={() => <Homepage />} exact={true} />
-        <Route path="/tabs/home/eventdetails/" component={EventDetails} />
+        <Route path="/tabs/home/eventdetails/:id" component={EventDetails} />
         <Route path="/tabs/shopping" render={() => <Shopping />} exact={true} />
         <Route path="/tabs/teaching" render={() => <Teaching />} exact={true} />
         <Route path="/tabs/teaching/teachinglist" component={TeachingList} exact={true} />
@@ -49,7 +51,9 @@ const Navbar: React.FC<MainTabsProps> = () => {
         <Route path="/tabs/teaching/teachingorder" component={TeachingOrder} />
         <Route path="/tabs/shopping" render={() => <Shopping />} exact={true} />
         <Route path="/tabs/donation" render={() => <Donation />} exact={true} />
-        <Route path="/tabs/profile" render={() => <UserProfile />} exact={true} />
+        <Route path="/tabs/userprofile" render={() => <UserProfile />} exact={true} />
+        <Route path="/tabs/userprofile/aboutus" component={AboutUs} />
+
 
       </IonRouterOutlet>
 

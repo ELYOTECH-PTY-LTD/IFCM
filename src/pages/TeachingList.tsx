@@ -54,7 +54,7 @@ const items: Item[] = [{ src: '/assets/img/black-family1.jpg', text: 'Developing
                <IonText className="text_card">Developing the strengths  </IonText><br/>
                <IonText className="date_card">01 Dec. 2020  </IonText>
              </IonCard>
-             <IonCard href="/tabs/teaching/TeachingOrrder" className="card_teach">
+             <IonCard href="/tabs/teaching/TeachingOrder" className="card_teach">
                <img src="/assets/img/Black-Success.jpg" className="img_card"></img>
                <IonText className="text_card">Developing the strengths  </IonText><br/>
                <IonText className="date_card">01 Dec. 2020  </IonText>

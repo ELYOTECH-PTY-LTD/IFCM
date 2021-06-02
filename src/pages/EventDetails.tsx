@@ -10,6 +10,24 @@ import history from '../history';
 import UserService from "../services/UserService";
 import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline} from 'react-ionicons'
 
+
+type EventItem = {
+  id: string;
+  src: string;
+  text: string;
+  date: string;
+  shortdesc: string;
+};
+const items: EventItem[] = [{ id: '1', src: '/assets/img/israel_pilgrimage.jpg', text: '2020 Israel Pilgrimage', date:'AUG 06, 2020', shortdesc: 'The relationship between the Bible and Israel is like the body…'},
+{ id: '2', src: '/assets/img/2021-viadelarosa.jpg', 
+text: 'VIA DOLOROSA - The way of the cross', date:'03/04/2021 - 05/04/2021', 
+shortdesc: 'The path Jesus walked from the place of his judgment to the site of his crucifixion…'},
+{ id: '3', src: '/assets/img/5km-bootcamp-now-r150.jpg', text: 'HOLY LAND 5KM BOOTCAMP', date:'16/12/2020 - 16/12/2020', 
+shortdesc: 'The nature of the event will be a 5km Bootcamp with obstacles at each kilometre. '},
+{ id: '4', src: 'http://placekitten.com/g/200/300', text: 'a picture of a cat', date:'01 Dec. 2020', 
+shortdesc: 'The relationship between the Bible and Israel is like the body…'}, ];
+
+
 type SomeComponentProps = RouteComponentProps;
 const EventDetails: React.FC<SomeComponentProps> = ({ history }) => {
 
@@ -26,74 +44,22 @@ const EventDetails: React.FC<SomeComponentProps> = ({ history }) => {
         <IonTitle className="eventdetailstitle"> Upcoming Events</IonTitle>
       </IonToolbar>
     </IonHeader>
-
-{/* <IonHeader translucent>
-      <IonToolbar>
-        <IonTitle>Event Details </IonTitle>
-      </IonToolbar>
-</IonHeader> 
-
-
-
-
-
-
-<IonContent>
-    -- Default back button --
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
-          <IonBackButton />
-        </IonButtons>
-      </IonToolbar>
-    </IonHeader>
-
-
-    {/*-- Back button with custom text and icon --*
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
-          <IonBackButton text="buttonText" icon="buttonIcon" />
-        </IonButtons>
-      </IonToolbar>
-    </IonHeader>
-
-    {/*-- Back button with no text and custom icon --*
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
-          <IonBackButton text="" icon="add" />
-        </IonButtons>
-      </IonToolbar>
-    </IonHeader>
-
-    {/*-- Danger back button next to a menu button --*
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
-          <IonMenuButton />
-          <IonBackButton color="danger" />
-        </IonButtons>
-      </IonToolbar>
-    </IonHeader>
-  </IonContent>
-
-*/}
-
+    {items.map((image, i) => (
 
     <IonContent fullscreen>
       <IonCard>
-        <img src="/assets/img/israel_pilgrimage.jpg" />
+        <img src={image.src}/>
         <IonCardHeader>
-        <IonCardTitle> 2020 Isreal Pimlgrinage </IonCardTitle>
-          <IonCardSubtitle className="date_eventdetails">AUG 06, 2020 - AUG 13, 2020 </IonCardSubtitle>
+        <IonCardTitle> {image.text} </IonCardTitle>
+          <IonCardSubtitle className="date_eventdetails">{image.date}</IonCardSubtitle>
         </IonCardHeader>
-<IonCardContent> 
-The relationship between the Bible and Israel is like the body soul. The body needs the soul to bring life. The body minus the soul is dust. You cannot separate the Bible and Israel. They are one unit. Join us this year and remember the world revolves around Jerusalem. It is not like any other city in the world. Jerusalem is a fruitful land. It was in Jerusalem the last supper took place, it was in Jerusalem that Judas betrayed Jesus, it was at the outskirts of Jerusalem that Jesus Christ was crucified. The ultimate sacrifice was done and humanity saved. It is indeed a good year. For more information email israeltrip@impactforchristsa.com </IonCardContent>
+        <IonCardContent> {image.shortdesc} </IonCardContent>
       </IonCard>
     </IonContent>
+    ))}
         </IonPage>
         
   );
-}
+
+};
 export default withRouter (EventDetails);

@@ -27,6 +27,9 @@ const Login: React.FC<SomeComponentProps> = ({ history }) => {
     if(!password) {
       setPasswordError(true);
     }
+    if(password && password ) {
+      history.push('/tabs/home', {direction: 'none'});
+    }
   };
     return (
       <IonPage id="login-page">
@@ -99,7 +102,7 @@ const Login: React.FC<SomeComponentProps> = ({ history }) => {
 
           <IonRow>
             <IonCol>
-              <IonButton type="submit" expand="block">Login</IonButton>
+              <IonButton className="login-button" type="submit" expand="block">Login</IonButton>
             </IonCol>
           </IonRow>
         </form>

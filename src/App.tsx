@@ -44,6 +44,10 @@ import TeachingOrder from './pages/TeachingOrder';
 
 import Shopping from './pages/Shopping';
 import UserProfile from './pages/UserProfile';
+import About from './pages/AboutUs';
+import PaymentCardDetail from './pages/PaymentCardDetail';
+import PaymentShippingDetail from './pages/PaymentShippingDetail';
+
 
 
 
@@ -64,6 +68,9 @@ const App: React.FC = () => {
         <Route path="/welcome" component={Welcome} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+        <Route path="/paymentcarddetails" component={PaymentCardDetail} />
+        <Route path="/paymentshippingdetails" component={PaymentShippingDetail} />
+
    
         <Route path="/" component={Welcome} exact />
       </IonRouterOutlet>

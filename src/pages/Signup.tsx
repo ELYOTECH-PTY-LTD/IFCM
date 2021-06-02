@@ -38,7 +38,7 @@ const Login: React.FC<SomeComponentProps> = ({ history }) => {
       }
   
       if(password && confirmPassword && email && firstName && lastName) {
-        history.push('/home', {direction: 'none'});
+        history.push('/tabs/home', {direction: 'none'});
       }
     };
   

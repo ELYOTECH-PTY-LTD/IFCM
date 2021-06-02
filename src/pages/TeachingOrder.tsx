@@ -26,13 +26,13 @@ const TeachingOrder: React.FC<SomeComponentProps> = ({ history }) => {
               <br/>
               <br/>
                <IonCard className="box">
-               <IonImg src="/assets/img/teaching/Romance-1.jpg" alt="romance" className="img_teaching"></IonImg>
+               <IonImg src="/assets/img/Love.jpg" alt="romance" className="img_teaching"></IonImg>
                <IonCardTitle className="titre_card_teaching">Understanding emotions</IonCardTitle>
                <IonCardSubtitle className="date_card_teaching">21 Feb. 2021<IonIcon className="icon_locker" icon={lockClosedOutline}></IonIcon> </IonCardSubtitle>
                 <IonCardContent className="titre_card_list">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel enim nec urna …</IonCardContent>
                </IonCard>
                <IonText className="center">Shop now for <IonText className="price"> R 5.00</IonText> </IonText>
-              <IonButton className="payd" color="favorite" href="/Payment">Purchase</IonButton>
+              <IonButton className="payd" color="favorite" href="/paymentcarddetails">Purchase</IonButton>
           </IonContent>
                 
         </IonPage>

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { IonThumbnail, IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonSlides,IonSlide,IonButtons,IonIcon,useIonViewWillEnter, IonImg, IonTitle, IonText, IonCard, IonCardContent, IonList, IonItem, IonAvatar, IonFooter, IonLabel, IonTabButton,IonTabBar } from '@ionic/react';
+import { IonThumbnail, IonContent, IonHeader, IonPage, IonToolbar, IonButton, IonSlides,IonSlide,IonButtons,IonIcon,useIonViewWillEnter, IonImg, IonTitle, IonText, IonCard, IonCardContent, IonList, IonItem, IonAvatar, IonFooter, IonLabel, IonTabButton,IonTabBar, IonListHeader } from '@ionic/react';
 import { arrowForward, bookmarkSharp } from 'ionicons/icons';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { IonReactRouter } from '@ionic/react-router';
@@ -14,19 +14,20 @@ import history from '../history';
 import Navbar from './Navbar';
 
 type EventItem = {
+  id: string;
   src: string;
   text: string;
   date: string;
   shortdesc: string;
 };
-const items: EventItem[] = [{ src: '/assets/img/israel_pilgrimage.jpg', text: '2020 Israel Pilgrimage', date:'AUG 06, 2020', 
-shortdesc: 'The relationship between the Bible and Israel is like the body…'},{ src: '/assets/img/2021-viadelarosa.jpg', 
+const items: EventItem[] = [{ id: '1', src: '/assets/img/israel_pilgrimage.jpg', text: '2020 Israel Pilgrimage', date:'AUG 06, 2020', shortdesc: 'The relationship between the Bible and Israel is like the body…'},
+{ id: '2', src: '/assets/img/2021-viadelarosa.jpg', 
 text: 'VIA DOLOROSA - The way of the cross', date:'03/04/2021 - 05/04/2021', 
 shortdesc: 'The path Jesus walked from the place of his judgment to the site of his crucifixion…'},
-{ src: '/assets/img/5km-bootcamp-now-r150.jpg', text: 'HOLY LAND 5KM BOOTCAMP', date:'16/12/2020 - 16/12/2020', 
+{ id: '3', src: '/assets/img/5km-bootcamp-now-r150.jpg', text: 'HOLY LAND 5KM BOOTCAMP', date:'16/12/2020 - 16/12/2020', 
 shortdesc: 'The nature of the event will be a 5km Bootcamp with obstacles at each kilometre. '},
-{ src: 'http://placekitten.com/g/200/300', text: 'a picture of a cat', date:'01 Dec. 2020', 
-shortdesc: 'The relationship between the Bible and Israel is like the body…'}, ];
+{ id: '4', src: 'http://placekitten.com/g/200/300', text: 'a picture of a cat', date:'01 Dec. 2020', 
+shortdesc: 'The relationship between the Bible and Israel is like the body…'} ];
 
 
 type SomeComponentProps = RouteComponentProps;
@@ -39,46 +40,39 @@ const Homepage: React.FC<SomeComponentProps> = ({ history }) => {
               <IonImg src="/assets/img/ifcm_logo.png" className="logo"></IonImg>
               <h1 className="title">Good Morning Raoul,</h1>
             </div>
-          
-            <IonCard className="emptycard">
-             <IonCardContent></IonCardContent>
-            </IonCard>
-            <img src="./assets/img/quotes.png" className="quotes"/>
+          <br/>
+            <IonCard className="home-emptycard">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
 
-            <IonCard className="prophetic-card">
-   
-          <IonCardContent>
-            <IonText color="light">
-              <p>&nbsp; </p>
-              <h5>Worries destroy the heart. Please guard your heart. Worries destroy the heart. 
-No matter what we have or don't have , no matter what we are going through, if we're at peace with ourselves and those around us, we can thrive..
-</h5> 
-</IonText>
-                
-              <IonText className="prophet">
-              Prophet Philip Banda     
-              </IonText>
-            </IonCardContent>
-            
-           </IonCard>
 
-           <IonList className="verse">
-              <h2 className="verse_titre">Verse of the day </h2>
-              <IonText className="verse_rectangle">
-              <IonIcon icon={bookmarkSharp} className="blue-icon" slot="start" />
-                <IonText className="verse_auteur"> John 14:12 </IonText>
-              </IonText><br/>
-              <IonText className="verse_texte">« Doing the work of Jesus Christ. »</IonText>
-            </IonList>
+           <IonList className="verse" lines="none">
+             <IonListHeader className="verse_titre">Verse of the day </IonListHeader>
+              <IonItem className="home-item">
+                <IonButton className="verse-button">
+                  <IonIcon icon={bookmarkSharp} className="blue-icon" slot="start" />
+                  <IonLabel className="verse_auteur"> John 14:12 </IonLabel>
+                  </IonButton>
+              </IonItem>
+              <IonItem>
+                <IonLabel className="verse_texte"> « Doing the work of Jesus Christ. »</IonLabel>
+              </IonItem>            
 
+</IonList>
+
+<div className="today-verse-box"></div>
  
 
-            <IonList className="event">
-              <h3 className="event_titre">Upcoming Events</h3>
+            <IonList className="event" lines="none">
+            <IonListHeader className="event_titre">Upcoming Events </IonListHeader>
+            <br/>
+            <br/>
 
 
               {items.map((image, i) => (
-        <IonItem className="event_card" key={i} href="/tabs/home/EventDetails">
+        <IonItem className="event_card" key={i} routerLink={`/tabs/home/eventdetails/${image.id}`}>
             <IonThumbnail slot="start" className="img">
             <img src={image.src} className="event-img"/>
             </IonThumbnail>
@@ -95,6 +89,28 @@ No matter what we have or don't have , no matter what we are going through, if w
       ))}
 
  </IonList>
+
+ </IonCard>
+
+ <img src="./assets/img/quotes.png" className="quotes"/>
+
+ <IonCard className="prophetic-card">
+   
+   <IonCardContent>
+     <IonText color="light">
+       <p>&nbsp; </p>
+       <h5>Worries destroy the heart. Please guard your heart. Worries destroy the heart. 
+No matter what we have or don't have , no matter what we are going through, if we're at peace with ourselves and those around us, we can thrive..
+</h5> 
+</IonText>
+         
+       <IonText className="prophet">
+       Prophet Philip Banda     
+       </IonText>
+     </IonCardContent>
+     
+    </IonCard>
+
   </IonContent>
 
   </IonPage>

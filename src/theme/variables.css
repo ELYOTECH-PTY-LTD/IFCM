@@ -26,6 +26,11 @@
  }
 
  :root {
+
+  --ion-color-ifcmorange: #fe7d4e;
+  --ion-color-ifcmblue:#3171e0;
+  --ion-color-ifcmgrey: #f6f6f9;
+
   /** primary **/
   --ion-color-primary: #fe7d4e;
   --ion-color-primary-rgb: 56, 128, 255;

@@ -4,30 +4,27 @@
     margin-top: 79px;
 }
 
+.donation-title {
+  color: #fe7d4e;
+  font-size: 37px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  /* line-height: 36px; */
+  padding-top: 35px;
+  margin-bottom: 10px;
+  margin-left: 35px;
+}
 
-.titre{
-    color: rgb(254, 125, 78);
-    font-size: 37px;
-    //font-family: Raleway-Regular;
-    font-weight: normal;
-    letter-spacing: 0px;
-    line-height: 36px;
-    padding-top: 35px;
-    margin-bottom: 10px;
-    margin-left: 35px;
-
-    }
-    .titre_text{
-        width: 281px;
-    height: 30px;
-    color: rgb(12, 17, 44);
-    font-size: 16px;
-    //font-family: Raleway-Medium;
-    font-weight: 500;
-    letter-spacing: 0px;
-    line-height: 30px;
-    margin-left: 35px;
-    }
+.donation-subtitle {
+  height: 30px;
+  color: #0c112c;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0px;
+//  line-height: 30px;
+  margin-left: 35px;
+text-transform: none;
+}
     
     .titre_card {
     
@@ -46,19 +43,18 @@
 
 
 
-.emptycard-teaching {
-    height: 606px;
-    background: rgb(255, 255, 255);
-    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
-    border-radius: 50px 50px 0px 0px;
-    margin-top: 170px;
-    margin-left:0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-top: 36px;
-    border: 0px solid #000000;
-
-  }
+    .emptycard {
+      background: rgb(255, 255, 255);
+      box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
+      border-radius: 50px 50px 0px 0px;
+      margin-top: 170px;
+      margin-left:0;
+      margin-right: 0;
+      margin-bottom: 0;
+      margin-top: 36px;
+      border: 0px solid #000000;
+  
+    }
 
   .div-donation {
     margin-top: 10px;
@@ -135,11 +131,33 @@ border: 0;
 margin-left: 43px;
 width: 326px;
 height: 60px;
-background: rgb(254, 125, 78);
+background-color: rgb(254, 125, 78);
 border-radius: 30px;
+color: white;
+
+
+align-items: center;
+margin-block: 10px;
+text-align: center;
+margin-left: 25px;
+
   }
 
   .divider{
     margin-top: -17px;
     margin-left: 21px;    
+  }
+  .cause-button {
+
+    margin-left: 43px;
+width: 326px;
+height: 60px;
+background-color: white;
+border-radius: 30px;
+--ion-color-primary:#ebecf7;
+
+align-items: center;
+margin-block: 10px;
+text-align: center;
+margin-left: 25px;
   }
