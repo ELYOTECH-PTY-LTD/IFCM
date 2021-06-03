@@ -60,7 +60,7 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
     <IonHeader className="navbar-noborder" >
       <IonToolbar >
         <IonButtons slot="start">
-        <IonBackButton icon={chevronBackOutline} defaultHref="/tabs/shopping/PaymentCardDetail" />
+        <IonBackButton icon={chevronBackOutline} defaultHref="/paymentcarddetails" />
         </IonButtons>
         <IonTitle className="eventdetailstitle"> Checkout</IonTitle>
       </IonToolbar>
@@ -71,17 +71,27 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
            
            <br/>
            <br/>
-           <IonItem lines="none">
-              <IonIcon icon={stopCircleOutline} ariaLabel="Delivery"/> <br/>
+           <IonItem lines="none" className="item_block">
+             <div className="item_flex">
+             <IonIcon icon={stopCircleOutline} ariaLabel="Delivery"/> <br/>
               <IonLabel>Delivery</IonLabel>
-            
-              <IonIcon icon={stopCircleOutline} ariaLabel="Payment</IonIcon"/><br/>
+             </div>
+              <hr className="trait"></hr>
+             <div className="item_flex">
+             <IonIcon icon={stopCircleOutline} ariaLabel="Payment"/><br/>
               <IonLabel>Payment</IonLabel>
-
-              <IonIcon icon={stopCircleOutline} ariaLabel="Confirmation"/><br/>
+             </div>
+             <hr className="trait"></hr>
+             <div className="item_flex">
+             <IonIcon icon={stopCircleOutline} ariaLabel="Confirmation"/><br/>
               <IonLabel>Confirmation</IonLabel>
+             </div>
+              
+            
+              
 
-</IonItem>
+              
+      </IonItem>
 
 
 <div className="divider-block"></div>
@@ -96,6 +106,7 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
 
  <IonText className="ordernumber">Order #453745</IonText>
 
+ <div className="divider_blockorder"></div>
 
   
 

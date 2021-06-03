@@ -51,7 +51,7 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
         <IonPage id="payment-page">
           <IonContent fullscreen>
                 <IonButtons>
-                    <IonBackButton defaultHref="/tabs/teaching/TeachingDetailsPrivate" className="back"/>
+                    <IonBackButton defaultHref="/tabs/teaching/TeachingOrder" className="back"/>
                 </IonButtons>
                 <IonText className="titre_teaching">Checkout</IonText>
                 <div className="selection">
@@ -86,19 +86,19 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                 <div className="selection_payment">
                     <div className="visa">
                         <IonButton className="btn_visa" color="light">
-                            <img src="/assets/img/LogoVISA.png" alt="visa" className="visa_img"></img>
+                            <img src="/assets/img/LogoVisaOn.png" alt="visa" className="visa_img"></img>
                         </IonButton>
                     </div>
 
                     <div className="mastercard">
                         <IonButton className="mastercard_visa" color="light">
-                            <img src="/assets/img/LogoMastercard.svg" alt="mastercard" className="mastercard_img"></img>
+                            <img src="/assets/img/LogoMastercardOn.png" alt="mastercard" className="mastercard_img"></img>
                         </IonButton>
                     </div>
 
                     <div className="paypal">
                         <IonButton className="btn_paypal" color="light">
-                            <img src="/assets/img/LogoPaypal.png" alt="paypal" className="paypal_img"></img>
+                            <img src="/assets/img/LogoPaypalOff.png" alt="paypal" className="paypal_img"></img>
                         </IonButton>
                     </div>
                 </div>
