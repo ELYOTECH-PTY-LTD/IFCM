@@ -86,11 +86,7 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
              <IonIcon icon={stopCircleOutline} ariaLabel="Confirmation"/><br/>
               <IonLabel>Confirmation</IonLabel>
              </div>
-              
-            
-              
 
-              
       </IonItem>
 
 
@@ -105,17 +101,9 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
   <IonText className="thanks">Thanks for your purchase.</IonText>
 
  <IonText className="ordernumber">Order #453745</IonText>
-
  <div className="divider_blockorder"></div>
-
-  
-
-
-   
             {orderitems.map((image) => (
-
             <IonList lines="none">
-
 <IonRow>
   <IonCol>
     <IonItem>
@@ -130,13 +118,7 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
     </IonRow>
 
 </IonList>
-
             ))}
-
-      
-
-
-
             {totalitems.map((image) => (
 <IonList>
 <IonRow>
@@ -153,9 +135,7 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
   </IonRow>
 
 </IonList>
-
             ))} 
-
 <br/>
 <br/>
 
@@ -163,7 +143,6 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
           <IonButton className="user-logout" shape="round" expand="block" href="#">
                 Order details
             </IonButton>
-
     </IonContent>
         </IonPage>
         

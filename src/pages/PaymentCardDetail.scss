@@ -7,6 +7,21 @@
 	align-content: stretch;
     padding-top: 90px;
 }
+.item_block{
+    display: block;
+}
+.item_flex{
+    text-align: center;
+    display: flow-root;
+    margin: auto;
+}
+.trait{
+    border: 1px dotted #9e9e9e;
+    border-style: none none dotted;
+    padding-bottom: -29px;
+    width: 50px;
+    margin-top: -15px;
+}
 .payment{
     display: block;
 }
@@ -60,11 +75,11 @@
 }
 .mastercard{
     display: block;
+    
 }
 .btn_mastercard{
     width: 96px;
     height: 60px;
-
     border-radius: 7px;
     box-shadow: none !important;
 }
