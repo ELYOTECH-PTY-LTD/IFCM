@@ -30,7 +30,7 @@ type SomeComponentProps = RouteComponentProps;
 const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
     const [Card_name, setCardName] = useState('');
     const [Card_Number, setCardNumber] = useState('');
-    let [TabType, setTabType] = useState('');
+    let [TabType, setTabType] = useState('visa');
     const [Date, setDate] = useState('');
     const [Exp, setExp] = useState('');
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -92,7 +92,20 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                 <IonButton className="btn_visa" color="light"onClick={() => setTabType(TabType = 'visa')}>
                             <img src="/assets/img/LogoVisaOn.png" alt="visa" className="visa_img" id="visa"></img>
                         </IonButton>
-                        {
+                        
+                        <IonButton className="btn_mastercard" color="light" onClick={() => setTabType(TabType = 'mastercard')}>
+                            <img src="/assets/img/LogoMastercardOn.png" alt="mastercard" className="mastercard_img" id="mastercard"></img>
+                        </IonButton>
+                    
+                        <IonButton className="btn_paypal" color="light" onClick={() => setTabType(TabType = 'paypal')}>
+                            <img src="/assets/img/LogoPaypalOff.png" alt="paypal" className="paypal_img" id="paypal"></img>
+                        </IonButton>
+                        
+                </div>
+                
+
+
+                {
                             TabType === 'visa' && 
                             <div className="payment_form">
                             <form noValidate onSubmit={login}>
@@ -153,10 +166,7 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                     </form>
                             </div>
                         }
-                        <IonButton className="btn_mastercard" color="light" onClick={() => setTabType(TabType = 'mastercard')}>
-                            <img src="/assets/img/LogoMastercardOn.png" alt="mastercard" className="mastercard_img" id="mastercard"></img>
-                        </IonButton>
-                    
+                        
                         {
                             TabType === 'mastercard' && 
                             <div className="payment_form">
@@ -231,10 +241,7 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                     </form>
                             </div>
                         }
-                    
-                        <IonButton className="btn_paypal" color="light" onClick={() => setTabType(TabType = 'paypal')}>
-                            <img src="/assets/img/LogoPaypalOff.png" alt="paypal" className="paypal_img" id="paypal"></img>
-                        </IonButton>
+
                         {
                             TabType === 'paypal' && 
                             
@@ -242,11 +249,6 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                             <button>Paypal</button>
                           </div>
                         }
-                </div>
-                        
-                  
-
-
           </IonContent>
         </IonPage>
         
