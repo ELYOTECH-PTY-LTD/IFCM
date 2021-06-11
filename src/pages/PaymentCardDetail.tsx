@@ -38,7 +38,10 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
     const [Card_NumberError, setCardNumberError] = useState(false);
     const [DateError, setDateError] = useState(false);
     const [ExpError, setExpError] = useState(false);
-    
+    const [lightModeVisa, setLightModeVisa] = useState(false);
+    const [lightModeMastercard, setLightModeMastercard] = useState(false);
+    const [lightModePaypal, setLightModePaypal] = useState(false);
+
     const login = async (e: React.FormEvent) => {
         e.preventDefault();
         setFormSubmitted(true);
@@ -54,7 +57,6 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
           if(!ExpError) {
             setExpError(true);
           }
-          
       };
 
     return (
@@ -72,21 +74,21 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
           <br/>
           <IonItem lines="none" className="item_block">
           <div className="item_flex">
-          <IonIcon icon={stopCircleOutline} ariaLabel="Delivery"/> <br/>
-            <IonLabel>Delivery</IonLabel>
+          <IonImg src="/assets/img/cerclevalide.png" className="cercle_valide" alt="cercle_valide"></IonImg>
+            <IonText className="deliver_text">Delivery</IonText>
           </div>
-            <hr className="trait"></hr>
+            <hr className="trait_simple"></hr>
           <div className="item_flex">
-          <IonIcon icon={stopCircleOutline} ariaLabel="Payment"/><br/>
-            <IonLabel>Payment</IonLabel>
+          <IonImg src="/assets/img/cercleorange.png" className="cercle_orange" alt="cercle_orange"></IonImg>
+            <IonText className="payment_text">Payment</IonText>
           </div>
-          <hr className="trait"></hr>
+          <hr className="trait_simple"></hr>
           <div className="item_flex">
-          <IonIcon icon={stopCircleOutline} ariaLabel="Confirmation"/><br/>
-            <IonLabel>Confirmation</IonLabel>
+         <IonImg src="/assets/img/cerclegris.png" className="cercle_gris" alt="cercle_gris"></IonImg>
+            <IonText className="confirmation_text">Confirmation</IonText>
           </div>
           </IonItem>
-
+          <div className="divider_block_top"></div>
                 <IonText className="Payment_title">Payment method</IonText>
                 <div className="selection_payment">
                 <IonButton className="btn_visa" color="light"onClick={() => setTabType(TabType = 'visa')}>
@@ -94,17 +96,18 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                         </IonButton>
                         
                         <IonButton className="btn_mastercard" color="light" onClick={() => setTabType(TabType = 'mastercard')}>
-                            <img src="/assets/img/LogoMastercardOn.png" alt="mastercard" className="mastercard_img" id="mastercard"></img>
+                            <img src="/assets/img/LogoMastercardOff.png" alt="mastercard" className="mastercard_img" id="mastercard"></img>
                         </IonButton>
                     
                         <IonButton className="btn_paypal" color="light" onClick={() => setTabType(TabType = 'paypal')}>
-                            <img src="/assets/img/LogoPaypalOff.png" alt="paypal" className="paypal_img" id="paypal"></img>
+                            <img
+                              className="paypal_img"
+                              onClick={() => setLightModePaypal(prevMode => !prevMode)}
+                              src={lightModePaypal ? "/assets/img/LogoPaypalOn.png" : "/assets/img/LogoPaypalOff.png"}
+                              alt="paypal"
+                            />
                         </IonButton>
-                        
                 </div>
-                
-
-
                 {
                             TabType === 'visa' && 
                             <div className="payment_form">
@@ -154,6 +157,7 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                                 </IonText>}
                         </div>
                       </IonList>
+                      <div className="divider_block_bottom"></div>
                       <IonRow>
                         <IonCol>
                           <div className="total">
@@ -166,70 +170,58 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                     </form>
                             </div>
                         }
-                        
+
                         {
                             TabType === 'mastercard' && 
                             <div className="payment_form">
-
-
                             <form noValidate onSubmit={login}>
                           <IonList> 
-                        
                         <IonItem>
                           <IonLabel position="stacked" color="primary">Card holder name </IonLabel>
                           <IonInput name="username" type="text" value={Card_name} spellCheck={false} autocapitalize="off" onIonChange={e => setCardName(e.detail.value!)}
                             required>
                           </IonInput>
                         </IonItem>
-    
                         {formSubmitted && Card_nameError && <IonText color="danger">
                           <p className="ion-padding-start">
                           Card holder is required
                           </p>
                         </IonText>}
-    
                         <IonItem>
                           <IonLabel position="stacked" color="primary">Card Number </IonLabel>
                           <IonInput name="password" type="password" value={Card_Number} onIonChange={e => setCardNumber(e.detail.value!)}>
                           </IonInput>
                         </IonItem>
-    
                         {formSubmitted && Card_NumberError && <IonText color="danger">
                           <p className="ion-padding-start">
                           Card Number  is required
                           </p>
                         </IonText>}
-    
                         <div className="flex date_op">
                                 <IonItem className="date_payment">
                                 <IonLabel position="stacked" color="primary" >Expiry Date  </IonLabel>
                                 <IonInput name="password" type="password" value={Date} onIonChange={e => setDate(e.detail.value!)}>
                                 </IonInput>
                                 </IonItem>
-    
                                 {formSubmitted && DateError && <IonText color="danger">
                                 <p className="ion-padding-start">
                                 Date  is required
                                 </p>
                                 </IonText>}
-    
                                 <IonItem className="exp_payment">
                                 <IonLabel position="stacked" color="primary" >CVV   </IonLabel>
                                 <IonInput name="text_cvv" type="number" max="3" value={Exp} onIonChange={e => setExp(e.detail.value!)}>
                                 </IonInput>
                                 </IonItem>
-    
                                 {formSubmitted && ExpError && <IonText color="danger">
                                 <p className="ion-padding-start">
                                 CVV  is required
                                 </p>
                                 </IonText>}
                         </div>
-                        
                       </IonList>
-    
+                      <div className="divider_block_bottom"></div>
                       <IonRow>
-                        
                         <IonCol>
                           <div className="total">
                           <IonText slot="start" className="total_text">Total</IonText>
@@ -241,6 +233,9 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                     </form>
                             </div>
                         }
+
+
+                        
 
                         {
                             TabType === 'paypal' && 

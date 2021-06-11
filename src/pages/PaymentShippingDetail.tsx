@@ -65,42 +65,39 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
         <IonTitle className="eventdetailstitle"> Checkout</IonTitle>
       </IonToolbar>
     </IonHeader>
-
-    
           <IonContent fullscreen>
-           
            <br/>
            <br/>
-           <IonItem lines="none" className="item_block">
-             <div className="item_flex">
-             <IonIcon icon={stopCircleOutline} ariaLabel="Delivery"/> <br/>
-              <IonLabel>Delivery</IonLabel>
-             </div>
-              <hr className="trait"></hr>
-             <div className="item_flex">
-             <IonIcon icon={stopCircleOutline} ariaLabel="Payment"/><br/>
-              <IonLabel>Payment</IonLabel>
-             </div>
-             <hr className="trait"></hr>
-             <div className="item_flex">
-             <IonIcon icon={stopCircleOutline} ariaLabel="Confirmation"/><br/>
-              <IonLabel>Confirmation</IonLabel>
-             </div>
 
-      </IonItem>
+           <IonItem lines="none" className="item_block">
+          <div className="item_flex">
+          <img src="/assets/img/cerclevalide.png" className="cercle_valide_shippingdetail" alt="cercle_valide"></img>
+            <IonText className="deliver_text">Delivery</IonText>
+          </div>
+            <hr className="trait_simple"></hr>
+          <div className="item_flex">
+          <img src="/assets/img/cerclegris.png" className="cercle_gris_shippingdetail" alt="cercle_gris"></img>
+            <IonText className="payment_text grey">Payment</IonText>
+          </div>
+          <hr className="trait_simple"></hr>
+          <div className="item_flex">
+         <img src="/assets/img/cercleorange.png" className="cercle_orange_shippingdetail" alt="cercle_orange"></img>
+            <IonText className="confirmation_text orange">Confirmation</IonText>
+          </div>
+          </IonItem>
 
 
 <div className="divider-block"></div>
 
 <IonCard className="PaymentShip_card" no-border>
-<IonCardTitle className="PaymentShip_title">Teaching unlocked </IonCardTitle>
+<IonCardTitle className="PaymentShip_title">Order placed</IonCardTitle>
 <br/>
 <br/>
 <IonIcon icon={lockOpenOutline} className="lock-button"></IonIcon>
 <IonIcon icon={checkmarkOutline} className="check-button"></IonIcon>
   <IonText className="thanks">Thanks for your purchase.</IonText>
 
- <IonText className="ordernumber">Order #453745</IonText>
+ <IonText className="ordernumber grey">Order #453745</IonText>
  <div className="divider_blockorder"></div>
             {orderitems.map((image) => (
             <IonList lines="none">
@@ -112,30 +109,33 @@ const PaymentShippingDetail: React.FC<SomeComponentProps> = ({ history }) => {
     </IonCol>
     <IonCol>
         <IonItem>
-         <IonText slot="end" className="orders"> {image.price}</IonText>
+         <IonText slot="end" className="price_article"> {image.price}</IonText>
          </IonItem>
     </IonCol>
     </IonRow>
 
 </IonList>
+
             ))}
+            <div className="divider_blockorder_bottom"></div>
             {totalitems.map((image) => (
 <IonList>
 <IonRow>
 <IonCol>
-  <IonItem>
+  <IonItem lines="none">
     <IonText slot="start" className="total_order"> {image.desc}</IonText>
     </IonItem>
   </IonCol>
   <IonCol>
-      <IonItem>
-       <IonText slot="end" className="total_order"> {image.price}</IonText>
+      <IonItem lines="none">
+       <IonText slot="end" className="price_total"> {image.price}</IonText>
        </IonItem>
   </IonCol>
   </IonRow>
 
 </IonList>
             ))} 
+            
 <br/>
 <br/>
 

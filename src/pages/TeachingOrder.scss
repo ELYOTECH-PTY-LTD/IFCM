@@ -17,8 +17,10 @@
     top: 30px;
     left: 135px;
 }
-.box{
+.box_card{
     box-shadow: none !important;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .img_teaching{
@@ -26,17 +28,20 @@
     height: 100%;
     background: rgb(255, 255, 255);
     box-shadow: 0px 2px 10px 3px rgba(0, 0, 0, 0.08);
-    border-radius: 15px 15px 15px 15px; 
-    
+    border-radius: 14px 14px 14px 14px;
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: 15px;
+
 }
 .titre_card_teaching{
-
     color: rgb(15, 21, 47);
     font-size: 26px;
   //  font-family: Gilroy-ExtraBold;
     font-weight: 600;
     letter-spacing: 0px;
     line-height: 20px;
+    padding-top: 40px;
 }
 .date_card_teaching{
 
@@ -46,6 +51,7 @@
     font-weight: 600;
     letter-spacing: 0px;
     line-height: 20px;
+    padding-top: 15px;
 }
 .text_card_list{
     
@@ -62,10 +68,23 @@
     left: 85%;
     color: grey;
 }
-
+.titre_card_list{
+    text-align: center;
+    padding-top: 30px;
+    /* width: 326px; */
+    /* height: 60px; */
+    color: rgb(12, 17, 44);
+    font-size: 16px;
+    /* font-family: OpenSans; */
+    letter-spacing: 0px;
+    line-height: 30px;
+}
 .center{
     text-align: center;
     display: block;
+}
+.shop_text{
+    font-weight: bold;
 }
 
 .price{
@@ -89,4 +108,7 @@
     border-radius: 25px;
     height: 50px;
     margin-left: 64px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -12,12 +12,29 @@
     display: flow-root;
     margin: auto;
 }
+.orange{
+    color: rgb(254, 125, 78);
+}
+.grey{
+    color: rgb(134, 135, 168);
+}
 .trait{
     border: 1px dotted #9e9e9e;
     border-style: none none dotted;
     padding-bottom: -29px;
     width: 50px;
     margin-top: -15px;
+}
+.cercle_gris_shippingdetail{
+    margin-left: 15px;
+    width: 50% !important;
+}
+.cercle_orange_shippingdetail{
+    width: 37% !important;
+}
+.cercle_valide_shippingdetail{
+    margin-left: 15px;
+    width: 50% !important;
 }
 .delivery_payment{
     display: block;
@@ -68,53 +85,7 @@
     margin-left: -7px;
 }
 
-.cercle_grey{
-    position: absolute;
-    left: 60%;
-    top: 15%;
-    text-align: center;
-    display: contents;
-}
 
-.circle_grey{
-    width: 28px;
-    height: 28px;
-    border-radius: 30px;
-    border: solid 2px rgb(134, 135, 168);;
-}
-.dot_grey{
-    width: 10px;
-    height: 10px;
-    border-radius: 30px;
-    background-color:rgb(134, 135, 168);;
-    display: block;
-    margin-top: 8px;
-    margin-left: 7px;
-}
-
-.cercle_orang{
-    position: absolute;
-    left: 60%;
-    top: 15%;
-    text-align: center;
-    display: contents;
-}
-
-.circle_orang{
-    width: 28px;
-    height: 28px;
-    border-radius: 30px;
-    border: solid 2px rgb(254, 125, 78);
-}
-.dot_orang{
-    width: 10px;
-    height: 10px;
-    border-radius: 30px;
-    background-color:rgb(254, 125, 78);
-    display: block;
-    margin-top: 8px;
-    margin-left: 7px;
-}
 
 .confirmation_payment{
     width: 86px;
@@ -156,9 +127,10 @@
 height: 40px;
 color: rgb(134, 135, 168);
 font-size: 21px;
-font-weight: 800;
+font-weight: 600;
 letter-spacing: 0px;
 line-height: 20px;
+margin-left: 15px;
 }
 
 .shopping_card{
@@ -196,7 +168,6 @@ line-height: 20px;
     padding-top: 10px;
     width: 224px;
     height: 66px;
-    color: #0c112c;
     font-size: 18px;
     text-align: center;
     letter-spacing: 0px;
@@ -234,8 +205,10 @@ line-height: 20px;
 .total_order{
     display: block;
     margin-left: 20px;
-    margin-top:15px;
+    margin-top: 15px;
     margin-bottom: 15px;
+    color: #0c112c;
+    font-weight: bold;
 }
 
 .list_order{
@@ -254,14 +227,14 @@ line-height: 20px;
 }
 
 .divider-block{
-    width: 352px;
+    width: 100%;
     height: 1px;
     border: 1px solid #f4f3f1;
     margin-left: 15px;
     margin-top: 15px;
 }
 .divider_blockorder{
-    width: 352px;
+    width: 100%;
     height: 1px;
     border: 1px solid #f4f3f1;
     margin-left: 15px;
@@ -293,4 +266,31 @@ line-height: 20px;
     margin-right: auto;
     display: block !important;
     margin-top: -36px;
+}
+
+.price_article{
+    color: #0c112c;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.price_total{
+    color: #fe7d4e;
+    font-weight: bold;
+}
+.item-inner {
+    border-style: none !important;
+}
+.divider_blockorder_bottom{
+    width: 100%;
+    height: 1px;
+    border: 1px solid #f4f3f1;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    margin-top: -15px;
+    z-index: 15;
+    position: absolute;
+}
+
+.item-native .item-inner{
+    border-style: none ;
 }

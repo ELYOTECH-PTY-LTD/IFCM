@@ -28,7 +28,6 @@ const DashboardPage: React.FC = () => {
         <Route path="/Teaching" render={() => <Teaching />} exact={true} />
         <Route path="/TeachingList" render={() => <TeachingList />} exact={true} />
         <Route path="/TeachingDetails" render={() => <TeachingDetails />} exact={true} />
-
       </IonRouterOutlet>
     );
   };
