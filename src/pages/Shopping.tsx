@@ -6,6 +6,7 @@ import { RouteComponentProps, withRouter } from 'react-router';
 import { IonReactRouter } from '@ionic/react-router';
 import { Link } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
+
 import history from '../history';
 import UserService from "../services/UserService";
 import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline} from 'react-ionicons'

@@ -53,6 +53,7 @@ import PaymentShippingDetail from './pages/PaymentShippingDetail';
 
 const App: React.FC = () => {
   
+  
   return (
 
   <IonApp>
