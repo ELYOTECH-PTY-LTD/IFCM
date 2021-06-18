@@ -1,27 +1,40 @@
 
+
+ion-segment-button {
+    --indicator-box-shadow: transparent !important;
+    --background:rgb(254, 220, 208);;
+    --color:#fe7d4e;
+    --background-checked: linear-gradient(to right, #fe7d4e, #fd875c)!important;
+    --color-checked: white;
+    border-radius: 11px !important;
+    padding: 0px;
+    margin: 0;
+    height: 43px;
+   
+  }
+
 .shopping-button{
-    width: 70px;
+width: 70px;
 height: 43px;
 border-radius: 11px;
-    background: rgb(254, 220, 208);}
+    background: rgb(254, 220, 208);
+}
 
 .shopping-button-books{
     width: 70px;
-height: 43px;
-border-radius: 11px;
-    background: rgb(254, 220, 208);}
+    margin-left: 20px;
+  
+}
 
-    .shopping-button-videos{
-        width: 70px;
-    height: 43px;
-    border-radius: 11px;
-        background: rgb(254, 220, 208);}
+.shopping-button-videos{
+    width: 70px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
-        .shopping-button-accessories {
-            width: 137px;
-height: 43px;
-background: rgb(255, 241, 236);
-border-radius: 11px;
+.shopping-button-accessories {
+    margin-right: 30px;
+    
         }
 
         .shopping-button-select {
@@ -52,39 +65,54 @@ color:aliceblue;
  --ion-grid-padding	:0;
 }
 .shoppingitem-card {
-  //  margin-top: 30px;    
+    margin-top: 35px;    
     width: 120px;
-    height: 180px;
+    height: auto;
     background-color: #f6f6f9;
     border-radius: 7px;
     margin-left: 10px;
     width: 90%;
     opacity: 100%;
-
+    
 }
-
+ 
 .shoppingitem-text {
  margin-left : 10px;
- text-align: justify;
-font-size: 12px;
+ text-align:start;
+ font-size: 12px;
 width: 90%;
 padding-left: 2px;
 padding-right: 2px;
 
-}
 
+}
+.text{
+width: 336px;
+height: 25px;
+color: rgb(134, 135, 168);
+font-size: 21px;
+font-family: Gilroy-ExtraBold;
+font-weight: 800;
+letter-spacing: 0px;
+line-height: 20px;
+text-align: start;
+margin-left: 20px;
+
+}
 .shoppingitem-price{
-    margin-left : 30px;
+margin-left : 10px;
 width: 43px;
 height: 18px;
 color: rgb(254, 125, 78);
 font-size: 14px;
 font-weight: 300;
-letter-spacing: 0px;
-line-height: 20px;
-background-color: #f6f6f9;
+letter-spacing:0px;
+line-height: 10px;
+background-color: rgb(254, 220, 208);
 border-radius: 5px;
 padding: 3px;
+text-align: start;
+margin-top: 5px;
 }
 
 .price-box {
@@ -97,23 +125,26 @@ padding: 3px;
 }
 
 .book-img{
-    width: 114px;
-height: 171px;
-margin-top: 30px;
-margin-left : 20px;
-margin-bottom: 0px;
+
+
+height: 170px;
+width: 109px;
+margin-top: 25px;
+margin-bottom:0px;
 bottom: 0;
+
 }
+
 
 .emptycard-shopping {
     background: rgb(255, 255, 255);
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.21);
     border-radius: 50px 50px 0px 0px;
-    margin-top: 170px;
+
     margin-left:0;
     margin-right: 0;
     margin-bottom: 0;
-    margin-top: 36px;
+   
     border: 0px solid #000000;
 
   }
