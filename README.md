@@ -29,3 +29,4 @@ Axios
 ## UPDATE :::::::
 npm install styled-components --save
 npm install -g npm
+npm install react-paypal-button-v2 --save
