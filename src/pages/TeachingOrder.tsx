@@ -31,7 +31,7 @@ const TeachingOrder: React.FC<SomeComponentProps> = ({ history }) => {
                 <IonCardContent className="titre_card_list">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel enim nec urna …</IonCardContent>
                </IonCard>
                <IonText className="center shop_text">Shop now for <IonText className="price"> R 5.00</IonText> </IonText>
-              <IonButton className="payd" color="favorite" href="/paymentcarddetails" >Purchase</IonButton>
+              <IonButton className="payd" color="favorite" href="/paymentdeliverydetails" >Purchase</IonButton>
           </IonContent>
                 
         </IonPage>

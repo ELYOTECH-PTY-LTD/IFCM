@@ -27,6 +27,7 @@ import Donation from './Donation';
 import AboutUs from './AboutUs';
 import PaymentCardDetail from './PaymentCardDetail';
 import PaymentShippingDetail from './PaymentShippingDetail';
+import PaymentDeliveryDetail from './PaymentDeliveryDetail';
 
 interface MainTabsProps { }
 

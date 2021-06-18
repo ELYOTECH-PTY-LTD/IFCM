@@ -47,7 +47,7 @@ import UserProfile from './pages/UserProfile';
 import About from './pages/AboutUs';
 import PaymentCardDetail from './pages/PaymentCardDetail';
 import PaymentShippingDetail from './pages/PaymentShippingDetail';
-
+import PaymentDeliveryDetail from './pages/PaymentDeliveryDetail';
 
 
 
@@ -70,7 +70,7 @@ const App: React.FC = () => {
         <Route path="/signup" component={Signup} />
         <Route path="/paymentcarddetails" component={PaymentCardDetail} />
         <Route path="/paymentshippingdetails" component={PaymentShippingDetail} />
-
+        <Route path="/paymentdeliverydetails" component={PaymentDeliveryDetail} />
    
         <Route path="/" component={Welcome} exact />
       </IonRouterOutlet>

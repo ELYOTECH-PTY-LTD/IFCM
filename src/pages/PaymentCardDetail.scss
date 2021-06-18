@@ -109,32 +109,14 @@
 .visa{
     display: block;
 }
-.btn_visa{
-    width: 96px;
-    height: 60px;
-    border: 1px solid rgb(254, 125, 78);
-    border-radius: 7px;
-    box-shadow: none !important;
-}
 .mastercard{
     display: block;
     
 }
-.btn_mastercard{
-    width: 96px;
-    height: 60px;
-    border-radius: 7px;
-    box-shadow: none !important;
-}
 .paypal{
     display: block;
 }
-.btn_paypal{
-    width: 96px;
-    height: 60px;
-    border-radius: 7px;
-    box-shadow: none !important;
-}
+
 .total{
     padding-top: 5%;
     display: flex;
@@ -174,7 +156,10 @@
         border-radius: 60px;
         overflow: hidden;
         perspective: 1px;
-}
+        text-transform:none;
+            font-weight: 400;
+        font-size: 20px;
+ }
 
 
 
@@ -218,4 +203,63 @@
 .exp_payment{
     width: 100%;
     padding-top: 2px;
+}
+
+.btn_visa_off{
+    width: 96px;
+    height: 60px;
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    --ion-color-base: none !important;
+}
+.btn_mastercard_off{
+    width: 96px;
+    height: 60px;
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    --ion-color-base: none !important;
+}
+
+.btn_paypal_off{
+    width: 96px;
+    height: 60px;
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    --ion-color-base: none !important;
+}
+.btn_visa_on{
+    width: 96px;
+    height: 60px;
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    border: 1px solid rgb(254, 125, 78);
+    --ion-color-base: none !important;
+}
+
+.btn_mastercard_on{
+    width: 96px;
+    height: 60px;
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    border: 1px solid rgb(254, 125, 78);
+    --ion-color-base: none !important;
+}
+
+.btn_paypal_on{
+    width: 96px;
+    height: 60px;
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    border: 1px solid rgb(254, 125, 78);
+    --ion-color-base: none !important;
+}
+.paypal_button_payment{
+    margin-top: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+    overflow: hidden;
+    perspective: 1px;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 20px;
 }

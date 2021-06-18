@@ -12,6 +12,7 @@ import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline 
 import { Component } from 'ionicons/dist/types/stencil-public-runtime';
 import { render } from '@testing-library/react';
 
+
 type Item = {
     src: string;
     title: string;
@@ -33,15 +34,22 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
     let [TabType, setTabType] = useState('visa');
     const [Date, setDate] = useState('');
     const [Exp, setExp] = useState('');
+   
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [Card_nameError, setCardNameError] = useState(false);
     const [Card_NumberError, setCardNumberError] = useState(false);
     const [DateError, setDateError] = useState(false);
     const [ExpError, setExpError] = useState(false);
+
     const [lightModeVisa, setLightModeVisa] = useState(false);
     const [lightModeMastercard, setLightModeMastercard] = useState(false);
     const [lightModePaypal, setLightModePaypal] = useState(false);
 
+    const [VisaActive , setVisaActive] = useState(true);
+    const [MastercardActive , setMastercardActive] = useState(false);
+    const [PaypalActive , setPaypalActive] = useState(false);
+
+    
     const login = async (e: React.FormEvent) => {
         e.preventDefault();
         setFormSubmitted(true);
@@ -57,14 +65,42 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
           if(!ExpError) {
             setExpError(true);
           }
+         
       };
+      const ChangeForVisa = () => {
+        setVisaActive(true)
+          
+            setMastercardActive(true)
+            setPaypalActive(true)
+           
+          setTabType(TabType = 'visa');
+          
+      }
+     const ChangeForMastercard = () => {
+      setMastercardActive(false)
+     
+        setVisaActive(false)
+        setPaypalActive(true)
+       
+      setTabType(TabType = 'mastercard');
+      
+  }
+  const ChangeForPaypal = () => {
+    setPaypalActive(false)
+  
+      setVisaActive(false) 
+      setMastercardActive(true)
+     
+    setTabType(TabType = 'paypal');
+    
+}
 
     return (
         <IonPage id="payment-page">
           <IonHeader className="navbar-noborder" >
           <IonToolbar >
           <IonButtons slot="start">
-          <IonBackButton icon={chevronBackOutline} defaultHref="/tabs/teaching/TeachingOrder" />
+          <IonBackButton icon={chevronBackOutline} defaultHref="/paymentdeliverydetails" />
           </IonButtons>
           <IonTitle className="eventdetailstitle"> Checkout</IonTitle>
           </IonToolbar>
@@ -91,20 +127,38 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
           <div className="divider_block_top"></div>
                 <IonText className="Payment_title">Payment method</IonText>
                 <div className="selection_payment">
-                <IonButton className="btn_visa" color="light"onClick={() => setTabType(TabType = 'visa')}>
-                            <img src="/assets/img/LogoVisaOn.png" alt="visa" className="visa_img" id="visa"></img>
+                <IonButton className={VisaActive ?  "btn_paypal_on" : "btn_visa_off"}
+                color="light"
+                
+                onClick={() => ChangeForVisa()}>
+                            <img 
+                            src={VisaActive ? "/assets/img/LogoVisaOn.png" : "/assets/img/LogoVisaOff.png"}
+                            alt="visa" 
+                            className={VisaActive ?  "visa_img" : "visa_img_off"}
+                            id="visa"
+                            ></img>
                         </IonButton>
                         
-                        <IonButton className="btn_mastercard" color="light" onClick={() => setTabType(TabType = 'mastercard')}>
-                            <img src="/assets/img/LogoMastercardOff.png" alt="mastercard" className="mastercard_img" id="mastercard"></img>
+                        <IonButton className={MastercardActive ?  "btn_mastercard_off" : "btn_mastercard_on"}
+                        color="light" 
+                        onClick={() => ChangeForMastercard()}>
+                            <img 
+                            src={MastercardActive ? "/assets/img/LogoMastercardOff.png" : "/assets/img/LogoMastercardOn.png"}
+                            alt="mastercard" 
+                            className={MastercardActive ?  "Mastercard_img" : "Mastercard_img_off"}
+                            id="mastercard"
+                            
+                            ></img>
                         </IonButton>
                     
-                        <IonButton className="btn_paypal" color="light" onClick={() => setTabType(TabType = 'paypal')}>
+                        <IonButton className={PaypalActive ?  "btn_paypal_off" : "btn_paypal_on"}
+                        color="light"
+                         onClick={() => ChangeForPaypal()}>
                             <img
-                              className="paypal_img"
-                              onClick={() => setLightModePaypal(prevMode => !prevMode)}
-                              src={lightModePaypal ? "/assets/img/LogoPaypalOn.png" : "/assets/img/LogoPaypalOff.png"}
-                              alt="paypal"
+                               src={PaypalActive ? "/assets/img/LogoPaypalOff.png" : "/assets/img/LogoPaypalOn.png"}
+                               alt="paypal" 
+                               className={PaypalActive ?  "paypal_img" : "paypal_img_off"}
+                               id="paypal"
                             />
                         </IonButton>
                 </div>
@@ -233,15 +287,14 @@ const PaymentCardDetail: React.FC<SomeComponentProps> = ({ history }) => {
                     </form>
                             </div>
                         }
-
-
-                        
-
                         {
                             TabType === 'paypal' && 
                             
                           <div>
-                            <button>Paypal</button>
+                            <IonList>
+                            <IonButton className="paypal_button_payment" expand="block" color="primary">Payer avec Paypal</IonButton>
+                            </IonList>
+                            
                           </div>
                         }
           </IonContent>

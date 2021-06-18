@@ -1,0 +1,202 @@
+.trait_simple{
+    border: 1px dotted #dfdddd;
+    border-style: none none dotted;
+    padding-bottom: -29px;
+    z-index: 10;
+    width: 100%;
+    margin-top: -15px;
+}
+
+.delivery_text{
+    margin-left: 6px;
+    width: 55px;
+height: 30px;
+color: rgb(254, 125, 78);
+font-size: 14px;
+//font-family: Raleway-Medium;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 30px;
+}
+.text_payment{
+    width: 60px;
+height: 30px;
+color: rgb(134, 135, 168);
+font-size: 14px;
+//font-family: Raleway-Medium;
+font-weight: 500;
+letter-spacing: 0px;
+line-height: 30px;
+}
+.text_confirmation{
+    width: 60px;
+    height: 30px;
+    color: rgb(134, 135, 168);
+    font-size: 14px;
+    //font-family: Raleway-Medium;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 30px;
+    margin-left: 5px;
+
+}
+.cercle_orange_2{
+    width: 45%;
+    margin-left: 23px;
+    padding-top: 5px;
+}
+.cercle_gris1{
+    width: 60%;
+    margin-left: 15px;
+    padding-top: 5px;
+    margin-top: 1px;
+}
+.cercle_gris2{
+    width: 40%;
+    margin-left: 15px;
+    padding-top: 5px;
+}
+.selection_delivery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+.shipping{
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    border: 1px solid rgb(254, 125, 78);
+    --ion-color-base: none !important;
+    width: 356px;
+    height: 150px;
+    background: rgb(253, 248, 246);
+    border: 1px solid rgb(254, 125, 78);
+    border-radius: 7px;
+}
+
+.pickup{
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    --ion-color-base: none !important;
+    width: 356px;
+    height: 150px;
+
+    
+    border-radius: 7px;
+}
+.pickup_off{
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    border: 1px solid rgb(254, 125, 78);
+    --ion-color-base: none !important;
+    width: 356px;
+    height: 150px;
+    background: rgb(253, 248, 246);
+    border: 1px solid rgb(254, 125, 78);
+    border-radius: 7px;
+}
+.shipping_off{
+    border-radius: 7px;
+    box-shadow: 0 !important;
+    --ion-color-base: none !important;
+    width: 356px;
+    height: 150px;
+
+    border-radius: 7px;
+}
+.title_delivery{
+    width: 182px;
+height: 42px;
+color: rgb(12, 17, 44);
+font-size: 16px;
+//font-family: Gilroy-ExtraBold;
+font-weight: bold;
+letter-spacing: 0px;
+line-height: 19px;
+margin-left: 15px;
+
+}
+.adress_text{
+    width: 108px;
+height: 20px;
+color: rgb(73, 73, 73);
+font-size: 14px;
+//font-family: OpenSans-Semibold;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 20px;
+margin-top: 2px;
+}
+.plus, .marge{
+    margin-left: 15px;
+    margin-right: 5px;
+}
+.pickup_adress{
+    width: 210px;
+height: 60px;
+color: rgb(73, 73, 73);
+font-size: 14px;
+//font-family: OpenSans-Semibold;
+font-weight: 400;
+letter-spacing: 0px;
+line-height: 20px;
+
+}
+.margebottom{
+    margin-left: 15px;
+    margin-right: 5px;
+    position: relative;
+    top: -18%;
+}
+.margebetter{
+    margin-left: 30px;
+    margin-right: 5px;
+}
+
+.divider_block_bottom2 {
+    width: 95%;
+    height: 1px;
+    border: 1px solid #f4f3f1;
+    margin-left: 15px;
+    padding-right: 15px;
+     margin-top: 5%; 
+}
+.margin_none{
+ margin-top: -20px;
+}
+.delivery{
+    width: 113px;
+    height: 30px;
+    color: rgb(12, 17, 44);
+    font-size: 16px;
+   // font-family: Gilroy-ExtraBold;
+    font-weight: 600;
+    letter-spacing: 0px;
+    line-height: 30px;
+    font-size: 18px;
+}
+.delivery_total{
+    color: rgb(254, 125, 78);
+    font-size: 21px;
+  //  font-family: Gilroy-Light;
+    font-weight: 300;
+    letter-spacing: 0px;
+    line-height: 20px;
+    font-size: 18px;
+    margin-left: 5px;
+}
+.btn_complete_delivery{
+    width: 326px;
+    height: 60px;
+    background: rgb(254, 125, 78);
+    border-radius: 30px 30px 30px 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 60px;
+    overflow: hidden;
+    perspective: 1px;
+    text-transform:none;
+        font-weight: 400;
+    font-size: 20px;
+}
