@@ -27,7 +27,12 @@ import Donation from './Donation';
 import AboutUs from './AboutUs';
 import PaymentCardDetail from './PaymentCardDetail';
 import PaymentShippingDetail from './PaymentShippingDetail';
+
+import Shoppingitemdetails from './Shoppingitemdetails';
+import ShoppingCart from './ShoppingCart'
+
 import PaymentDeliveryDetail from './PaymentDeliveryDetail';
+
 
 interface MainTabsProps { }
 
@@ -38,7 +43,6 @@ const Navbar: React.FC<MainTabsProps> = () => {
     <IonTabs>
       <IonRouterOutlet>
         <Redirect exact path="tabs" to="tabs/home" />
-
         {/*
           Using the render method prop cuts down the number of renders your components will have due to route changes.
           Use the component prop when your component depends on the RouterComponentProps passed in automatically.
@@ -54,8 +58,9 @@ const Navbar: React.FC<MainTabsProps> = () => {
         <Route path="/tabs/donation" render={() => <Donation />} exact={true} />
         <Route path="/tabs/userprofile" render={() => <UserProfile />} exact={true} />
         <Route path="/tabs/userprofile/aboutus" component={AboutUs} />
-
-
+        <Route path="/tabs/shopping/Shoppingitemdetails" component={Shoppingitemdetails} />
+        <Route path="/tabs/shopping/Shoppingitemdetails/ShoppingCart" component={ ShoppingCart} />
+       
       </IonRouterOutlet>
 
       <IonTabBar slot="bottom">
