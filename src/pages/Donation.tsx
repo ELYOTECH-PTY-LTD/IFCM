@@ -29,8 +29,8 @@ const Donation: React.FC<SomeComponentProps> = ({ history }) => {
               </IonCard>
   
             <IonCard className="emptycard">
-            <div className="div-donation">
-                <p>&nbsp;</p>
+                <br/>
+                <br/>
                 <IonGrid>
                     <IonRow>
                         <IonCol className="donation-col" >
@@ -55,38 +55,31 @@ const Donation: React.FC<SomeComponentProps> = ({ history }) => {
                     </IonRow>
                     
                 </IonGrid>
-            </div>
-            <div>
-                <p>
-                <IonText className="donation-question">How much wanna donate ? </IonText>
-                </p>
-            </div>
-
+       <br/>
+       <br/>
+       <br/>
+       <br/>
     
-<IonCard className="dollar-card">
-    <IonGrid className="dollar-grid">
-        <IonRow>
-            <IonCol className="dollar-col">
-                <IonImg src="/assets/img/Dollar_Icon.svg" className="dollar-img"/>
-            </IonCol>
-            <IonCol>
-            <IonInput className="input-amount" type="number" value={number} placeholder="0,00"   onIonChange={e => setNumber(parseInt(e.detail.value!, 10))}></IonInput>
-            <IonItemDivider className="divider"></IonItemDivider>
-            </IonCol>
-        </IonRow>
-    </IonGrid>
-</IonCard>
+                <IonText className="donation-question">How much wanna donate ? </IonText>
+
+                <br/>
+       <br/>
+
+            <IonItem lines="inset" className="donation-amount">
+                <IonIcon src="/assets/img/Dollar_Icon.svg" slot="start" className="dollar-img" />
+
+                <IonInput className="input-amount" type="number" value={number} placeholder="0,00"   onIonChange={e => setNumber(parseInt(e.detail.value!, 10))}></IonInput>
+
+            </IonItem>
+
+
+<br/>
 <br/>
 
-
-<IonButton className="cause-button" shape="round" fill="outline" color="medium" routerLink="/tabs/userprofile/notificationslist">Choose your cause Chip
-    <IonIcon icon={chevronForwardOutline} />
-    </IonButton>
-
-
-        <IonItem color="medium">
+        <IonItem detail lines="none" className="cause-button" >
           <IonLabel>Choose your cause</IonLabel>
-          <IonSelect interface="action-sheet" interfaceOptions={options}>
+          <IonSelect interface="action-sheet" interfaceOptions={options} className="donation-select">
+          <IonSelectOption  value=""></IonSelectOption>
           <IonSelectOption  value="Tithe">Tithe</IonSelectOption>
             <IonSelectOption value="Offering">Offering</IonSelectOption>
             <IonSelectOption value="IFCM Charity">Impact For Christ Ministries Charitable Deeds   </IonSelectOption>
@@ -94,13 +87,20 @@ const Donation: React.FC<SomeComponentProps> = ({ history }) => {
           </IonSelect>
         </IonItem>
 
-<p>&nbsp;</p>
-       
-       
+        <br/>
+<br/>
+
+        <br/>
+        <br/>
+<br/>
+
+        <br/>
 <IonButton className="donation-button" shape="round" type="submit" expand="block" href="#"> Donate </IonButton>
            
 
-</IonCard>
+       
+        </IonCard>
+
 
 
 
