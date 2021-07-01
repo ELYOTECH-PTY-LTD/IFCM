@@ -1,0 +1,79 @@
+.titre_order{
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.trait_simple{
+    border: 1px dotted #dfdddd;
+    border-style: none none dotted;
+    padding-bottom: -29px;
+    z-index: 10;
+    width: 100%;
+    margin-top: -15px;
+}
+
+.titre_orders{
+    display: flex;
+    margin-top: 45px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding-left: 48px;
+    margin-top: 25px;
+}
+.order_card{
+    display: flex;
+    padding-bottom: 5px;
+    box-shadow: none;
+    padding-left: 45px;
+}
+.flex{
+    display: flex;
+}
+.order_img{
+    width: 50px;
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
+}
+.order_category{
+    width: 50px;
+    font-size: 15px;
+    color: black;
+    padding-left: 10px;
+   display: flex;
+ 
+
+}
+.column{
+    display: flex;
+
+    padding: 0;
+    margin: 0;
+}
+.order_number{
+    width: 50px;
+    font-size: 15px;
+    color: black;
+    padding-left: 10px;
+   display: flex;
+
+    padding-top: 15px;
+}
+.go{
+    display: flex;
+}
+.button_order{
+    margin-left: 65%;
+    margin-top: -46px;
+    position: absolute;
+}
