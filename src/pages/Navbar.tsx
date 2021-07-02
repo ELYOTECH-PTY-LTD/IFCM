@@ -32,7 +32,11 @@ import Shoppingitemdetails from './Shoppingitemdetails';
 import ShoppingCart from './ShoppingCart'
 
 import PaymentDeliveryDetail from './PaymentDeliveryDetail';
-
+import OrderList from './OrderList';
+import OrderDetail from './OrderDetail';
+import NotificationList from './NotificationList';
+import Help from './Help';
+import Setting from './Setting';
 
 interface MainTabsProps { }
 
@@ -58,6 +62,11 @@ const Navbar: React.FC<MainTabsProps> = () => {
         <Route path="/tabs/donation" render={() => <Donation />} exact={true} />
         <Route path="/tabs/userprofile" render={() => <UserProfile />} exact={true} />
         <Route path="/tabs/userprofile/aboutus" component={AboutUs} />
+        <Route path="/tabs/userprofile/orderlist" component={OrderList} />
+        <Route path="/tabs/userprofile/orderdetail" component={OrderDetail} />
+        <Route path="/tabs/userprofile/notificationslist" component={NotificationList} />
+        <Route path="/tabs/userprofile/settings" component={Setting} />
+        <Route path="/tabs/userprofile/help" component={Help} />
         <Route path="/tabs/shopping/Shoppingitemdetails" component={Shoppingitemdetails} />
         <Route path="/tabs/shopping/Shoppingitemdetails/ShoppingCart" component={ ShoppingCart} />
        

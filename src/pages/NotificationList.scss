@@ -1,0 +1,42 @@
+.trait_simple_notification{
+    border: 1px dotted #c5c3c3;
+    border-style: none none dotted;
+    padding-bottom: -29px;
+    z-index: 10;
+    width: 100%;
+    margin-top: 18px;
+}
+
+.titre_notification{
+    
+        color: rgb(254, 125, 78);
+        font-weight: bold;
+        position: relative;
+        padding: 0;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+           
+    
+}
+
+.trait_simple_notification{
+    border: 1px dotted #c5c3c3;
+    border-style: none none dotted;
+    padding-bottom: -29px;
+    z-index: 10;
+    width: 100%;
+    margin-top: 18px;
+}
+
+.texte_notification
+{
+  
+    padding-bottom: -29px;
+    z-index: 10;
+    width: 100%;
+    margin-top: 18px;
+    color: grey;
+    font-size:  15px;
+}
