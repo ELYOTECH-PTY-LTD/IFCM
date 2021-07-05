@@ -31,6 +31,8 @@ Axios
 ## UPDATE :::::::
 npm install -g react-router
 #
+npm install -g react-scripts
+#
 npm install -g styled-components --save
 #
 npm install -g typescript
