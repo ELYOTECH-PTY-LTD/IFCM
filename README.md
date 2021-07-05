@@ -29,6 +29,22 @@ Axios
 
 
 ## UPDATE :::::::
-npm install styled-components --save
-npm install -g npm
+npm install -g react-router
+#
+npm install -g styled-components --save
+#
+npm install -g typescript
+#
+npm install -g ionicons
+#
+npm install -g node-sass
+#
+npm install -g  history
+#
+npm install -g  axios
+#
 npm install react-paypal-button-v2 --save
+#
+npm install -g npm
+#
+
