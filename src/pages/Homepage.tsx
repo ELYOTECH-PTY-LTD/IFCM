@@ -19,23 +19,6 @@ import Navbar from './Navbar';
 
 
 
-/* type EventItem = {
-  id: string;
-  src: string;
-  text: string;
-  date: string;
-  shortdesc: string;
-};
-const items: EventItem[] = [{ id: '1', src: '/assets/img/israel_pilgrimage.jpg', text: '2020 Israel Pilgrimage', date:'AUG 06, 2020', shortdesc: 'The relationship between the Bible and Israel is like the body…'},
-{ id: '2', src: '/assets/img/2021-viadelarosa.jpg', 
-text: 'VIA DOLOROSA - The way of the cross', date:'03/04/2021 - 05/04/2021', 
-shortdesc: 'The path Jesus walked from the place of his judgment to the site of his crucifixion…'},
-{ id: '3', src: '/assets/img/5km-bootcamp-now-r150.jpg', text: 'HOLY LAND 5KM BOOTCAMP', date:'16/12/2020 - 16/12/2020', 
-shortdesc: 'The nature of the event will be a 5km Bootcamp with obstacles at each kilometre. '},
-{ id: '4', src: 'http://placekitten.com/g/200/300', text: 'a picture of a cat', date:'01 Dec. 2020', 
-shortdesc: 'The relationship between the Bible and Israel is like the body…'} ];
-*/
-
 interface OwnProps { };
 
 interface StateProps {
@@ -86,15 +69,15 @@ const Homepage: React.FC<HomePageProps> = ({ events }) => {
             <br/>
             <br/>
 
-              {events.map((image, i) => (
-        <IonItem className="event_card" key={i} routerLink={`/tabs/home/eventdetails/${image.id}`}>
+              {events.map((eventdetails, i) => (
+        <IonItem className="event_card" key={i} routerLink={`/tabs/home/eventdetails/${eventdetails.id}`}>
             <IonThumbnail slot="start" className="img">
-            <img src={image.src} className="event-img"/>
+            <img src={eventdetails.imgsrc} className="event-img"/>
             </IonThumbnail>
             <IonLabel>
-            <h3 className="date_event"><b> {image.date} </b></h3>
-            <h2 className="lieu_event"> {image.title} </h2>
-            <p className="text_event"> {image.shortdesc} </p>
+            <h3 className="date_event"><b> {eventdetails.date} </b></h3>
+            <h2 className="lieu_event"> {eventdetails.title} </h2>
+            <p className="text_event"> {eventdetails.shortdesc} </p>
             </IonLabel>
             </IonItem>
 

@@ -2,7 +2,7 @@
   export interface Event {
     
     id: number;
-    src: string;
+    imgsrc: string;
     title: string;
     date: string;
     shortdesc: string;
@@ -28,7 +28,7 @@
     id: number;
     title: string;
     description: string;
-    src: string;
+    imgsrc: string;
     author: string;
     price: string;
   }
@@ -49,7 +49,7 @@
     id: number;
     title: string;
     text: string;
-    src: string;
+    imgsrc: string;
     author: string;
     price: string;
     lock?: boolean;

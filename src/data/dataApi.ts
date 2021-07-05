@@ -2,7 +2,7 @@ import { Plugins } from '@capacitor/core';
 import { useState } from 'react';
 
 import { ActionType } from './types'; 
-import { AppIfcmState, Event, Shopping,ShoppingItem, Teaching, TeachingLesson } from './models';
+import { AppIfcmState, Event, Shopping, ShoppingItem, Teaching, TeachingLesson } from './models';
 
 
 const { Storage } = Plugins;
@@ -40,12 +40,19 @@ export const getAppData = async () => {
   const events = responseData.Event as Event[];
   const teachings = responseData.Teaching as Teaching [];
   const shopping = responseData.Shopping as Shopping [];
+
+  const shoppingitems = parseShoppingItems(shopping);
+  const lessons = parseLessons(teachings);
+
+
   console.log("fin fetch event structure");
 
   const data = {
     events,
+    shopping,
+    shoppingitems,
     teachings,
-    shopping
+    lessons
   }
 
   console.log(data);
@@ -56,6 +63,28 @@ export const getAppData = async () => {
 }
 
 
+function parseLessons(teachings: Teaching[]) {
+  const lessons: TeachingLesson[] = [];
+  teachings.forEach(g => {
+      console.log(g);
+      g.lessons.forEach(s => lessons.push(s))
+   });
+  console.log(lessons); 
+
+  return lessons;
+}
+
+
+function parseShoppingItems(shopping: Shopping[]) {
+  const items: ShoppingItem[] = [];
+  shopping.forEach(g => {
+      console.log(g);
+      g.items.forEach(s => items.push(s))
+  });
+  console.log(items); 
+
+  return items;
+}
 
   export const loadAppData = () => async (dispatch: React.Dispatch<any>) => {
 
@@ -118,12 +147,4 @@ export type SessionsActions =
     await Storage.set({ key: HAS_SEEN_TUTORIAL, value: JSON.stringify(hasSeenTutorial) });
   }
 
-  /*
-  function parseLessons(teachings: Teaching) {
-    const lessons: TeachingLesson[] = [];
-    teachings.forEach(g => {
-      (s => g.lessons.push(s))
-    });
-    return lessons;
-  }
-  */
+
