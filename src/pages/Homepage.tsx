@@ -8,12 +8,18 @@ import { useHistory } from "react-router-dom";
 import UserService from "../services/UserService";
 import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline} from 'react-ionicons'
 
+import { Event } from '../data/models';
+import { connect } from '../data/connect';
+
+
 import './Homepage.scss';
 
 import history from '../history';
 import Navbar from './Navbar';
 
-type EventItem = {
+
+
+/* type EventItem = {
   id: string;
   src: string;
   text: string;
@@ -28,10 +34,19 @@ shortdesc: 'The path Jesus walked from the place of his judgment to the site of 
 shortdesc: 'The nature of the event will be a 5km Bootcamp with obstacles at each kilometre. '},
 { id: '4', src: 'http://placekitten.com/g/200/300', text: 'a picture of a cat', date:'01 Dec. 2020', 
 shortdesc: 'The relationship between the Bible and Israel is like the body…'} ];
+*/
 
+interface OwnProps { };
 
-type SomeComponentProps = RouteComponentProps;
-const Homepage: React.FC<SomeComponentProps> = ({ history }) => {
+interface StateProps {
+  events: Event[];
+}
+
+interface DispatchProps { };
+
+interface HomePageProps extends OwnProps, StateProps, DispatchProps { };
+
+const Homepage: React.FC<HomePageProps> = ({ events }) => {
 
     return (
         <IonPage id="home-page">
@@ -70,25 +85,23 @@ const Homepage: React.FC<SomeComponentProps> = ({ history }) => {
             <br/>
             <br/>
 
-
-              {items.map((image, i) => (
+              {events.map((image, i) => (
         <IonItem className="event_card" key={i} routerLink={`/tabs/home/eventdetails/${image.id}`}>
             <IonThumbnail slot="start" className="img">
             <img src={image.src} className="event-img"/>
             </IonThumbnail>
             <IonLabel>
             <h3 className="date_event"><b> {image.date} </b></h3>
-            <h2 className="lieu_event"> {image.text} </h2>
+            <h2 className="lieu_event"> {image.location} </h2>
             <p className="text_event"> {image.shortdesc} </p>
-
-        
             </IonLabel>
-
-
             </IonItem>
+
       ))}
 
  </IonList>
+
+
 
  </IonCard>
 
@@ -117,4 +130,12 @@ No matter what we have or don't have , no matter what we are going through, if w
   );
 };
 
-export default withRouter (Homepage);
+//export default withRouter (Homepage);
+
+export default connect<OwnProps, StateProps, DispatchProps>({
+  mapStateToProps: (state) => ({
+  }),
+  mapDispatchToProps: {
+  },
+  component: React.memo(Homepage)
+});

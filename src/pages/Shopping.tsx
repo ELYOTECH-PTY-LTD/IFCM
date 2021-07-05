@@ -80,10 +80,10 @@ const Shopping: React.FC<SomeComponentProps> = ({ history }) => {
               <IonTitle className="shopping-title">Books</IonTitle>
             </IonSegmentButton>
             <IonSegmentButton className="shopping-button-videos" value="1"  >
-              <IonTitle className="shopping-title">VideoS</IonTitle>
+              <IonTitle className="shopping-title">Media</IonTitle>
             </IonSegmentButton>
             <IonSegmentButton className="shopping-button-accessories" value="2"  >
-              <IonTitle className="shopping-title">Accessoires</IonTitle>
+              <IonTitle className="shopping-title">Accessories</IonTitle>
             </IonSegmentButton>
           </IonSegment>
         </IonToolbar>

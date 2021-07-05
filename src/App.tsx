@@ -32,7 +32,6 @@ import './theme/variables.css';
 import Login from './pages/Login';
 
 import Welcome from './pages/Welcome';
-import DashBoard from './pages/DashboardPage';
 import Signup from './pages/Signup';
 import Homepage from './pages/Homepage'
 import Navbar from './pages/Navbar'
@@ -48,12 +47,48 @@ import About from './pages/AboutUs';
 import PaymentCardDetail from './pages/PaymentCardDetail';
 import PaymentShippingDetail from './pages/PaymentShippingDetail';
 import PaymentDeliveryDetail from './pages/PaymentDeliveryDetail';
+import RedirectToLogin from './components/RedirectToLogin';
 
+
+import { connect } from './data/connect';
+import { AppContextProvider } from './data/AppContext';
+import { loadAppData } from './data/dataApi';
+import { setIsLoggedIn, setUsername, loadUserData } from './data/user';
+
+import { Event } from './data/models';
 
 
 const App: React.FC = () => {
-  
-  
+  return (
+    <AppContextProvider>
+      <IonicAppConnected />
+    </AppContextProvider>
+  );
+};
+
+
+interface StateProps {
+  events: Event;
+}
+
+interface DispatchProps {
+  loadAppData: typeof loadAppData;
+  loadUserData: typeof loadUserData;
+  setIsLoggedIn: typeof setIsLoggedIn;
+  setUsername: typeof setUsername;
+}
+
+interface IonicAppProps extends StateProps, DispatchProps { }
+
+
+const IfcmApp: React.FC<IonicAppProps> = ({ events,  setIsLoggedIn, setUsername, loadAppData, loadUserData }) => {
+
+  useEffect(() => {
+    loadUserData();
+    loadAppData();
+    // eslint-disable-next-line
+  }, []);
+
   return (
 
   <IonApp>
@@ -72,7 +107,12 @@ const App: React.FC = () => {
         <Route path="/paymentcarddetails" component={PaymentCardDetail} />
         <Route path="/paymentshippingdetails" component={PaymentShippingDetail} />
         <Route path="/paymentdeliverydetails" component={PaymentDeliveryDetail} />
-   
+        <Route path="/userprofile/logout" render={() => {
+                  return <RedirectToLogin
+                    setIsLoggedIn={setIsLoggedIn}
+                    setUsername={setUsername}
+                  />;
+                }} />
         <Route path="/" component={Welcome} exact />
       </IonRouterOutlet>
      </IonSplitPane>
@@ -107,9 +147,21 @@ const App: React.FC = () => {
 
 }
 
+/*
+export default connect<{}, StateProps, DispatchProps>({
+  component: IfcmApp
+});
+*/
+
+
 export default App;
 
 
+const IonicAppConnected = connect<{}, StateProps, DispatchProps> ({ 
+ mapStateToProps:(state) => ({ events: state.data.events }),
+  mapDispatchToProps: { loadAppData, loadUserData, setIsLoggedIn, setUsername },
+  component: IfcmApp
+});
 
 /**
  * 
