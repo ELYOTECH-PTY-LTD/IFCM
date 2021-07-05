@@ -17,8 +17,8 @@
     
     id_cat: number;
     category: string;
-    items : ShoppingItem[];
     count : number;
+    items : ShoppingItem[];
 
   }
 
@@ -38,8 +38,8 @@
     
     id_cat: number;
     category: string;
-    lessons : TeachingLesson[];
     count : number;
+    lessons : TeachingLesson[];
 
   }
 
@@ -52,7 +52,7 @@
     src: string;
     author: string;
     price: string;
-    lock : string;
+    lock?: boolean;
   }
 
   export interface AppIfcmState {

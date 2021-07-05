@@ -78,7 +78,7 @@
 
 "Shopping" : [
   {
-    "id_categ" : "1",
+    "id_cat" : "1",
       "category" : "Books",
       "items" : [
         {
@@ -110,7 +110,7 @@
   },
 
   {
-  "id_categ" : "2",
+  "id_cat" : "2",
   "category" : "Videos",
   "items" : [
         {
@@ -143,7 +143,7 @@
 },
 
 {
-  "id_categ" : "3",
+  "id_cat" : "3",
   "category" : "Accessories",
   "items" : [
         {

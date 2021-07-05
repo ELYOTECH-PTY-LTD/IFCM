@@ -47,7 +47,8 @@ interface DispatchProps { };
 interface HomePageProps extends OwnProps, StateProps, DispatchProps { };
 
 const Homepage: React.FC<HomePageProps> = ({ events }) => {
-
+  console.log("Liste des evenements");
+  console.log( events);
     return (
         <IonPage id="home-page">
           <IonContent fullscreen>
@@ -92,7 +93,7 @@ const Homepage: React.FC<HomePageProps> = ({ events }) => {
             </IonThumbnail>
             <IonLabel>
             <h3 className="date_event"><b> {image.date} </b></h3>
-            <h2 className="lieu_event"> {image.location} </h2>
+            <h2 className="lieu_event"> {image.title} </h2>
             <p className="text_event"> {image.shortdesc} </p>
             </IonLabel>
             </IonItem>
@@ -126,14 +127,18 @@ No matter what we have or don't have , no matter what we are going through, if w
 
   </IonContent>
 
+
   </IonPage>
   );
+
 };
 
 //export default withRouter (Homepage);
 
+
 export default connect<OwnProps, StateProps, DispatchProps>({
   mapStateToProps: (state) => ({
+    events: state.data.events
   }),
   mapDispatchToProps: {
   },

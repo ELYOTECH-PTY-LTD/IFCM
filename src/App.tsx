@@ -67,10 +67,6 @@ const App: React.FC = () => {
 };
 
 
-interface StateProps {
-  events: Event;
-}
-
 interface DispatchProps {
   loadAppData: typeof loadAppData;
   loadUserData: typeof loadUserData;
@@ -78,10 +74,10 @@ interface DispatchProps {
   setUsername: typeof setUsername;
 }
 
-interface IonicAppProps extends StateProps, DispatchProps { }
+interface IonicAppProps extends DispatchProps { }
 
 
-const IfcmApp: React.FC<IonicAppProps> = ({ events,  setIsLoggedIn, setUsername, loadAppData, loadUserData }) => {
+const IfcmApp: React.FC<IonicAppProps> = ({  setIsLoggedIn, setUsername, loadAppData, loadUserData }) => {
 
   useEffect(() => {
     loadUserData();
@@ -157,8 +153,8 @@ export default connect<{}, StateProps, DispatchProps>({
 export default App;
 
 
-const IonicAppConnected = connect<{}, StateProps, DispatchProps> ({ 
- mapStateToProps:(state) => ({ events: state.data.events }),
+const IonicAppConnected = connect<{}, {}, DispatchProps> ({ 
+ mapStateToProps:(state) => ({ }),
   mapDispatchToProps: { loadAppData, loadUserData, setIsLoggedIn, setUsername },
   component: IfcmApp
 });

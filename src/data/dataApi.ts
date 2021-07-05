@@ -38,10 +38,14 @@ export const getAppData = async () => {
 
   console.log("debut fetch event structure");
   const events = responseData.Event as Event[];
+  const teachings = responseData.Teaching as Teaching [];
+  const shopping = responseData.Shopping as Shopping [];
   console.log("fin fetch event structure");
 
   const data = {
-    events
+    events,
+    teachings,
+    shopping
   }
 
   console.log(data);
@@ -52,16 +56,20 @@ export const getAppData = async () => {
 }
 
 
-export const loadAppData = async () => {
 
-  console.log("debut loading data");
+  export const loadAppData = () => async (dispatch: React.Dispatch<any>) => {
 
-  const data = await getAppData();
-  console.log(data);
-  console.log("fin loading data");
+    console.log("debut loading data");
+    dispatch(setLoading(true));
+    const data = await getAppData();
+    console.log("fin loading data");
+    
+    console.log("local storage data - setdata");
+    dispatch(setData(data));
+    dispatch(setLoading(false));
+    console.log("fin set data");
 
-
-}
+  }
 
 export const setLoading = (isLoading: boolean) => ({
   type: 'set-app-loading',
@@ -109,3 +117,13 @@ export type SessionsActions =
   export const setHasSeenTutorialData = async (hasSeenTutorial: boolean) => {
     await Storage.set({ key: HAS_SEEN_TUTORIAL, value: JSON.stringify(hasSeenTutorial) });
   }
+
+  /*
+  function parseLessons(teachings: Teaching) {
+    const lessons: TeachingLesson[] = [];
+    teachings.forEach(g => {
+      (s => g.lessons.push(s))
+    });
+    return lessons;
+  }
+  */
