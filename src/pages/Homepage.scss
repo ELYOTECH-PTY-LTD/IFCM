@@ -13,7 +13,8 @@ police
         width: 140px;
 }
 .title{
-    margin-left: 25px;
+    margin-left: 50px;
+    padding-left: 20px;;
     color: #2d3650;
     font-size: 24px;
     font-weight: 750;
@@ -39,9 +40,9 @@ police
 }
 .prophet {
     font-size: 12px;
-    text-align: right;
+    text-align: left;
     position: relative;
-    left: 60%;
+   // left: 60%;
     color: rgb(155, 60, 25);
     font-size: 12px;
     //font-family: OpenSans;
@@ -49,6 +50,23 @@ police
     line-height: 20px;
 }
 
+.prophet-icon {
+    width: 18.33px;
+    height: 20.17px;
+    color:#c85738;
+    opacity: 100%;
+    position : relative;
+}
+.barre-vertical {
+//width: 1px;
+//height: 18px;
+border: 1px solid #c85738;
+top : 0;
+right:0;
+width:150px;		
+height:100%;
+background-color:#c85738;
+}
 
 .prophet2 {
 
@@ -68,8 +86,8 @@ police
     border : none;
     display: unset;
     border-block: none;
+    top : 100px;
 
- 
 
 }
 
@@ -241,7 +259,7 @@ border: 0;
     margin-left:0;
     margin-right: 0;
     border: 0px solid #000000;
-   margin-top: 131px;
+   margin-top: 140px;
 }
 
 
@@ -252,6 +270,15 @@ border: 0;
     margin-left: 30px;
     margin-right: 30px;
     margin-top: -931px;
+//    height: 200px;
+
+}
+
+.prophetic-message {
+height:200px;
+text-overflow:ellipsis;
+overflow: auto;
+float: left;
 
 }
 

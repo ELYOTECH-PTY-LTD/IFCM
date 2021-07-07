@@ -56,6 +56,8 @@
   }
 
   export interface AppIfcmState {
+    propheticmessage : PropheticMessage;
+    verseoftoday : VerseOfToday;
     events : Event[];
     shopping: Shopping[];
     shoppingitems: ShoppingItem[];
@@ -65,6 +67,23 @@
   
   }
 
+  export interface PropheticMessage {
+    
+    id: number;
+    date : string;
+    title: string;
+    text: string;
+    author: string;
 
+  }
+
+  export interface VerseOfToday {
+    
+    id: number;
+    verse: string;
+    text: string;
+    date: string;
+
+  }
  
   

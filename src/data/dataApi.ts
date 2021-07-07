@@ -2,7 +2,7 @@ import { Plugins } from '@capacitor/core';
 import { useState } from 'react';
 
 import { ActionType } from './types'; 
-import { AppIfcmState, Event, Shopping, ShoppingItem, Teaching, TeachingLesson } from './models';
+import { AppIfcmState, Event, Shopping, ShoppingItem, Teaching, TeachingLesson, PropheticMessage, VerseOfToday } from './models';
 
 
 const { Storage } = Plugins;
@@ -37,6 +37,9 @@ export const getAppData = async () => {
 
 
   console.log("debut fetch event structure");
+  const propheticmessage = responseData.PropheticMessage as PropheticMessage;
+  const verseoftoday = responseData.VerseOfToday as VerseOfToday;
+
   const events = responseData.Event as Event[];
   const teachings = responseData.Teaching as Teaching [];
   const shopping = responseData.Shopping as Shopping [];
@@ -48,6 +51,8 @@ export const getAppData = async () => {
   console.log("fin fetch event structure");
 
   const data = {
+    propheticmessage,
+    verseoftoday,
     events,
     shopping,
     shoppingitems,

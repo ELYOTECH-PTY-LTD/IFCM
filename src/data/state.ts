@@ -5,6 +5,8 @@ import { Event } from './models'
 
 export const initialState: AppState = {
   data: {
+    propheticmessage : "" as any,
+    verseoftoday : "" as any,
     events: [],
     shopping: { items: [] } as any,
     shoppingitems: [],
