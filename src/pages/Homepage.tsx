@@ -76,12 +76,14 @@ const Homepage: React.FC<HomePageProps> = ({ events, propheticmessage, verseofto
               <h1 className="title">Good Morning Raoul,</h1>
             </div>
           <br/>
-          <IonCard className="home-emptycard">
-
+          <IonCard className="home-emptycard"> <IonCardContent></IonCardContent></IonCard>
+          <IonCard className="contentcard">
           <br/>
           <br/>
            <IonList className="verse" lines="none">
              <IonListHeader className="verse_titre">Verse of the day </IonListHeader>
+             <br/>
+
               <IonItem className="home-item">
                 <IonButton className="verse-button">
                   <IonIcon icon={bookmarkSharp} className="blue-icon" slot="start" />
@@ -93,19 +95,12 @@ const Homepage: React.FC<HomePageProps> = ({ events, propheticmessage, verseofto
               </IonItem>            
 
 </IonList>
-</IonCard>
-
-
-<div className="today-verse-box"></div>
  
 
             <IonList className="event" lines="none">
             <IonListHeader className="event_titre">Upcoming Events </IonListHeader>
             <br/>
             <br/>
-            <br/>
-            <br/>
-
               {events.map((eventdetails, i) => (
         <IonItem className="event_card" key={i} routerLink={`/tabs/home/eventdetails/${eventdetails.id}`}>
             <IonThumbnail slot="start" className="img">
@@ -122,12 +117,13 @@ const Homepage: React.FC<HomePageProps> = ({ events, propheticmessage, verseofto
 
  </IonList>
 
+</IonCard>
 
  <img src="./assets/img/quotes.png" className="quotes"/>
 
  <IonCard className="prophetic-card">
    
-   <IonCardContent>
+   <IonCardContent className="propheticcontent">
      <IonText color="light" className="prophetic-message">
        <h4>{propheticmessage.title} </h4><br/>
        <h5>{propheticmessage.text} </h5> 

@@ -21,7 +21,7 @@ import TeachingOrder from './TeachingOrder';
 import Signup from './Signup';
 import Login from './Login';
 import Welcome from './Welcome';
-import Shopping from './Shopping';
+import Shop from './Shopping';
 import UserProfile from './UserProfile';
 import Donation from './Donation';
 import AboutUs from './AboutUs';
@@ -49,12 +49,12 @@ const Navbar: React.FC<MainTabsProps> = () => {
         */}
         <Route path="/tabs/home" render={() => <Homepage />} exact={true} />
         <Route path="/tabs/home/eventdetails/:id" component={EventDetails} />
-        <Route path="/tabs/shopping" render={() => <Shopping />} exact={true} />
+        <Route path="/tabs/shopping" render={() => <Shop />} exact={true} />
         <Route path="/tabs/teaching" render={() => <Teaching />} exact={true} />
         <Route path="/tabs/teaching/teachinglist" component={TeachingList} exact={true} />
         <Route path="/tabs/teaching/teachingdetails" component={TeachingDetails} />
         <Route path="/tabs/teaching/teachingorder" component={TeachingOrder} />
-        <Route path="/tabs/shopping" render={() => <Shopping />} exact={true} />
+        <Route path="/tabs/shopping" render={() => <Shop />} exact={true} />
         <Route path="/tabs/donation" render={() => <Donation />} exact={true} />
         <Route path="/tabs/userprofile" render={() => <UserProfile />} exact={true} />
         <Route path="/tabs/userprofile/aboutus" component={AboutUs} />

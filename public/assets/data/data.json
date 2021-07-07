@@ -71,6 +71,7 @@
       "lessons" : [
         {
           "id" : "1",
+          "id_cat" : "1",
           "title": "Developping strong relationship",
           "description": "logo-angular",
           "imgsrc":"/assets/img/speakers/bear.jpg",
@@ -80,6 +81,7 @@
         }, 
         {
           "id" : "2",
+          "id_cat" : "1",
           "title": "Developping strenghts",
           "description": "logo-angular",
           "imgsrc":"/assets/img/speakers/bear.jpg",
@@ -100,6 +102,7 @@
       "items" : [
         {
           "id" : "1",
+          "id_cat" : "1",
           "title": "REWIRING THE MIND",
           "description": "And do not be conformed to this world, but be transformed by the renewing of your mind, that you may prove what is that good and acceptable and perfect will of God.",
           "imgsrc":"https://ifcmapp.s3.eu-west-3.amazonaws.com/assets/img/shopping/books/REWIRINGthemind_1_960x.jpg",
@@ -108,6 +111,7 @@
         },
         {
           "id" : "2",
+          "id_cat" : "1",
           "title": "THE UNIVERSAL GARDEN OF EMUNA",
           "description": "The Universal Garden of Emuna, completely non-denominational. All of mankind deserve to live a life of Emuna, peace and tranquility. The Garden of Emuna -- Emuna is the Hebrew word for faith -- Working on Emuna allows us to really appreciate life straight from the source. This book is a practical step by step guide to attaining high levels of Emuna / faith . Faith / Emuna is likened to a lush, fragrant garden, thus the book Garden of Emuna a garden harmonizing G-d's will with our existent. Written by the worlds expert on practical Emuna, Rabbi Shalom Arush, and translated by Rabbi Lazer Brody. ",
           "imgsrc":"https://ifcmapp.s3.eu-west-3.amazonaws.com/assets/img/shopping/books/garden_of_emuna_960x.jpg",
@@ -116,6 +120,7 @@
         },
         {
           "id" : "3",
+          "id_cat" : "1",
           "title": "TRUE CHRISTIANITY IS IRRESISTIBLE",
           "description": "Selected writings and teachings by Prophet Philip Banda. ",
           "imgsrc":"https://ifcmapp.s3.eu-west-3.amazonaws.com/assets/img/shopping/books/truechristianity_960x.png",
@@ -133,6 +138,7 @@
   "items" : [
         {
           "id" : "1",
+          "id_cat" : "2",
           "title": "WHY WE FAST (P2) - 30/12",
           "description": "",
           "imgsrc":"https://ifcmapp.undefined/assets/img/shopping/medias/cd_f8f9f1fe-9cd6-4514-a32d-78abb65d012b_960x.jpg",
@@ -141,6 +147,7 @@
         },
         {
           "id" : "2",
+          "id_cat" : "2",
           "title": "IMPACT FOR CHRIST MINISTRIES - FOR SUCH A TIME AS THIS",
           "description": "2018 Prophetic Theme Song, produced by Impact for Christ Ministries.",
           "imgsrc":"https://ifcmapp.undefined/assets/img/shopping/medias/fsatat_960x.png",
@@ -149,6 +156,7 @@
         },
         {
           "id" : "3",
+          "id_cat" : "2",
           "title": "FAITHFUL",
           "description": "",
           "imgsrc":"https://ifcmapp.undefined/assets/img/shopping/medias/Faithful_960x.jpg",
@@ -167,6 +175,7 @@
   "items" : [
         {
           "id" : "1",
+          "id_cat" : "3",
           "title": "REWIRING THE MIND",
           "description": "And do not be conformed to this world, but be transformed by the renewing of your mind, that you may prove what is that good and acceptable and perfect will of God.",
           "imgsrc":"/assets/img/speakers/bear.jpg",
@@ -175,6 +184,7 @@
         },
         {
           "id" : "2",
+          "id_cat" : "3",
           "title": "THE UNIVERSAL GARDEN OF EMUNA",
           "description": "The Universal Garden of Emuna, completely non-denominational. All of mankind deserve to live a life of Emuna, peace and tranquility. The Garden of Emuna -- Emuna is the Hebrew word for faith -- Working on Emuna allows us to really appreciate life straight from the source. This book is a practical step by step guide to attaining high levels of Emuna / faith . Faith / Emuna is likened to a lush, fragrant garden, thus the book Garden of Emuna a garden harmonizing G-d's will with our existent. Written by the worlds expert on practical Emuna, Rabbi Shalom Arush, and translated by Rabbi Lazer Brody. ",
           "imgsrc":"/assets/img/speakers/bear.jpg",
@@ -183,6 +193,7 @@
         },
         {
           "id" : "3",
+          "id_cat" : "3",
           "title": "TRUE CHRISTIANITY IS IRRESISTIBLE",
           "description": "Selected writings and teachings by Prophet Philip Banda. ",
           "imgsrc":"/assets/img/speakers/bear.jpg",

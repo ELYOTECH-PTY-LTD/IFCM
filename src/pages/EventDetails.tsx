@@ -48,8 +48,8 @@ const EventDetails: React.FC<EventDetailProps> = ({ eventdetail }) => {
       </IonToolbar>
     </IonHeader>
     <IonContent fullscreen>
-      <IonCard>
-        <img src={eventdetail.imgsrc} alt={eventdetail.location} />
+      <IonCard className="event-details-card">
+        <img src={eventdetail.imgsrc} alt={eventdetail.location} className="eventdetails-img"/>
         <IonCardHeader>
         <IonCardTitle> {eventdetail.title} </IonCardTitle>
           <IonCardSubtitle className="date_eventdetails">{eventdetail.date}</IonCardSubtitle>
@@ -60,6 +60,7 @@ const EventDetails: React.FC<EventDetailProps> = ({ eventdetail }) => {
 
         </IonCardHeader>
         <IonCardContent> {eventdetail.description} </IonCardContent>
+        
       </IonCard>
     </IonContent>
         </IonPage>

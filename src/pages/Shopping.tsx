@@ -11,8 +11,27 @@ import history from '../history';
 import UserService from "../services/UserService";
 import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline} from 'react-ionicons'
 import { IonCardHeader,IonMenuButton,IonSearchbar} from '@ionic/react';
-type SomeComponentProps = RouteComponentProps;
-const Shopping: React.FC<SomeComponentProps> = ({ history }) => {
+
+
+import { Shopping, ShoppingItem } from '../data/models';
+import { connect } from '../data/connect';
+
+interface OwnProps { };
+
+interface StateProps {
+  shopping: Shopping[];
+  shoppingitems : ShoppingItem[];
+  
+}
+
+interface DispatchProps { };
+
+interface ShopProps extends OwnProps, StateProps, DispatchProps { };
+
+const Shop: React.FC<ShopProps> = ({ shopping, shoppingitems }) => {
+
+const books = shoppingitems.filter( t => t.id_cat=1);
+const videos = shoppingitems.filter( t => t.id_cat=2);
 
   const [searchText, setSearchText] = useState('');
 
@@ -96,9 +115,12 @@ const Shopping: React.FC<SomeComponentProps> = ({ history }) => {
         <IonSlide>
       <IonCard className="emptycard-shopping">
         <IonGrid className="shopping-grid">
+          
           <IonRow>
             <IonText className="text">All books</IonText>
           </IonRow>
+          {books.map((items, i) => (
+            console.log(items),
         <IonRow>
           <IonCol size="6">
             <IonRow>
@@ -109,115 +131,37 @@ const Shopping: React.FC<SomeComponentProps> = ({ history }) => {
           <br/>
           </IonCol>
             <IonCol>
-           
-              <img src="/assets/img/garden_of_emuna_480x.jpg" className="book-img"/> 
-           
+              <img src={items.imgsrc} className="book-img"/> 
               </IonCol>
             <IonCol size="1">
               <br/>
             </IonCol>
-           
-            
           </IonRow>
           </IonCard>
           </IonRow>
           <IonRow >
-            <IonText  className="shoppingitem-text"> The Universal Garden of Emuna</IonText>
+            <IonText  className="shoppingitem-text"> {items.description}</IonText>
             </IonRow>   
             <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
+            <IonText className="shoppingitem-price">{items.price}</IonText>
             </IonRow>
           </IonCol>
-          <IonCol size="6">
-            <IonRow>
-              
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
-          <IonRow>
-          <IonCol size="1">
-          <br/>
-          </IonCol>
-            <IonCol>
-              <img src="/assets/img/garden_of_education_480x.jpg" className="book-img"/> 
-              </IonCol>
-            <IonCol size="1">
-              <br/>
-            </IonCol>
-           
-            
-          </IonRow>
-          </IonCard>
-          </IonRow>
-          <IonRow >
-            <IonText  className="shoppingitem-text"> The Garden of Education - Education with Love  </IonText>
-            </IonRow>   
-            <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
-            </IonRow>
-          </IonCol>
-          <IonCol size="6">
-            <IonRow>
-              
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
-          <IonRow>
-          <IonCol size="1">
-          <br/>
-          </IonCol>
-            <IonCol>
-              <img src="/assets/img/REWIRINGthemind_1_480x.jpg" className="book-img"/> 
-              </IonCol>
-            <IonCol size="1">
-              <br/>
-            </IonCol>
-           
-            
-          </IonRow>
-          </IonCard>
-          </IonRow>
-          <IonRow >
-            <IonText  className="shoppingitem-text">Rewiring the Mind </IonText>
-             </IonRow>   
-            <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
-            </IonRow>
-          </IonCol>
-         
-          <IonCol size="6">
-            <IonRow>
-              
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
-          <IonRow>
-          <IonCol size="1">
-          <br/>
-          </IonCol>
-            <IonCol>
-              <img src="/assets/img/truechristianity_480x.png" className="book-img"/> 
-              </IonCol>
-            <IonCol size="1">
-              <br/>
-            </IonCol>
-           
-            
-          </IonRow>
-          </IonCard>
-          </IonRow>
-          <IonRow >
-            <IonText  className="shoppingitem-text"> The power of praying for your adult children  </IonText>
-            </IonRow>   
-            <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
-            </IonRow>
-          </IonCol>
-        </IonRow>
+         </IonRow>  
+           ))}
         </IonGrid>
+        
         </IonCard>
         </IonSlide>
+
         {/*-- Package Segment --*/}
         <IonSlide>
         <IonCard className="emptycard-shopping">
         <IonGrid className="shopping-grid">
           <IonRow>
-            <IonText className="text">All videos</IonText>
+            <IonText className="text">All Media</IonText>
           </IonRow>
+          {videos.map((itemmedia, i) => (
+      
         <IonRow>
           <IonCol size="6">
             <IonRow>
@@ -229,104 +173,26 @@ const Shopping: React.FC<SomeComponentProps> = ({ history }) => {
           </IonCol>
             <IonCol>
            
-              <img src="/assets/img/fsatat_480x.png" className="book-img"/> 
+              <img src={itemmedia.imgsrc} className="book-img"/> 
            
               </IonCol>
             <IonCol size="1">
               <br/>
             </IonCol>
-           
-            
+          
           </IonRow>
           </IonCard>
           </IonRow>
           <IonRow >
-            <IonText  className="shoppingitem-text"> Impact for Christ Ministries - For Such A Time As This</IonText>
+            <IonText  className="shoppingitem-text"> {itemmedia.title}</IonText>
             </IonRow>   
             <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
-            </IonRow>
-          </IonCol>
-          <IonCol size="6">
-            <IonRow>
-              
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
-          <IonRow>
-          <IonCol size="1">
-          <br/>
-          </IonCol>
-            <IonCol>
-              <img src="/assets/img/Faithful_480x.jpg" className="book-img"/> 
-              </IonCol>
-            <IonCol size="1">
-              <br/>
-            </IonCol>
-           
-            
-          </IonRow>
-          </IonCard>
-          </IonRow>
-          <IonRow >
-            <IonText  className="shoppingitem-text"> Faithful  </IonText>
-            </IonRow>   
-            <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
-            </IonRow>
-          </IonCol>
-          <IonCol size="6">
-            <IonRow>
-              
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
-          <IonRow>
-          <IonCol size="1">
-          <br/>
-          </IonCol>
-            <IonCol>
-              <img src="/assets/img/WhatLoveIS_480x.jpg" className="book-img"/> 
-              </IonCol>
-            <IonCol size="1">
-              <br/>
-            </IonCol>
-           
-            
-          </IonRow>
-          </IonCard>
-          </IonRow>
-          <IonRow >
-            <IonText  className="shoppingitem-text">What Love is </IonText>
-             </IonRow>   
-            <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
+            <IonText className="shoppingitem-price">{itemmedia.price} </IonText>
             </IonRow>
           </IonCol>
          
-          <IonCol size="6">
-            <IonRow>
-              
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
-          <IonRow>
-          <IonCol size="1">
-          <br/>
-          </IonCol>
-            <IonCol>
-              <img src="/assets/img/MyWorld_480x.jpg" className="book-img"/> 
-              </IonCol>
-            <IonCol size="1">
-              <br/>
-            </IonCol>
-           
-            
-          </IonRow>
-          </IonCard>
-          </IonRow>
-          <IonRow >
-            <IonText  className="shoppingitem-text"> You are my world+For this cause</IonText>
-            </IonRow>   
-            <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
-            </IonRow>
-          </IonCol>
         </IonRow>
+           ))}
         </IonGrid>
         </IonCard>
         </IonSlide>
@@ -337,6 +203,8 @@ const Shopping: React.FC<SomeComponentProps> = ({ history }) => {
           <IonRow>
             <IonText className="text">All accessoires</IonText>
           </IonRow>
+          {shoppingitems.filter(books => books.id_cat=3).map((accessories, i) => (
+
         <IonRow>
           <IonCol size="6">
             <IonRow>
@@ -348,104 +216,25 @@ const Shopping: React.FC<SomeComponentProps> = ({ history }) => {
           </IonCol>
             <IonCol>
            
-              <img src="/assets/img/Cross_480x.png" className="book-img"/> 
+              <img src={accessories.imgsrc} className="book-img"/> 
            
               </IonCol>
             <IonCol size="1">
               <br/>
             </IonCol>
            
-            
           </IonRow>
           </IonCard>
           </IonRow>
           <IonRow >
-            <IonText  className="shoppingitem-text"> Corss</IonText>
+            <IonText  className="shoppingitem-text"> {accessories.title} </IonText>
             </IonRow>   
             <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
-            </IonRow>
-          </IonCol>
-          <IonCol size="6">
-            <IonRow>
-              
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
-          <IonRow>
-          <IonCol size="1">
-          <br/>
-          </IonCol>
-            <IonCol>
-              <img src="/assets/img/AllThingsBand_480x.jpg" className="book-img"/> 
-              </IonCol>
-            <IonCol size="1">
-              <br/>
-            </IonCol>
-           
-            
-          </IonRow>
-          </IonCard>
-          </IonRow>
-          <IonRow >
-            <IonText  className="shoppingitem-text">  I Can Do All Things Through Him Wristband  </IonText>
-            </IonRow>   
-            <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
-            </IonRow>
-          </IonCol>
-          <IonCol size="6">
-            <IonRow>
-              
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
-          <IonRow>
-          <IonCol size="1">
-          <br/>
-          </IonCol>
-            <IonCol>
-              <img src="/assets/img/courage_480x.jpg" className="book-img"/> 
-              </IonCol>
-            <IonCol size="1">
-              <br/>
-            </IonCol>
-           
-            
-          </IonRow>
-          </IonCard>
-          </IonRow>
-          <IonRow >
-            <IonText  className="shoppingitem-text">Gift Courageous  </IonText>
-             </IonRow>   
-            <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
-            </IonRow>
-          </IonCol>
-         
-          <IonCol size="6">
-            <IonRow>
-              
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
-          <IonRow>
-          <IonCol size="1">
-          <br/>
-          </IonCol>
-            <IonCol>
-              <img src="/assets/img/BlessedisShe_Luke1_480x.png" className="book-img"/> 
-              </IonCol>
-            <IonCol size="1">
-              <br/>
-            </IonCol>
-           
-            
-          </IonRow>
-          </IonCard>
-          </IonRow>
-          <IonRow >
-            <IonText  className="shoppingitem-text"> The Blessed is She who believe  </IonText>
-            </IonRow>   
-            <IonRow>
-            <IonText className="shoppingitem-price"> R 300</IonText>
+            <IonText className="shoppingitem-price"> {accessories.price} </IonText>
             </IonRow>
           </IonCol>
         </IonRow>
+           ))}
         </IonGrid>
         </IonCard>
         </IonSlide>
@@ -453,21 +242,17 @@ const Shopping: React.FC<SomeComponentProps> = ({ history }) => {
     </IonContent>
   </IonPage>
 
+        
+    );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  );
 };
-export default withRouter (Shopping);
+//export default withRouter (Shopping);
+export default connect<OwnProps, StateProps, DispatchProps>({
+  mapStateToProps: (state) => ({
+    shopping: state.data.shopping,
+    shoppingitems : state.data.shoppingitems
+  }),
+  mapDispatchToProps: {
+  },
+  component: React.memo(Shop)
+});

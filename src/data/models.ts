@@ -26,6 +26,7 @@
   export interface ShoppingItem {
     
     id: number;
+    id_cat: number;
     title: string;
     description: string;
     imgsrc: string;
@@ -47,6 +48,7 @@
   export interface TeachingLesson {
     
     id: number;
+    id_cat: number;
     title: string;
     text: string;
     imgsrc: string;
