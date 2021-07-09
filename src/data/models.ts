@@ -37,9 +37,10 @@
 
   export interface Teaching {
     
-    id_cat: number;
+    id: number;
     category: string;
     count : number;
+    imgsrc: string;
     lessons : TeachingLesson[];
 
   }
@@ -48,13 +49,14 @@
   export interface TeachingLesson {
     
     id: number;
-    id_cat: number;
+    idcat: number;
     title: string;
     text: string;
     imgsrc: string;
     author: string;
     price: string;
-    lock?: boolean;
+    date : string;
+    lock: boolean;
   }
 
   export interface AppIfcmState {

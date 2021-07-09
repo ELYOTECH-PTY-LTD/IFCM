@@ -51,8 +51,8 @@ const Navbar: React.FC<MainTabsProps> = () => {
         <Route path="/tabs/home/eventdetails/:id" component={EventDetails} />
         <Route path="/tabs/shopping" render={() => <Shop />} exact={true} />
         <Route path="/tabs/teaching" render={() => <Teaching />} exact={true} />
-        <Route path="/tabs/teaching/teachinglist" component={TeachingList} exact={true} />
-        <Route path="/tabs/teaching/teachingdetails" component={TeachingDetails} />
+        <Route path="/tabs/teaching/teachinglist/:id" component={TeachingList} exact={true} />
+        <Route path="/tabs/teaching/teachingdetails/:id" component={TeachingDetails} />
         <Route path="/tabs/teaching/teachingorder" component={TeachingOrder} />
         <Route path="/tabs/shopping" render={() => <Shop />} exact={true} />
         <Route path="/tabs/donation" render={() => <Donation />} exact={true} />

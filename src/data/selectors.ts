@@ -26,7 +26,12 @@ export const getEvent= createSelector(
 
 export const getLesson = createSelector(
   getTeachingLessons, getIdParam,
-  (speakers, id) => speakers.find(x => x.id === id)
+  (lessons, id) => lessons.find(x => x.id === id)
 );
 
+
+export const getTeaching = createSelector(
+  getTeachings, getIdParam,
+  (teachings, id) => teachings.find(z => z.id === id)
+);
 

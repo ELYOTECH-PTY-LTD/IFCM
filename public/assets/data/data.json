@@ -65,9 +65,10 @@
 
   "Teaching": [
     {
-      "id_cat" : "1",
+      "id" : "1",
       "category" : "Love",
       "count" : "2",
+      "imgsrc":"https://ifcmapp.s3.eu-west-3.amazonaws.com/assets/img/event/2021-easter.jpg",
       "lessons" : [
         {
           "id" : "1",

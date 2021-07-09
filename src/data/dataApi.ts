@@ -43,10 +43,21 @@ export const getAppData = async () => {
   const events = responseData.Event as Event[];
   const teachings = responseData.Teaching as Teaching [];
   const shopping = responseData.Shopping as Shopping [];
-
+  const lesson_teaching = responseData.Teaching as Teaching [];
+console.log(lesson_teaching.length)
+const newtab = [];
+    for (let i = 0; i <= lesson_teaching.length; i++)
+   {
+          newtab[i] = lesson_teaching[i];
+    }
+       
+console.log(newtab);
+console.log('lessondata')
+ console.log(lesson_teaching)
   const shoppingitems = parseShoppingItems(shopping);
   const lessons = parseLessons(teachings);
-
+  console.log('parsinglessons')
+  console.log(lessons[0])
 
   console.log("fin fetch event structure");
 
@@ -74,6 +85,7 @@ function parseLessons(teachings: Teaching[]) {
       console.log(g);
       g.lessons.forEach(s => lessons.push(s))
    });
+   console.log("lessons");
   console.log(lessons); 
 
   return lessons;

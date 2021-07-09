@@ -10,8 +10,22 @@ import history from '../history';
 import UserService from "../services/UserService";
 import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline} from 'react-ionicons'
 
-type SomeComponentProps = RouteComponentProps;
-const Teaching: React.FC<SomeComponentProps> = ({ history }) => {
+import { Teaching, TeachingLesson } from '../data/models';
+import { connect } from '../data/connect';
+
+interface OwnProps { };
+
+interface StateProps {
+  teachinglist: Teaching[];
+}
+
+interface DispatchProps { };
+
+interface TeachingProps extends OwnProps, StateProps, DispatchProps { };
+const TeachingPage: React.FC<TeachingProps> = ({ teachinglist  }) => {
+
+console.log("Liste des teachings");
+console.log(teachinglist);
 
     return (
         <IonPage id="teaching-page">
@@ -24,55 +38,27 @@ const Teaching: React.FC<SomeComponentProps> = ({ history }) => {
             <IonCard className="emptycard">
                     <IonText className="titre_card flex">Categories </IonText>
                         <IonGrid className="custom_grid ">
-                            <IonRow className="ligne padding">
+                            {teachinglist.map((teachingcategorie, i) => (
                                 <IonCol className="colum">
-                                    <IonCard className="card_one" href="/tabs/teaching/TeachingList">
-                                        <img src="/assets/img/Love.jpg"></img>
-                                        <IonText className="card_titre">Love</IonText>
-                                        <IonText className="card_text">5 texts</IonText>
-                                    </IonCard>
-                                    <IonCard className="card_two" href="/tabs/teaching/TeachingList">
-                                        <img src="/assets/img/anxiete.jpeg"></img>
-                                        <IonText className="card_titre">Anxiety</IonText>
-                                        <IonText className="card_text">9 texts</IonText>
-                                    </IonCard>
-                                </IonCol>
-                                
-                            </IonRow>
-                            <IonRow className="ligne padding">
-                                <IonCol className="colum">
-                                    <IonCard className="card_one" href="/tabs/teaching/TeachingList">
-                                        <img src="/assets/img/prayer.png"></img>
-                                        <IonText className="card_titre">Prayer</IonText>
-                                        <IonText className="card_text">5 texts</IonText>
-                                    </IonCard>
-                                    <IonCard className="card_two" href="/tabs/teaching/TeachingList">
-                                        <img src="/assets/img/Black-Success.jpg"></img>
-                                        <IonText className="card_titre">Success</IonText>
-                                        <IonText className="card_text">9 texts</IonText>
-                                    </IonCard>
-                                </IonCol>
-
-                            </IonRow>
-                   
-                            <IonRow className="ligne padding">
-                                <IonCol className="colum">
-                                    <IonCard className="card_one" href="/tabs/teaching/TeachingList">
-                                        <img src="/assets/img/prayer.png"></img>
-                                        <IonText className="card_titre">Delivrance</IonText>
-                                        <IonText className="card_text">10 texts</IonText>
-                                    </IonCard>
-             
-                                </IonCol>
-
-                            </IonRow>
-                    
+                            <IonCard className={ i / 1 == 0 ? 'card_one' : 'card_two'}  routerLink={`/tabs/teaching/TeachingList/${teachingcategorie.idcat}`} key={i}>
+                                <img src={teachingcategorie.imgsrc}></img>
+                                <IonText className="card_titre">{teachingcategorie.category}</IonText>
+                                <IonText className="card_text">{teachingcategorie.count} texts</IonText>
+                            </IonCard>
+                            </IonCol>   
+                          ))}
                 </IonGrid>
             </IonCard>
           </IonContent>
-                
         </IonPage>
-        
   );
-}
-export default withRouter (Teaching);
+};
+
+export default connect<OwnProps, StateProps, DispatchProps>({
+    mapStateToProps: (state) => ({
+        teachinglist: state.data.teachings,
+    }),
+    mapDispatchToProps: {
+    },
+    component: React.memo(TeachingPage)
+  });
