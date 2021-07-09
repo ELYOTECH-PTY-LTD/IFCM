@@ -58,7 +58,7 @@ const Navbar: React.FC<MainTabsProps> = () => {
         <Route path="/tabs/donation" render={() => <Donation />} exact={true} />
         <Route path="/tabs/userprofile" render={() => <UserProfile />} exact={true} />
         <Route path="/tabs/userprofile/aboutus" component={AboutUs} />
-        <Route path="/tabs/shopping/Shoppingitemdetails" component={Shoppingitemdetails} />
+        <Route path="/tabs/shopping/Shoppingitemdetails/:id" component={Shoppingitemdetails} />
         <Route path="/tabs/shopping/Shoppingitemdetails/ShoppingCart" component={ ShoppingCart} />
        
       </IonRouterOutlet>

@@ -30,8 +30,9 @@ interface ShopProps extends OwnProps, StateProps, DispatchProps { };
 
 const Shop: React.FC<ShopProps> = ({ shopping, shoppingitems }) => {
 
-const books = shoppingitems.filter( t => t.id_cat=1);
-const videos = shoppingitems.filter( t => t.id_cat=2);
+//const books = shoppingitems.filter( t => t.id_cat=1);
+//const videos = shoppingitems.filter( t => t.id_cat=2);
+
 
   const [searchText, setSearchText] = useState('');
 
@@ -119,13 +120,14 @@ const videos = shoppingitems.filter( t => t.id_cat=2);
           <IonRow>
             <IonText className="text">All books</IonText>
           </IonRow>
-          {books.map((items, i) => (
-            console.log(items),
+        
+            
         <IonRow>
+        {shoppingitems.filter(books=> books.idcat==1).map((items,i) => (
           <IonCol size="6">
             <IonRow>
               
-          <IonCard className="shoppingitem-card" href="/tabs/shopping/shoppingitemdetails">
+          <IonCard  key={i} routerLink={`/tabs/shopping/shoppingitemdetails/${items.id}`}  className="shoppingitem-card" >
           <IonRow>
           <IonCol size="1">
           <br/>
@@ -140,14 +142,15 @@ const videos = shoppingitems.filter( t => t.id_cat=2);
           </IonCard>
           </IonRow>
           <IonRow >
-            <IonText  className="shoppingitem-text"> {items.description}</IonText>
+            <IonText  className="shoppingitem-text"> {items.title}</IonText>
             </IonRow>   
             <IonRow>
             <IonText className="shoppingitem-price">{items.price}</IonText>
             </IonRow>
           </IonCol>
+             ))}
          </IonRow>  
-           ))}
+        
         </IonGrid>
         
         </IonCard>
@@ -160,9 +163,11 @@ const videos = shoppingitems.filter( t => t.id_cat=2);
           <IonRow>
             <IonText className="text">All Media</IonText>
           </IonRow>
-          {videos.map((itemmedia, i) => (
-      
+   
+     
+            
         <IonRow>
+        {shoppingitems.filter(videos=> videos.idcat==2).map((itemmedia,i) => (
           <IonCol size="6">
             <IonRow>
               
@@ -184,15 +189,16 @@ const videos = shoppingitems.filter( t => t.id_cat=2);
           </IonCard>
           </IonRow>
           <IonRow >
+           
             <IonText  className="shoppingitem-text"> {itemmedia.title}</IonText>
             </IonRow>   
             <IonRow>
             <IonText className="shoppingitem-price">{itemmedia.price} </IonText>
             </IonRow>
           </IonCol>
-         
+            ))}
         </IonRow>
-           ))}
+        
         </IonGrid>
         </IonCard>
         </IonSlide>
@@ -203,9 +209,11 @@ const videos = shoppingitems.filter( t => t.id_cat=2);
           <IonRow>
             <IonText className="text">All accessoires</IonText>
           </IonRow>
-          {shoppingitems.filter(books => books.id_cat=3).map((accessories, i) => (
+         
 
         <IonRow>
+          
+            {shoppingitems.filter(accessories => accessories.idcat==3).map((itemsaccessories ,i) => (
           <IonCol size="6">
             <IonRow>
               
@@ -216,7 +224,7 @@ const videos = shoppingitems.filter( t => t.id_cat=2);
           </IonCol>
             <IonCol>
            
-              <img src={accessories.imgsrc} className="book-img"/> 
+              <img src={itemsaccessories.imgsrc} className="book-img"/> 
            
               </IonCol>
             <IonCol size="1">
@@ -227,14 +235,15 @@ const videos = shoppingitems.filter( t => t.id_cat=2);
           </IonCard>
           </IonRow>
           <IonRow >
-            <IonText  className="shoppingitem-text"> {accessories.title} </IonText>
+            <IonText  className="shoppingitem-text">{itemsaccessories.title}</IonText>
             </IonRow>   
             <IonRow>
-            <IonText className="shoppingitem-price"> {accessories.price} </IonText>
+            <IonText className="shoppingitem-price">{itemsaccessories.price}</IonText>
             </IonRow>
           </IonCol>
+            ))}
         </IonRow>
-           ))}
+         
         </IonGrid>
         </IonCard>
         </IonSlide>

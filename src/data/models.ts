@@ -26,7 +26,7 @@
   export interface ShoppingItem {
     
     id: number;
-    id_cat: number;
+    idcat: number;
     title: string;
     description: string;
     imgsrc: string;

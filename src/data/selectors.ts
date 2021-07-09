@@ -30,3 +30,9 @@ export const getLesson = createSelector(
 );
 
 
+export const getShoppingDetails= createSelector(
+  getShoppingItems, getIdParam,
+  (shopping, id) => {
+    return shopping.find(s => s.id === id);
+  }
+);

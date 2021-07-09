@@ -13,22 +13,30 @@ import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline 
 import { Component } from 'ionicons/dist/types/stencil-public-runtime';
 import { render } from '@testing-library/react';
 
-type ShoppingItem = {
-    src: string;
-    title: string;
-    subtitle: string;
-    text:string;
-    prix:string;
-    
-  };
-  const items: ShoppingItem[] = [{ 
-  src: '/assets/img/Romance-1.jpg', title: 'Love teaching', subtitle:'ggggggg',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel enim nec urna …',prix:'5',},];
- 
-  
 
-type SomeComponentProps = RouteComponentProps;
+import { ShoppingItem } from '../data/models';
+import { connect } from '../data/connect';
+import * as selectors from '../data/selectors';
 
-const Shoppingitemdetails: React.FC<SomeComponentProps> = ({ history }) => {
+
+interface ShoppingDetailsProps {
+  shoppingDetails: ShoppingItem;
+}
+
+
+interface OwnProps extends RouteComponentProps {
+  shoppingDetails: ShoppingItem;
+};
+
+interface StateProps {};
+
+interface DispatchProps {};
+
+interface ShoppingDetailsProps extends OwnProps, StateProps, DispatchProps {};
+
+
+
+const Shoppingitemdetails: React.FC<ShoppingDetailsProps> = ({shoppingDetails }) => {
     
    
 
@@ -58,7 +66,7 @@ const Shoppingitemdetails: React.FC<SomeComponentProps> = ({ history }) => {
           </IonCol>
             <IonCol>
            
-              <img  className="shoppingitem-card" src="/assets/img/garden_of_emuna_480x.jpg" /> 
+              <img  className="shoppingitem-card" src={shoppingDetails.imgsrc} /> 
            
               </IonCol>
             <IonCol size="2">
@@ -72,15 +80,15 @@ const Shoppingitemdetails: React.FC<SomeComponentProps> = ({ history }) => {
          
           <IonRow >
             <IonCol>
-            <IonText className="card_title" > The Universal Garden of Emuna</IonText>
+            <IonText className="card_title" > {shoppingDetails.title}</IonText>
             </IonCol>
           </IonRow>   
             <IonRow>
               <IonCol>
-            <IonText className="card_sub_title"> prophet philipe Banda </IonText>
+            <IonText className="card_sub_title"> {shoppingDetails.author} </IonText>
             </IonCol>
             <IonCol>
-            <span className="shoppingitem-d-price"> R 300 </span> 
+            <span className="shoppingitem-d-price"> {shoppingDetails.price} </span> 
             </IonCol>
             </IonRow>
           </IonCol>
@@ -106,16 +114,7 @@ const Shoppingitemdetails: React.FC<SomeComponentProps> = ({ history }) => {
          <IonRow>
            <IonCol className="book-description">
             <p>
-            The Universal Garden of Emuna, completely non-denominational. 
-            All of mankind deserve to live a life of Emuna, peace and tranquility. 
-            The Garden of Emuna -- Emuna is the Hebrew word for faith -- Working on Emuna allows 
-            us to really appreciate life straight from the source.
-             This book is a practical step by step guide to attaining high levels of Emuna / faith .
-              Faith / Emuna is likened to a lush, fragrant garden, thus the book Garden of Emuna a garden
-               harmonizing G-d's will with our existent. Written by the worlds expert on practical Emuna,
-               * Rabbi Shalom Arush, and translated by Rabbi Lazer Brody.
-
-
+            {shoppingDetails.description}
             </p>
             </IonCol>
          </IonRow>
@@ -140,4 +139,12 @@ const Shoppingitemdetails: React.FC<SomeComponentProps> = ({ history }) => {
         
   );
 }
-export default withRouter (Shoppingitemdetails);
+
+export default connect({
+  mapStateToProps: (state, ownProps) => ({
+    shoppingDetails: selectors.getShoppingDetails(state, ownProps)
+  }),
+  component: Shoppingitemdetails
+});
+
+//export default withRouter (Shoppingitemdetails);
