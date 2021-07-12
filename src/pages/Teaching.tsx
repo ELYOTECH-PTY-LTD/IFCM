@@ -9,11 +9,13 @@ import { useHistory } from "react-router-dom";
 import history from '../history';
 import UserService from "../services/UserService";
 import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline} from 'react-ionicons'
-
+import  *  as selectors from '../data/selectors';
 import { Teaching, TeachingLesson } from '../data/models';
 import { connect } from '../data/connect';
 
-interface OwnProps { };
+interface OwnProps { 
+
+};
 
 interface StateProps {
   teachinglist: Teaching[];
@@ -40,7 +42,7 @@ console.log(teachinglist);
                         <IonGrid className="custom_grid ">
                             {teachinglist.map((teachingcategorie, i) => (
                                 <IonCol className="colum">
-                            <IonCard className={ i / 1 == 0 ? 'card_one' : 'card_two'}  routerLink={`/tabs/teaching/TeachingList/${teachingcategorie.idcat}`} key={i}>
+                            <IonCard className={ i / 1 == 0 ? 'card_one' : 'card_two'}  routerLink={`/tabs/teaching/TeachingList/${teachingcategorie.id}`} key={i}>
                                 <img src={teachingcategorie.imgsrc}></img>
                                 <IonText className="card_titre">{teachingcategorie.category}</IonText>
                                 <IonText className="card_text">{teachingcategorie.count} texts</IonText>
@@ -56,7 +58,8 @@ console.log(teachinglist);
 
 export default connect<OwnProps, StateProps, DispatchProps>({
     mapStateToProps: (state) => ({
-        teachinglist: state.data.teachings,
+      teachinglist : selectors.getTeachings(state),
+       //teachinglist: state.data.teachings 
     }),
     mapDispatchToProps: {
     },

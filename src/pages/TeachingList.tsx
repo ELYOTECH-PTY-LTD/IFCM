@@ -9,42 +9,35 @@ import { useHistory } from "react-router-dom";
 import history from '../history';
 import UserService from "../services/UserService";
 import { pin, wifi, wine, warning, walk, informationCircle, navigate, star, checkmarkCircle, shuffle, home, closeCircle } from 'ionicons/icons';
-import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline, LockClosedOutline} from 'react-ionicons'
+import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline, LockClosedOutline} from 'react-ionicons';
 
 import { Teaching, TeachingLesson } from '../data/models';
 import { connect } from '../data/connect';
 
 import  *  as selectors from '../data/selectors';
 
-interface OwnProps { };
 
-interface StateProps {
-  teachingslist: Teaching[];
-  teachinglessons : TeachingLesson[];
-
+interface OwnProps extends RouteComponentProps {
+  teachingcat: Teaching;
 }
 
-interface DispatchProps { };
+interface DispatchProps {};
+interface StateProps {};
+interface TeachingListProps extends OwnProps, StateProps, DispatchProps {};
+const TeachingList: React.FC<TeachingListProps> = ({ teachingcat }) => {
 
-interface TeachingProps extends OwnProps, StateProps, DispatchProps { };
-const TeachingList: React.FC<TeachingProps> = ({ teachingslist , teachinglessons}) => {
-
-  const teachingcat  = teachingslist[0];
+  
   console.log("here is the teaching categorie selected");
   console.log(teachingcat);
-  const lessonslist = teachinglessons.filter ( t => t.idcat = teachingcat.id);
-  console.log("here are the lessons of the categories "+lessonslist);
-  console.log(lessonslist);
-
+  const lessons = teachingcat.lessons;
+  console.log(lessons);
     return (
       <IonPage id="teachinglist-page">
       <IonContent fullscreen>
         <IonCard className="box">
         <IonButtons>
                 <IonBackButton defaultHref="/tabs/teaching" className="back"/>
-            </IonButtons>
-
-          
+            </IonButtons>     
             <div className="Texte_teaching">
             <IonText className="text_catégorie">
               Teaching
@@ -59,14 +52,12 @@ const TeachingList: React.FC<TeachingProps> = ({ teachingslist , teachinglessons
            &nbsp;
            </p>
            <IonList>
-           {lessonslist.map((lessonitem, i) => (
-
+           {lessons.map((lessonitem, i) => (
              <IonCard routerLink={`/tabs/teaching/TeachingList/${teachingcat.id}/Teachingdetails/${lessonitem.id}`} className="card_teach">
                <img src={lessonitem.imgsrc}className="img_card"></img>
                <IonText className="text_card">{lessonitem.title} </IonText><br/>
                <IonText className="date_card">{lessonitem.date} </IonText>
                <IonText >{lessonitem.author} </IonText>
-
           {
             lessonitem.lock === true && 
             
@@ -81,29 +72,20 @@ const TeachingList: React.FC<TeachingProps> = ({ teachingslist , teachinglessons
               
         }
              </IonCard>
-  
-     
            ))}
-      
-      
-
            </IonList>
         </IonCard>
       </IonContent>
-            
     </IonPage>
-    
 );
-
 };
-
 export default connect<OwnProps, StateProps, DispatchProps>({
-  mapStateToProps: (state) => ({​​​​​​​​
-    teachingcat: selectors.getTeachings(state),
-    teachinglessons : state.data.lessons
+  mapStateToProps: (state, ownProps) => ({​​​​​​​​
+    teachinglessons : selectors.getTeachingLessons(state),
+    teachingcat :selectors.getTeaching(state,ownProps)
  }​​​​​​​​),
 ​​​​  mapDispatchToProps: {
 },
 component: React.memo(TeachingList)
-}​​​​​​​​)
+}​​​​​​​​);
 

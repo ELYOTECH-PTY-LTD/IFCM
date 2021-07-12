@@ -36,18 +36,15 @@
   
 
   export interface Teaching {
-    
     id: number;
     category: string;
     count : number;
     imgsrc: string;
     lessons : TeachingLesson[];
-
   }
 
 
   export interface TeachingLesson {
-    
     id: number;
     idcat: number;
     title: string;
@@ -68,7 +65,7 @@
     teachings: Teaching[];
     lessons: TeachingLesson[];
     loading?: boolean;
-  
+    cat: number;
   }
 
   export interface PropheticMessage {

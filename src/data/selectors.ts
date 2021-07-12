@@ -9,7 +9,7 @@ const getEventList = (state: AppState) => {
 export const getShopping= (state: AppState) => state.data.shopping;
 const getShoppingItems= (state: AppState) => state.data.shoppingitems;
 export const getTeachings= (state: AppState) => state.data.teachings;
-const getTeachingLessons = (state: AppState) => state.data.lessons;
+export const getTeachingLessons = (state: AppState) => state.data.lessons;
 
 
 
@@ -35,3 +35,9 @@ export const getTeaching = createSelector(
   (teachings, id) => teachings.find(z => z.id === id)
 );
 
+export const getShoppingDetails= createSelector(
+  getShoppingItems, getIdParam,
+  (shopping, id) => {
+    return shopping.find(s => s.id === id);
+  }
+);
