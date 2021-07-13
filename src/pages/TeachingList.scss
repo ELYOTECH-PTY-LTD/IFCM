@@ -4,11 +4,13 @@
     background: rgb(216, 216, 216);
     padding: 0;
     margin: 0;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
 .text_catégorie{
     background-color: chocolate;
-    padding: 0;
+    padding: 25;
     margin: 0;
     color: white;
     border-radius: 5px 5px 5px 5px;
@@ -19,8 +21,8 @@
     position: absolute;
     bottom: 65%;
     left: 5%;
-    
 }
+
 .text_caté{
     width: 237px;
     height: 40px;
@@ -66,7 +68,7 @@
     position: relative;
     bottom: 38%;
     top: 33px;
-    left: 2%;
+    left: 8%;
 }
 .img_card{
     width: 54px;
@@ -75,7 +77,7 @@
     border-radius: 11px;
 }
 .text_card{
-    width: 220px;
+    width: auto !important;
     height: 23px;
     color: rgb(12, 17, 44);
     font-size: 16px;
@@ -85,6 +87,8 @@
     position: absolute;
     top: 20px;
     left: 75px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 .date_card{
     width: 87px;
@@ -102,7 +106,6 @@
 .card_teach{
     background: rgb(246, 246, 249);
     box-shadow: none !important;
-    margin-top: 15px;
     margin-bottom: -2px;
     padding-top: 10px;
     padding-left: 10px;
@@ -110,8 +113,14 @@
     border-radius: 7px 7px 7px 7px;
     width: 316px;
     height: 77px;
-
-    
+    display: flex;
+    height: 77px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.card_techinglist{
+    position: relative;
+    top: 25%;
 }
 .box{
     box-shadow: none !important;

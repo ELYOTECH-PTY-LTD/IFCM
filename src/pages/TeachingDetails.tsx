@@ -9,10 +9,25 @@ import { useHistory } from "react-router-dom";
 import history from '../history';
 import UserService from "../services/UserService";
 import { BookmarkSharp,  HomeOutline , BagOutline, HeartOutline , PersonOutline, LockClosedOutline} from 'react-ionicons'
+import  *  as selectors from '../data/selectors';
+import { Teaching, TeachingLesson } from '../data/models';
+import { connect } from '../data/connect';
 
-type SomeComponentProps = RouteComponentProps;
-const TeachingDetails: React.FC<SomeComponentProps> = ({ history }) => {
+interface OwnProps {};
 
+interface StateProps {
+  teachingdetails: TeachingLesson[];
+}
+
+interface DispatchProps {};
+
+interface TeachingDetailsProps extends OwnProps, StateProps, DispatchProps { };
+
+const TeachingDetails: React.FC<TeachingDetailsProps> = ({ teachingdetails }) => {
+console.log(teachingdetails);
+const id_lessons = teachingdetails.filter( t => t.idcat = 1)
+console.log('ff'+id_lessons);
+console.log(id_lessons);
     return (
       <IonPage id="eventdetails-page">
 
@@ -41,9 +56,24 @@ const TeachingDetails: React.FC<SomeComponentProps> = ({ history }) => {
   Vestibulum vitae velit id enim sagittis consectetur dignissim sit amet est. Praesent vitae posuere nisi, non porttitor mi.   
   </IonCardContent>
         </IonCard>
+              {teachingdetails.filter(lesson => lesson.idcat == 1 && lesson.id == 2).map((lessons, i) => (
+                <div className="">
+                      <img src={lessons.imgsrc} />
+                  <p>h</p>
+                </div>
+                
+        ))}
       </IonContent>
           </IonPage>
           
     );
   };
-export default withRouter (TeachingDetails);
+  export default connect({
+    mapStateToProps: (state) => ({
+      teachingdetails : state.data.lessons
+       //teachinglist: state.data.teachings 
+    }),
+    mapDispatchToProps: {
+    },
+    component: React.memo(TeachingDetails)
+  });

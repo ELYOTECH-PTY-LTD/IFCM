@@ -43,13 +43,14 @@ console.log(teachingcat)
         <IonCard className="box">
         <IonButtons>
                 <IonBackButton defaultHref="/tabs/teaching" className="back"/>
-            </IonButtons>     
+            </IonButtons>
+            <img src="/assets/img/Love.jpg" alt="romance" className="img_love"></img>     
             <div className="Texte_teaching">
             <IonText className="text_catégorie">
               Teaching
             </IonText>
             <IonCardSubtitle className="text_caté">{teachingcat.category}</IonCardSubtitle>
-            <IonCardHeader className="text_nombre">`{teachingcat.count} texts</IonCardHeader>
+            <IonCardHeader className="text_nombre">{teachingcat.count} texts</IonCardHeader>
             </div>
            <IonText className="text_title">
            All texts 
@@ -57,7 +58,7 @@ console.log(teachingcat)
            <p>
            &nbsp;
            </p>
-           <IonList>
+           <IonList className="card_techinglist">
            {lessons.map((lessonitem, i) => (
              <IonCard routerLink={`/tabs/teaching/TeachingList/${teachingcat.id}/Teachingdetails/${lessonitem.id}`} className="card_teach">
                <img src={lessonitem.imgsrc}className="img_card"></img>
@@ -79,7 +80,8 @@ console.log(teachingcat)
         }
              </IonCard>
            ))}
-           </IonList>
+           </IonList
+           >
         </IonCard>
       </IonContent>
     </IonPage>

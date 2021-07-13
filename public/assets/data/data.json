@@ -75,7 +75,7 @@
           "id_cat" : "1",
           "title": "Developping strong relationship",
           "description": "logo-angular",
-          "imgsrc":"/assets/img/speakers/bear.jpg",
+          "imgsrc":"https://ifcmapp.s3.eu-west-3.amazonaws.com/assets/img/event/2021-easter.jpg",
           "date":"01/06/2021",
           "price" : "R 40",
           "lock" : "Yes"
@@ -85,7 +85,7 @@
           "id_cat" : "1",
           "title": "Developping strenghts",
           "description": "logo-angular",
-          "imgsrc":"/assets/img/speakers/bear.jpg",
+          "imgsrc":"https://ifcmapp.s3.eu-west-3.amazonaws.com/assets/img/event/2021-easter.jpg",
           "date":"01/06/2021",
           "price" : "",
           "lock" : "No"
