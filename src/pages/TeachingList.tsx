@@ -15,17 +15,23 @@ import { Teaching, TeachingLesson } from '../data/models';
 import { connect } from '../data/connect';
 
 import  *  as selectors from '../data/selectors';
+import { State } from 'ionicons/dist/types/stencil-public-runtime';
+
+
+interface TeachingListProps {
+  teachingcat: Teaching;
+}
 
 
 interface OwnProps extends RouteComponentProps {
-  teachingcat: Teaching;
+  teachingcat?: Teaching;
 }
 
 interface DispatchProps {};
 interface StateProps {};
 interface TeachingListProps extends OwnProps, StateProps, DispatchProps {};
 const TeachingList: React.FC<TeachingListProps> = ({ teachingcat }) => {
-
+console.log(teachingcat)
   
   console.log("here is the teaching categorie selected");
   console.log(teachingcat);
@@ -79,13 +85,14 @@ const TeachingList: React.FC<TeachingListProps> = ({ teachingcat }) => {
     </IonPage>
 );
 };
-export default connect<OwnProps, StateProps, DispatchProps>({
-  mapStateToProps: (state, ownProps) => ({​​​​​​​​
-    teachinglessons : selectors.getTeachingLessons(state),
+
+
+export default connect({
+  mapStateToProps: (state, ownProps) => ({
     teachingcat :selectors.getTeaching(state,ownProps)
- }​​​​​​​​),
-​​​​  mapDispatchToProps: {
-},
-component: React.memo(TeachingList)
-}​​​​​​​​);
+  }),
+  component: TeachingList
+});
+
+
 

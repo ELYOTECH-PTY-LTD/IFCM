@@ -65,7 +65,6 @@
     teachings: Teaching[];
     lessons: TeachingLesson[];
     loading?: boolean;
-    cat: number;
   }
 
   export interface PropheticMessage {
